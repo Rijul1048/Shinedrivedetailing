@@ -1,0 +1,30 @@
+# Node modules
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Virtual environment
+env/
+venv/
+.env/
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Database
+*.sqlite3
+db.sqlite3
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Static files (if collected)
+staticfiles/

@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+<div class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pb-12 px-4 sm:px-6 lg:px-8 pt-20 md:pt-40">
+    <div class="max-w-5xl mx-auto py-12">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl lg:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#4b4188ff] to-[#5f52a9] mb-4">
+                Explore Our Premium Car Detailing Services
+            </h1>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                At ShineDrive Detailing, we offer a range of premium car detailing services tailored for your vehicle. From full auto detailing to specialized interior and exterior car care, each service is meticulously performed to exceed your expectations and deliver a lasting shine.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <!-- Full Detail Card -->
+            <a href="{% url 'full' %}" class="block bg-white rounded-xl shadow-lg hover:shadow-2xl overflow-hidden transition-all duration-300 transform hover:-translate-y-2 group relative border border-gray-200">
+                <img src="{% static 'images/banners2.jpeg' %}" alt="Comprehensive full car detailing service" class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-110">
+                <div class="p-7 text-center">
+                    <h2 class="text-2xl font-bold text-[#756AB6] mb-3">Complete Full Car Detailing</h2>
+                    <p class="text-gray-700 mb-5 text-base">Experience our complete full detailing service including thorough interior and exterior rejuvenation, bringing your car back to showroom condition.</p>
+                    <span class="inline-block bg-[#E0AED0]/20 text-[#756AB6] text-sm font-semibold px-5 py-2 rounded-full transform group-hover:scale-105 transition-transform duration-300">Most Popular</span>
+                </div>
+            </a>
+
+            <!-- Interior Detail Card -->
+            <a href="{% url 'interior_detail' %}" class="block bg-white rounded-xl shadow-lg hover:shadow-2xl overflow-hidden transition-all duration-300 transform hover:-translate-y-2 group relative border border-gray-200">
+                <img src="{% static 'images/interior_service.jpg' %}" alt="Professional interior car detailing service" class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-110">
+                <div class="p-7 text-center">
+                    <h2 class="text-2xl font-bold text-[#756AB6] mb-3">Expert Interior Car Detailing</h2>
+                    <p class="text-gray-700 mb-5 text-base">Enjoy deep interior car cleaning, sanitization, and conditioning for your car's cabin, ensuring a fresh and pristine environment for your drive.</p>
+                    <span class="inline-block bg-[#E0AED0]/20 text-[#756AB6] text-sm font-semibold px-5 py-2 rounded-full transform group-hover:scale-105 transition-transform duration-300">Fresh & Clean</span>
+                </div>
+            </a>
+
+            <!-- Exterior Detail Card -->
+            <a href="{% url 'exterior_detail' %}" class="block bg-white rounded-xl shadow-lg hover:shadow-2xl overflow-hidden transition-all duration-300 transform hover:-translate-y-2 group relative border border-gray-200">
+                <img src="{% static 'images/temp-banner6.jpg' %}" alt="Premium exterior car detailing with paint correction" class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-110">
+                <div class="p-7 text-center">
+                    <h2 class="text-2xl font-bold text-[#756AB6] mb-3">Premium Exterior Car Detailing</h2>
+                    <p class="text-gray-700 mb-5 text-base">Our meticulous exterior car detailing includes washing, paint correction, and protection to restore your car's exterior to a brilliant, lasting shine.</p>
+                    <span class="inline-block bg-[#E0AED0]/20 text-[#756AB6] text-sm font-semibold px-5 py-2 rounded-full transform group-hover:scale-105 transition-transform duration-300">Showroom Finish</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
