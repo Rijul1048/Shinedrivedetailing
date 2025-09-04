@@ -30,10 +30,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2bvagg4g_-jqr1p7ct^=90yq(hxhm!008r&cgyuwww$n14_xi_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [
+    'shinedrivedetailing.com',
+    'www.shinedrivedetailing.com',
+    '16.171.233.52',
+    'localhost',
+]
 
 # Application definition
 
@@ -52,8 +56,15 @@ INSTALLED_APPS = [
 ]
 
 TAILWIND_APP_NAME = 'tailwindapp'
-INTERNAL_IPS = "[127.0.0.1]" 
-NPM_BIN_PATH = "C:\\Users\\DELL\\AppData\\Roaming\\npm\\npm.cmd"
+INTERNAL_IPS = [
+    "127.0.0.1",
+    "localhost",
+    "16.171.233.52",
+    "shinedrivedetailing.com",
+]
+
+# Linux npm path (removed Windows path)
+NPM_BIN_PATH = '/usr/bin/npm'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -74,7 +85,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'django.template.context_processors.request',
+                               'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -89,7 +100,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+        'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
@@ -139,7 +150,7 @@ STATICFILES_DIRS = [
 ]
 
 # Media files (user uploaded)
-MEDIA_URL = '/media/'
+# MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
@@ -156,4 +167,4 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'shinedrive2024@gmail.com'  # Your email
 EMAIL_HOST_PASSWORD = 'wrbk vksa wnmw tngr'  # App password (not regular password)
-DEFAULT_FROM_EMAIL = 'shinedrive2024@gmail.com'
+DEFAULT_FROM_EMAIL = 'shinedrive2024@gmail.com'    
