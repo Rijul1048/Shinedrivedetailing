@@ -1,58 +1,58 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Mobile menu toggle
-const menuBtn = document.getElementById('menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
 
-menuBtn.addEventListener('click', () => {
-  mobileMenu.classList.toggle('hidden');
-});
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
 
-// Navbar scroll effect
-const navbar = document.getElementById('navbar');
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar');
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
-    // When scrolled, add a solid background and shadow
-    navbar.classList.add('bg-white', 'shadow-md');
-    navbar.classList.remove('nav-glass'); // Remove glass effect
-  } else {
-    // At top, use initial transparent/glass effect
-    navbar.classList.remove('bg-white', 'shadow-md');
-    navbar.classList.add('nav-glass');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      // When scrolled, add a solid background and shadow
+      navbar.classList.add('bg-white', 'shadow-md');
+      navbar.classList.remove('nav-glass'); // Remove glass effect
+    } else {
+      // At top, use initial transparent/glass effect
+      navbar.classList.remove('bg-white', 'shadow-md');
+      navbar.classList.add('nav-glass');
+    }
+  });
+
+  // New function to create floating particles for the new hero section
+  function createNewParticles() {
+    const container = document.getElementById('new-particles-container');
+    const particleCount = 15; // Fewer, larger particles for a cleaner look
+
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('new-particle');
+
+      const size = Math.random() * 30 + 10; // Larger particles
+      const startX = Math.random() * 100;
+      const startY = Math.random() * 100;
+
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      particle.style.left = `${startX}%`;
+      particle.style.top = `${startY}%`;
+      particle.style.opacity = Math.random() * 0.3 + 0.1; // More subtle opacity
+
+      // Randomize animation duration and delay
+      particle.style.animationDuration = `${Math.random() * 10 + 10}s`;
+      particle.style.animationDelay = `${Math.random() * 8}s`;
+
+      container.appendChild(particle);
+    }
   }
-});
 
-// New function to create floating particles for the new hero section
-function createNewParticles() {
-  const container = document.getElementById('new-particles-container');
-  const particleCount = 15; // Fewer, larger particles for a cleaner look
-
-  for (let i = 0; i < particleCount; i++) {
-    const particle = document.createElement('div');
-    particle.classList.add('new-particle');
-
-    const size = Math.random() * 30 + 10; // Larger particles
-    const startX = Math.random() * 100;
-    const startY = Math.random() * 100;
-
-    particle.style.width = `${size}px`;
-    particle.style.height = `${size}px`;
-    particle.style.left = `${startX}%`;
-    particle.style.top = `${startY}%`;
-    particle.style.opacity = Math.random() * 0.3 + 0.1; // More subtle opacity
-
-    // Randomize animation duration and delay
-    particle.style.animationDuration = `${Math.random() * 10 + 10}s`;
-    particle.style.animationDelay = `${Math.random() * 8}s`;
-
-    container.appendChild(particle);
-  }
-}
-
-// Initialize new particles when the DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-  createNewParticles();
-});
+  // Initialize new particles when the DOM is loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    createNewParticles();
+  });
   // ===== Package Tabs =====
   const tabBtns = document.querySelectorAll(".tab-btn");
   const packageCards = document.querySelectorAll(".package-card");
@@ -233,7 +233,7 @@ function initMap() {
 function loadReviews() {
   if (typeof google === "undefined") {
     const script = document.createElement("script");
-    script.src = `https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initMap`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyB6iCfwC2HzjH_RUeB3h8l94lgyZM0_wEg&libraries=places&callback=initMap`;
     script.async = true;
     script.defer = true;
     script.id = "google-maps-script";
@@ -749,110 +749,130 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-    // Reels
-    const reelContainer = document.getElementById("reelContainer");
-    if (reelContainer) {
-        const reels = Array.from(reelContainer.getElementsByClassName("reel"));
-        const prevReel = document.getElementById("prevReel");
-        const nextReel = document.getElementById("nextReel");
+// Reels
+const reelContainer = document.getElementById("reelContainer");
+if (reelContainer) {
+  const reels = Array.from(reelContainer.getElementsByClassName("reel"));
+  const prevReel = document.getElementById("prevReel");
+  const nextReel = document.getElementById("nextReel");
 
-        if (reels.length > 0 && prevReel && nextReel) {
-            let activeIndex = 1;
+  if (reels.length > 0 && prevReel && nextReel) {
+    let activeIndex = 1;
 
-            function updateReels() {
-                reels.forEach((reel, index) => {
-                    const diff = index - activeIndex;
-                    const video = reel.querySelector("video");
+    function updateReels() {
+      reels.forEach((reel, index) => {
+        const diff = index - activeIndex;
+        const video = reel.querySelector("video");
 
-                    if (diff === 0) {
-                        reel.style.transform = "translateX(0) scale(1)";
-                        reel.style.zIndex = "20";
-                        if (video) video.play();
-                    } else if (diff === -1 || diff === 1) {
-                        reel.style.transform = `translateX(0) scale(0.75)`;
-                        reel.style.zIndex = "10";
-                        if (video) video.pause();
-                    } else {
-                        reel.style.transform = "translateX(0) scale(0.5)";
-                        reel.style.zIndex = "0";
-                        if (video) video.pause();
-                    }
-                });
-            }
-
-            function moveReels(direction) {
-                activeIndex = (activeIndex + direction + reels.length) % reels.length;
-                updateReels();
-            }
-
-            prevReel.addEventListener("click", () => moveReels(-1));
-            nextReel.addEventListener("click", () => moveReels(1));
-
-            reels.forEach((reel) => {
-                reel.addEventListener("click", () => {
-                    const clickedIndex = reels.indexOf(reel);
-                    const diff = clickedIndex - activeIndex;
-                    moveReels(diff);
-                });
-            });
-
-            updateReels();
+        if (diff === 0) {
+          reel.style.transform = "translateX(0) scale(1)";
+          reel.style.zIndex = "20";
+          if (video) video.play();
+        } else if (diff === -1 || diff === 1) {
+          reel.style.transform = `translateX(0) scale(0.75)`;
+          reel.style.zIndex = "10";
+          if (video) video.pause();
+        } else {
+          reel.style.transform = "translateX(0) scale(0.5)";
+          reel.style.zIndex = "0";
+          if (video) video.pause();
         }
+      });
     }
 
-    // Mobile Reels
-    const mobileReels = document.getElementById("mobileReels");
-    if (mobileReels) {
-        let currentMobileIndex = 0;
-        const reelCount = 3;
-
-        function updateMobileCarousel() {
-            const offset = -currentMobileIndex * 100;
-            mobileReels.style.transform = `translateX(${offset}%)`;
-
-            document.querySelectorAll(".mobile-carousel video").forEach((video, index) => {
-                if (video) {
-                    if (index === currentMobileIndex) {
-                        video.play();
-                    } else {
-                        video.pause();
-                    }
-                }
-            });
-        }
-
-        const mobileNext = document.getElementById("mobileNext");
-        const mobilePrev = document.getElementById("mobilePrev");
-
-        if (mobileNext) {
-            mobileNext.addEventListener("click", () => {
-                if (currentMobileIndex < reelCount - 1) {
-                    currentMobileIndex++;
-                    updateMobileCarousel();
-                }
-            });
-        }
-
-        if (mobilePrev) {
-            mobilePrev.addEventListener("click", () => {
-                if (currentMobileIndex > 0) {
-                    currentMobileIndex--;
-                    updateMobileCarousel();
-                }
-            });
-        }
+    function moveReels(direction) {
+      activeIndex = (activeIndex + direction + reels.length) % reels.length;
+      updateReels();
     }
 
-    // Mute/Unmute functionality
-    document.querySelectorAll(".mute-btn").forEach((btn) => {
-        btn.addEventListener("click", (e) => {
-            const videoContainer = e.target.closest("div");
-            if (videoContainer) {
-                const video = videoContainer.querySelector("video");
-                if (video) {
-                    video.muted = !video.muted;
-                    e.target.textContent = video.muted ? "🔇" : "🔊";
-                }
-            }
-        });
+    prevReel.addEventListener("click", () => moveReels(-1));
+    nextReel.addEventListener("click", () => moveReels(1));
+
+    reels.forEach((reel) => {
+      reel.addEventListener("click", () => {
+        const clickedIndex = reels.indexOf(reel);
+        const diff = clickedIndex - activeIndex;
+        moveReels(diff);
+      });
     });
+
+    updateReels();
+  }
+}
+
+// Mobile Reels
+const mobileReels = document.getElementById("mobileReels");
+if (mobileReels) {
+  let currentMobileIndex = 0;
+  const reelCount = 3;
+
+  function updateMobileCarousel() {
+    const offset = -currentMobileIndex * 100;
+    mobileReels.style.transform = `translateX(${offset}%)`;
+
+    document.querySelectorAll(".mobile-carousel video").forEach((video, index) => {
+      if (video) {
+        if (index === currentMobileIndex) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      }
+    });
+  }
+
+  const mobileNext = document.getElementById("mobileNext");
+  const mobilePrev = document.getElementById("mobilePrev");
+
+  if (mobileNext) {
+    mobileNext.addEventListener("click", () => {
+      if (currentMobileIndex < reelCount - 1) {
+        currentMobileIndex++;
+        updateMobileCarousel();
+      }
+    });
+  }
+
+  if (mobilePrev) {
+    mobilePrev.addEventListener("click", () => {
+      if (currentMobileIndex > 0) {
+        currentMobileIndex--;
+        updateMobileCarousel();
+      }
+    });
+  }
+}
+
+// Mute/Unmute functionality
+document.querySelectorAll(".mute-btn").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    const videoContainer = e.target.closest("div");
+    if (videoContainer) {
+      const video = videoContainer.querySelector("video");
+      if (video) {
+        video.muted = !video.muted;
+        e.target.textContent = video.muted ? "🔇" : "🔊";
+      }
+    }
+  });
+});
+
+// Confetti
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.getElementById("confetti-container");
+  const colors = ["#AC87C5", "#756AB6", "#E0E7FF", "#F5F3FF"];
+
+  // Create confetti elements
+  for (let i = 0; i < 50; i++) {
+    const confetti = document.createElement("div");
+    confetti.className = "confetti";
+    confetti.style.left = Math.random() * 100 + "vw";
+    confetti.style.animationDelay = Math.random() * 5 + "s";
+    confetti.style.width = Math.random() * 8 + 5 + "px";
+    confetti.style.height = confetti.style.width;
+    confetti.style.backgroundColor =
+      colors[Math.floor(Math.random() * colors.length)];
+    confetti.style.opacity = Math.random() * 0.5 + 0.3;
+    container.appendChild(confetti);
+  }
+});    

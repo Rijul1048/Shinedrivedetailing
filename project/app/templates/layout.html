@@ -29,8 +29,19 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'css/custom-style.css'%}">
   </head>
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16992886374"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-16992886374');
+  </script>
+
   <body>
     <!-- Preloader -->
     <div id="preloader">
@@ -58,7 +69,7 @@
                       Services
                       <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#5f52a9] to-[#756AB6] transition-all group-hover:w-full"></span>
                   </a>
-                  <a href="#price" class="text-gray-700 hover:text-[#756AB6] font-medium transition-colors relative group">
+                  <a href="https://shinedrivedetailing.com#price" class="text-gray-700 hover:text-[#756AB6] font-medium transition-colors relative group">
                       Pricing
                       <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#5f52a9] to-[#756AB6] transition-all group-hover:w-full"></span>
                   </a>
@@ -70,9 +81,11 @@
 
               <!-- Call to Action -->
               <div class="hidden lg:flex items-center">
+                <a href="https://shinedrivedetailing.com#choose-your-car">
                   <button class="bg-gradient-to-r from-[#5f52a9] to-[#756AB6] text-white px-6 py-2.5 rounded-lg font-medium hover:shadow-xl transition-all hover:scale-105 shadow-lg">
                       <i class="fas fa-calendar-check mr-2"></i> Book Now
                   </button>
+                </a>
               </div>
 
               <!-- Mobile Menu Button -->
@@ -88,9 +101,9 @@
       <div class="lg:hidden hidden bg-white py-4 px-4 absolute w-full shadow-xl" id="mobile-menu">
           <a href="{% url 'index' %}" class="block py-3 text-gray-700 hover:text-[#756AB6] font-medium border-b border-gray-100"><i class="fas fa-home mr-3"></i> Home</a>
           <a href="{% url 'services' %}" class="block py-3 text-gray-700 hover:text-[#756AB6] font-medium border-b border-gray-100"><i class="fas fa-spa mr-3"></i> Services</a>
-          <a href="#choose-your-car" class="block py-3 text-gray-700 hover:text-[#756AB6] font-medium border-b border-gray-100"><i class="fas fa-tag mr-3"></i> Pricing</a>
+          <a href="https://shinedrivedetailing.com#price" class="block py-3 text-gray-700 hover:text-[#756AB6] font-medium border-b border-gray-100"><i class="fas fa-tag mr-3"></i> Pricing</a>
           <a href="{% url 'about' %}" class="block py-3 text-gray-700 hover:text-[#756AB6] font-medium border-b border-gray-100"><i class="fas fa-info-circle mr-3"></i> About Us</a>
-          <button href="#choose-your-car+" class="bg-gradient-to-r from-[#5f52a9] to-[#756AB6] text-white w-full py-3 rounded-lg font-medium mt-4 shadow-lg">
+          <button href="https://shinedrivedetailing.com#choose-your-car" class="bg-gradient-to-r from-[#5f52a9] to-[#756AB6] text-white w-full py-3 rounded-lg font-medium mt-4 shadow-lg">
               <i class="fas fa-calendar-check mr-2"></i> Book Now
           </button>
       </div>
@@ -364,7 +377,7 @@
                 <i class="fas fa-images text-xl mb-1"></i>
                 <span class="text-xs">About Us</span>
             </a>
-            <a href="#choose-your-car" class="flex flex-col items-center {% if active_page == 'booking' %}text-purple-600{% else %}text-gray-500 hover:text-purple-600{% endif %}">
+            <a href="https://shinedrivedetailing.com#choose-your-car" class="flex flex-col items-center {% if active_page == 'booking' %}text-purple-600{% else %}text-gray-500 hover:text-purple-600{% endif %}">
                 <i class="fas fa-calendar-alt text-xl mb-1"></i>
                 <span class="text-xs">Book</span>
             </a>  
