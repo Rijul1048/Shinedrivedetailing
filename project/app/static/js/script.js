@@ -591,6 +591,7 @@ function getPackageInfo(vehicleType, serviceType, packageType) {
           duration: "4-5 hours",
         },
       },
+      
       interior: {
         bronze_interior: {
           display: "Bronze Interior Detail ($154 CAD)",
