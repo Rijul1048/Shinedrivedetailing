@@ -507,8 +507,8 @@ function getPackageInfo(vehicleType, serviceType, packageType) {
           duration: "1.5-2.5 hours",
         },
         platinum_interior: {
-          display: "Platinum Interior Detail ($195 CAD)",
-          price: "195",
+          display: "Platinum Interior Detail ($186 CAD)",
+          price: "186",
           duration: "2-3 hours",
         },
       },
@@ -550,13 +550,13 @@ function getPackageInfo(vehicleType, serviceType, packageType) {
           duration: "1.5-2 hours",
         },
         gold_interior: {
-          display: "Gold Interior Detail ($180 CAD)",
-          price: "180",
+          display: "Gold Interior Detail ($181 CAD)",
+          price: "181",
           duration: "2-2.5 hours",
         },
         platinum_interior: {
-          display: "Platinum Interior Detail ($215 CAD)",
-          price: "215",
+          display: "Platinum Interior Detail ($208 CAD)",
+          price: "208",
           duration: "2.5-3.5 hours",
         },
       },
@@ -598,8 +598,8 @@ function getPackageInfo(vehicleType, serviceType, packageType) {
           duration: "2-2.5 hours",
         },
         gold_interior: {
-          display: "Gold Interior Detail ($198 CAD)",
-          price: "198",
+          display: "Gold Interior Detail ($208 CAD)",
+          price: "208",
           duration: "2.5-3 hours",
         },
         platinum_interior: {
@@ -646,13 +646,13 @@ function getPackageInfo(vehicleType, serviceType, packageType) {
           duration: "2.5-3 hours",
         },
         gold_interior: {
-          display: "Gold Interior Detail ($207 CAD)",
-          price: "207",
+          display: "Gold Interior Detail ($217 CAD)",
+          price: "217",
           duration: "3-3.5 hours",
         },
         platinum_interior: {
-          display: "Platinum Interior Detail ($250 CAD)",
-          price: "250",
+          display: "Platinum Interior Detail ($244 CAD)",
+          price: "244",
           duration: "3.5-4.5 hours",
         },
       },

@@ -51,10 +51,13 @@
         </div>
 
 <!-- Booking Card Container -->
-<div class="bg-white rounded-xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl">
+<div class="bg-white rounded-xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl mb-12">
 <div class="md:flex">
 <!-- Booking Form Section -->
 <div class="w-full p-6 md:p-8">
+  <!-- Store the booking URL in a data attribute -->
+  <div id="bookingUrl" data-url="{% url 'booking' %}" style="display: none;"></div>
+  
   <form id="bookingForm" method="POST" action="{% url 'booking' %}" class="space-y-8" novalidate>
     {% csrf_token %}
     {% if form.non_field_errors %}
@@ -68,7 +71,7 @@
     <div class="bg-indigo-50 p-6 rounded-xl border border-indigo-100 mb-8 transition-colors duration-200 hover:border-indigo-200">
       <div class="flex items-center mb-4">
         <svg class="w-6 h-6 text-indigo-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1  00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 04-4z" clip-rule="evenodd"></path>
         </svg>
         <h2 class="text-xl font-bold text-indigo-800">Your Selection</h2>
       </div>
@@ -77,7 +80,12 @@
         <!-- Vehicle Selection -->
         <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:border-indigo-200 transition-colors">
           <p class="text-sm text-gray-500 mb-1">Vehicle</p>
-          <p class="font-semibold text-gray-800" id="displayVehicleType">{{ form.initial.vehicle_type }}</p>
+          <select id="vehicleDropdown" class="w-full p-2 border rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white">
+            <option value="sedan" {% if form.initial.vehicle_type == 'sedan' %}selected{% endif %}>Sedan/Coupe (2 Seats)</option>
+            <option value="suv5" {% if form.initial.vehicle_type == 'suv5' %}selected{% endif %}>SUV (5 Seats)</option>
+            <option value="suv7" {% if form.initial.vehicle_type == 'suv7' %}selected{% endif %}>Pick Up/7-Seat SUV</option>
+            <option value="xlsuv" {% if form.initial.vehicle_type == 'xlsuv' %}selected{% endif %}>XL SUV</option>
+          </select>
           {{ form.vehicle_type.as_hidden }}
           {% if form.vehicle_type.errors %}
             <p class="text-red-500 text-xs italic mt-1">{{ form.vehicle_type.errors }}</p>
@@ -87,7 +95,11 @@
         <!-- Service Selection -->
         <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:border-indigo-200 transition-colors">
           <p class="text-sm text-gray-500 mb-1">Service</p>
-          <p class="font-semibold text-gray-800" id="displayServiceType">{{ form.initial.service_type }}</p>
+          <select id="serviceDropdown" class="w-full p-2 border rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white">
+            <option value="full" {% if form.initial.service_type == 'full' %}selected{% endif %}>Full Detail</option>
+            <option value="interior" {% if form.initial.service_type == 'interior' %}selected{% endif %}>Interior Detail</option>
+            <option value="exterior" {% if form.initial.service_type == 'exterior' %}selected{% endif %}>Exterior Detail</option>
+          </select>
           {{ form.service_type.as_hidden }}
           {% if form.service_type.errors %}
             <p class="text-red-500 text-xs italic mt-1">{{ form.service_type.errors }}</p>
@@ -97,7 +109,9 @@
         <!-- Package Selection -->
         <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:border-indigo-200 transition-colors">
           <p class="text-sm text-gray-500 mb-1">Package</p>
-          <p class="font-semibold text-gray-800" id="displayPackage"></p>
+          <select id="packageDropdown" class="w-full p-2 border rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white">
+            <!-- Options will be populated dynamically -->
+          </select>
           {{ form.package_type.as_hidden }}
           <input type="hidden" id="packagePrice" name="package_price">
           {% if form.package_type.errors %}
@@ -125,7 +139,7 @@
           {{ form.full_name }}
           <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
             <svg class="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+              <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 03z" clip-rule="evenodd"></path>
             </svg>
           </div>
         </div>
@@ -162,7 +176,7 @@
           <div class="relative">
             {{ form.email }}
             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <svg class="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 0">
                 <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
                 <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
               </svg>
@@ -179,7 +193,7 @@
     <div class="space-y-6">
       <h2 class="text-2xl font-bold text-gray-800 pb-2 border-b border-gray-200 flex items-center">
         <svg class="w-6 h-6 text-gray-700 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
         </svg>
         Schedule Your Appointment
       </h2>
@@ -228,12 +242,12 @@
     <div class="bg-indigo-50 p-6 rounded-xl border border-indigo-100 mt-8 transition-colors duration-200 hover:border-indigo-200">
       <h2 class="text-xl font-bold text-indigo-800 mb-5 flex items-center">
         <svg class="w-5 h-5 text-indigo-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd"></path>
+          <path fill-rule="evenodd" d="M10 2a4 4 0 00- 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1  00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd"></path>
         </svg>
         Order Summary
       </h2>
       
-      <div class="space-y-3 mb-6">
+      <div class="space-3 mb-6">
         <div class="flex justify-between">
           <span class="text-gray-600">Service:</span>
           <span class="font-medium text-gray-800" id="summaryService"></span>
@@ -267,84 +281,101 @@
 </div>
 
 <script>
+// Get the booking URL from the data attribute
+const bookingUrl = document.getElementById('bookingUrl').getAttribute('data-url');
+
 // Pricing data
 const pricing = {
     'sedan': {
         'full': {
-            'bronze': { display: 'Bronze Full Detail ($136 CAD)', price: '136', duration: '1-2 hours' },
-            'gold': { display: 'Gold Full Detail ($195 CAD)', price: '195', duration: '2-3 hours' },
-            'platinum': { display: 'Platinum Full Detail ($217 CAD)', price: '217', duration: '3-4 hours' }
+            'bronze_full': { display: 'Bronze Full Detail ($136 CAD)', price: '136', duration: '1-2 hours' },
+            'gold_full': { display: 'Gold Full Detail ($195 CAD)', price: '195', duration: '2-3 hours' },
+            'platinum_full': { display: 'Platinum Full Detail ($217 CAD)', price: '217', duration: '3-4 hours' }
         },
         'interior': {
-            'bronze': { display: 'Bronze Interior ($110 CAD)', price: '110', duration: '1-2 hours' },
-            'gold': { display: 'Gold Interior ($165 CAD)', price: '165', duration: '2-3 hours' },
-            'platinum': { display: 'Platinum Interior ($195 CAD)', price: '195', duration: '3-4 hours' }
+            'bronze_interior': { display: 'Bronze Interior Detail ($110 CAD)', price: '110', duration: '1-1.5 hours' },
+            'gold_interior': { display: 'Gold Interior Detail ($165 CAD)', price: '165', duration: '1.5-2.5 hours' },
+            'platinum_interior': { display: 'Platinum Interior Detail ($186 CAD)', price: '186', duration: '2-3 hours' }
         },
         'exterior': {
-            'bronze': { display: 'Bronze Exterior ($95 CAD)', price: '95', duration: '1-2 hours' },
-            'gold': { display: 'Gold Exterior ($136 CAD)', price: '136', duration: '2-3 hours' },
-            'platinum': { display: 'Platinum Exterior ($175 CAD)', price: '175', duration: '3-4 hours' }
+            'gold_exterior': { display: 'Gold Exterior Detail ($163 CAD)', price: '163', duration: '1-1.5 hours' },
+            'platinum_exterior': { display: 'Premium Exterior Detail ($200 CAD)', price: '200', duration: '1.5-2 hours' }
         }
     },
     'suv5': {
         'full': {
-            'bronze': { display: 'Bronze Full Detail ($156 CAD)', price: '156', duration: '1-2 hours' },
-            'gold': { display: 'Gold Full Detail ($225 CAD)', price: '225', duration: '2-3 hours' },
-            'platinum': { display: 'Platinum Full Detail ($247 CAD)', price: '247', duration: '3-4 hours' }
+            'bronze_full': { display: 'Bronze Full Detail ($171 CAD)', price: '171', duration: '1.5-2.5 hours' },
+            'gold_full': { display: 'Gold Full Detail ($217 CAD)', price: '217', duration: '2.5-3.5 hours' },
+            'platinum_full': { display: 'Platinum Full Detail ($244 CAD)', price: '244', duration: '3.5-4.5 hours' }
         },
         'interior': {
-            'bronze': { display: 'Bronze Interior ($115 CAD)', price: '115', duration: '1-2 hours' },
-            'gold': { display: 'Gold Interior ($156 CAD)', price: '156', duration: '2-3 hours' },
-            'platinum': { display: 'Platinum Interior ($195 CAD)', price: '195', duration: '3-4 hours' }
+            'bronze_interior': { display: 'Bronze Interior Detail ($137 CAD)', price: '137', duration: '1.5-2 hours' },
+            'gold_interior': { display: 'Gold Interior Detail ($180 CAD)', price: '180', duration: '2-2.5 hours' },
+            'platinum_interior': { display: 'Platinum Interior Detail ($208 CAD)', price: '208', duration: '2.5-3.5 hours' }
         },
         'exterior': {
-            'bronze': { display: 'Bronze Exterior ($115 CAD)', price: '115', duration: '1-2 hours' },
-            'gold': { display: 'Gold Exterior ($156 CAD)', price: '156', duration: '2-3 hours' },
-            'platinum': { display: 'Platinum Exterior ($195 CAD)', price: '195', duration: '3-4 hours' }
+            'gold_exterior': { display: 'Gold Exterior Detail ($181 CAD)', price: '181', duration: '1-2 hours' },
+            'platinum_exterior': { display: 'Premium Exterior Detail ($228 CAD)', price: '228', duration: '1.5-2.5 hours' }
         }
     },
     'suv7': {
         'full': {
-            'bronze': { display: 'Bronze Full Detail ($176 CAD)', price: '176', duration: '2-3 hours' },
-            'gold': { display: 'Gold Full Detail ($255 CAD)', price: '255', duration: '3-4 hours' },
-            'platinum': { display: 'Platinum Full Detail ($277 CAD)', price: '277', duration: '4-5 hours' }
+            'bronze_full': { display: 'Bronze Full Detail ($204 CAD)', price: '204', duration: '2-3 hours' },
+            'gold_full': { display: 'Gold Full Detail ($258 CAD)', price: '258', duration: '3-4 hours' },
+            'platinum_full': { display: 'Platinum Full Detail ($285 CAD)', price: '285', duration: '4-5 hours' }
         },
         'interior': {
-            'bronze': { display: 'Bronze Interior ($135 CAD)', price: '135', duration: '1-2 hours' },
-            'gold': { display: 'Gold Interior ($176 CAD)', price: '176', duration: '2-3 hours' },
-            'platinum': { display: 'Platinum Interior ($215 CAD)', price: '215', duration: '3-4 hours' }
+            'bronze_interior': { display: 'Bronze Interior Detail ($154 CAD)', price: '154', duration: '2-2.5 hours' },
+            'gold_interior': { display: 'Gold Interior Detail ($208 CAD)', price: '208', duration: '2.5-3 hours' },
+            'platinum_interior': { display: 'platinum Interior Detail ($235 CAD)', price: '235', duration: '3-4 hours' }
         },
         'exterior': {
-            'bronze': { display: 'Bronze Exterior ($135 CAD)', price: '135', duration: '1-2 hours' },
-            'gold': { display: 'Gold Exterior ($176 CAD)', price: '176', duration: '2-3 hours' },
-            'platinum': { display: 'Platinum Exterior ($215 CAD)', price: '215', duration: '3-4 hours' }
+            'gold_exterior': { display: 'Gold Exterior Detail ($200 CAD)', price: '200', duration: '1.5-2 hours' },
+            'platinum_exterior': { display: 'Premium Exterior Detail ($250 CAD)', price: '250', duration: '2-2.5 hours' }
         }
     },
     'xlsuv': {
         'full': {
-            'bronze': { display: 'Bronze Full Detail ($196 CAD)', price: '196', duration: '2-3 hours' },
-            'gold': { display: 'Gold Full Detail ($285 CAD)', price: '285', duration: '3-4 hours' },
-            'platinum': { display: 'Platinum Full Detail ($307 CAD)', price: '307', duration: '4-5 hours' }
+            'bronze_full': { display: 'Bronze Full Detail ($213 CAD)', price: '213', duration: '2.5-3.5 hours' },
+            'gold_full': { display: 'Gold Full Detail ($267 CAD)', price: '267', duration: '3.5-4.5 hours' },
+            'platinum_full': { display: 'Platinum Full Detail ($294 CAD)', price: '294', duration: '4.5-6 hours' }
         },
         'interior': {
-            'bronze': { display: 'Bronze Interior ($155 CAD)', price: '155', duration: '2-3 hours' },
-            'gold': { display: 'Gold Interior ($196 CAD)', price: '196', duration: '3-4 hours' },
-            'platinum': { display: 'Platinum Interior ($235 CAD)', price: '235', duration: '4-5 hours' }
+            'bronze_interior': { display: 'Bronze Interior Detail ($163 CAD)', price: '163', duration: '2.5-3 hours' },
+            'gold_interior': { display: 'Gold Interior Detail ($217 CAD)', price: '217', duration: '3-3.5 hours' },
+            'platinum_interior': { display: 'Platinum Interior Detail ($244 CAD)', price: '244', duration: '3.5-4.5 hours' }
         },
         'exterior': {
-            'bronze': { display: 'Bronze Exterior ($155 CAD)', price: '155', duration: '2-3 hours' },
-            'gold': { display: 'Gold Exterior ($196 CAD)', price: '196', duration: '3-4 hours' },
-            'platinum': { display: 'Platinum Exterior ($235 CAD)', price: '235', duration: '4-5 hours' }
+            'gold_exterior': { display: 'Gold Exterior Detail ($213 CAD)', price: '213', duration: '2-2.5 hours' },
+            'platinum_exterior': { display: 'Premium Exterior Detail ($286 CAD)', price: '286', duration: '2.5-3 hours' }
         }
     }
 };
 
+// Default packages for each service type
+const defaultPackages = {
+    'full': 'gold_full',
+    'interior': 'gold_interior',
+    'exterior': 'platinum_exterior'
+};
+
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded - testing script execution');
+    
     // Initialize form with URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const vehicleType = urlParams.get('vehicle') || 'sedan';
     const serviceType = urlParams.get('service') || 'full';
-    const packageType = urlParams.get('package') || 'gold';
+    const packageType = urlParams.get('package') || defaultPackages[serviceType];
+    
+    console.log('Initial parameters:', {vehicleType, serviceType, packageType});
+    
+    // Set dropdown values
+    document.getElementById('vehicleDropdown').value = vehicleType;
+    document.getElementById('serviceDropdown').value = serviceType;
+    
+    // Populate package dropdown based on initial values
+    populatePackageDropdown(vehicleType, serviceType, packageType);
     
     // Update display based on initial values
     updatePackageDisplay(vehicleType, serviceType, packageType);
@@ -354,17 +385,94 @@ document.addEventListener('DOMContentLoaded', function() {
     const today = new Date().toISOString().split('T')[0];
     document.getElementById('id_date').min = today;
     
+    // Add event listeners to dropdowns
+    document.getElementById('vehicleDropdown').addEventListener('change', function() {
+        console.log('Vehicle dropdown changed');
+        const vehicle = this.value;
+        const service = document.getElementById('serviceDropdown').value;
+        const defaultPackage = defaultPackages[service];
+        
+        console.log('Redirecting to:', `${bookingUrl}?vehicle=${vehicle}&service=${service}&package=${defaultPackage}`);
+        
+        // Reload page with new parameters
+        window.location.href = `${bookingUrl}?vehicle=${vehicle}&service=${service}&package=${defaultPackage}`;
+    });
+    
+    document.getElementById('serviceDropdown').addEventListener('change', function() {
+        console.log('Service dropdown changed');
+        const service = this.value;
+        const vehicle = document.getElementById('vehicleDropdown').value;
+        const defaultPackage = defaultPackages[service];
+        
+        console.log('Redirecting to:', `${bookingUrl}?vehicle=${vehicle}&service=${service}&package=${defaultPackage}`);
+        
+        // Reload page with new parameters
+        window.location.href = `${bookingUrl}?vehicle=${vehicle}&service=${service}&package=${defaultPackage}`;
+    });
+    
+    document.getElementById('packageDropdown').addEventListener('change', function() {
+        console.log('Package dropdown changed');
+        const packageValue = this.value;
+        const vehicle = document.getElementById('vehicleDropdown').value;
+        const service = document.getElementById('serviceDropdown').value;
+        
+        console.log('Redirecting to:', `${bookingUrl}?vehicle=${vehicle}&service=${service}&package=${packageValue}`);
+        
+        // Reload page with new parameters
+        window.location.href = `${bookingUrl}?vehicle=${vehicle}&service=${service}&package=${packageValue}`;
+    });
 });
+
+function populatePackageDropdown(vehicleType, serviceType, selectedPackage) {
+    const packageDropdown = document.getElementById('packageDropdown');
+    if (!packageDropdown) {
+        console.error('Package dropdown not found');
+        return;
+    }
+    
+    packageDropdown.innerHTML = '';
+    
+    const packages = pricing[vehicleType]?.[serviceType] || {};
+    
+    for (const [key, value] of Object.entries(packages)) {
+        const option = document.createElement('option');
+        option.value = key;
+        option.textContent = value.display;
+        if (key === selectedPackage) {
+            option.selected = true;
+        }
+        packageDropdown.appendChild(option);
+    }
+    
+    // If the selected package doesn't exist in the new options, select the first one
+    if (!packages[selectedPackage] && Object.keys(packages).length > 0) {
+        const firstPackage = Object.keys(packages)[0];
+        packageDropdown.value = firstPackage;
+        updatePackageDisplay(vehicleType, serviceType, firstPackage);
+        updateSummary(vehicleType, serviceType, firstPackage);
+    }
+}
 
 function updatePackageDisplay(vehicleType, serviceType, packageType) {
     const packageInfo = getPackageInfo(vehicleType, serviceType, packageType);
-    document.getElementById('displayPackage').textContent = packageInfo.display;
-    document.getElementById('id_package_type').value = packageType.split('_')[0]; // Extract only the package type
-    document.getElementById('packagePrice').value = packageInfo.price;
+    const displayElement = document.getElementById('displayPackage');
+    if (displayElement) {
+        displayElement.textContent = packageInfo.display;
+    }
+    
+    const packageTypeElement = document.getElementById('id_package_type');
+    if (packageTypeElement) {
+        packageTypeElement.value = packageType;
+    }
+    
+    const packagePriceElement = document.getElementById('packagePrice');
+    if (packagePriceElement) {
+        packagePriceElement.value = packageInfo.price;
+    }
 }
 
 function getPackageInfo(vehicleType, serviceType, packageType) {
-    return pricing[vehicleType]?.[serviceType]?.[packageType] || pricing['sedan']['full']['gold'];
+    return pricing[vehicleType]?.[serviceType]?.[packageType] || pricing['sedan']['full']['gold_full'];
 }
 
 function updateSummary(vehicleType, serviceType, packageType) {
@@ -376,11 +484,17 @@ function updateSummary(vehicleType, serviceType, packageType) {
         'xlsuv': 'XL SUV'
     };
     
-    document.getElementById('summaryService').textContent = packageInfo.display.split(' (')[0];
-    document.getElementById('summaryVehicle').textContent = vehicleDisplayMap[vehicleType];
-    document.getElementById('summaryDuration').textContent = packageInfo.duration;
-    document.getElementById('summaryTotal').textContent = `$${packageInfo.price} CAD`;
+    const summaryService = document.getElementById('summaryService');
+    const summaryVehicle = document.getElementById('summaryVehicle');
+    const summaryDuration = document.getElementById('summaryDuration');
+    const summaryTotal = document.getElementById('summaryTotal');
+    
+    if (summaryService) summaryService.textContent = packageInfo.display.split(' (')[0];
+    if (summaryVehicle) summaryVehicle.textContent = vehicleDisplayMap[vehicleType];
+    if (summaryDuration) summaryDuration.textContent = packageInfo.duration;
+    if (summaryTotal) summaryTotal.textContent = `$${packageInfo.price} CAD`;
 }
 </script>
+
 
 {% endblock %}
