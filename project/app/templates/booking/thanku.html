@@ -316,25 +316,5 @@
   </div>
 </main>
 
-<!-- Confetti Animation Script -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const container = document.getElementById("confetti-container");
-    const colors = ["#AC87C5", "#756AB6", "#E0E7FF", "#F5F3FF"];
 
-    // Create confetti elements
-    for (let i = 0; i < 50; i++) {
-      const confetti = document.createElement("div");
-      confetti.className = "confetti";
-      confetti.style.left = Math.random() * 100 + "vw";
-      confetti.style.animationDelay = Math.random() * 5 + "s";
-      confetti.style.width = Math.random() * 8 + 5 + "px";
-      confetti.style.height = confetti.style.width;
-      confetti.style.backgroundColor =
-        colors[Math.floor(Math.random() * colors.length)];
-      confetti.style.opacity = Math.random() * 0.5 + 0.3;
-      container.appendChild(confetti);
-    }
-  });
-</script>
 {% endblock %}
