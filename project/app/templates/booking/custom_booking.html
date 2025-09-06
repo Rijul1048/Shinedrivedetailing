@@ -81,10 +81,10 @@
         <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:border-indigo-200 transition-colors">
           <p class="text-sm text-gray-500 mb-1">Vehicle</p>
           <select id="vehicleDropdown" class="w-full p-2 border rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white">
-            <option value="sedan" {% if form.initial.vehicle_type == 'sedan' %}selected{% endif %}>Sedan/Coupe (2 Seats)</option>
-            <option value="suv5" {% if form.initial.vehicle_type == 'suv5' %}selected{% endif %}>SUV (5 Seats)</option>
-            <option value="suv7" {% if form.initial.vehicle_type == 'suv7' %}selected{% endif %}>Pick Up/7-Seat SUV</option>
-            <option value="xlsuv" {% if form.initial.vehicle_type == 'xlsuv' %}selected{% endif %}>XL SUV</option>
+            <option value="sedan">Sedan/Coupe (2 Seats)</option>
+            <option value="suv5">SUV (5 Seats)</option>
+            <option value="suv7">Pick Up/7-Seat SUV</option>
+            <option value="xlsuv">XL SUV</option>
           </select>
           {{ form.vehicle_type.as_hidden }}
           {% if form.vehicle_type.errors %}
@@ -96,9 +96,9 @@
         <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:border-indigo-200 transition-colors">
           <p class="text-sm text-gray-500 mb-1">Service</p>
           <select id="serviceDropdown" class="w-full p-2 border rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white">
-            <option value="full" {% if form.initial.service_type == 'full' %}selected{% endif %}>Full Detail</option>
-            <option value="interior" {% if form.initial.service_type == 'interior' %}selected{% endif %}>Interior Detail</option>
-            <option value="exterior" {% if form.initial.service_type == 'exterior' %}selected{% endif %}>Exterior Detail</option>
+            <option value="full">Full Detail</option>
+            <option value="interior">Interior Detail</option>
+            <option value="exterior">Exterior Detail</option>
           </select>
           {{ form.service_type.as_hidden }}
           {% if form.service_type.errors %}
@@ -288,75 +288,87 @@
   const pricing = {
       'sedan': {
           'full': {
-              'bronze': { display: 'Bronze Full Detail ($136 CAD)', price: '136', duration: '1-2 hours', formValue: 'bronze' },
-              'gold': { display: 'Gold Full Detail ($195 CAD)', price: '195', duration: '2-3 hours', formValue: 'gold' },
-              'platinum': { display: 'Platinum Full Detail ($217 CAD)', price: '217', duration: '3-4 hours', formValue: 'platinum' }
+              'bronze_full': { display: 'Bronze Full Detail ($136 CAD)', price: '136', duration: '1-2 hours' },
+              'gold_full': { display: 'Gold Full Detail ($195 CAD)', price: '195', duration: '2-3 hours' },
+              'platinum_full': { display: 'Platinum Full Detail ($217 CAD)', price: '217', duration: '3-4 hours' }
           },
           'interior': {
-              'bronze': { display: 'Bronze Interior Detail ($110 CAD)', price: '110', duration: '1-1.5 hours', formValue: 'bronze' },
-              'gold': { display: 'Gold Interior Detail ($165 CAD)', price: '165', duration: '1.5-2.5 hours', formValue: 'gold' },
-              'platinum': { display: 'Platinum Interior Detail ($186 CAD)', price: '186', duration: '2-3 hours', formValue: 'platinum' }
+              'bronze_interior': { display: 'Bronze Interior Detail ($110 CAD)', price: '110', duration: '1-1.5 hours' },
+              'gold_interior': { display: 'Gold Interior Detail ($165 CAD)', price: '165', duration: '1.5-2.5 hours' },
+              'platinum_interior': { display: 'Platinum Interior Detail ($186 CAD)', price: '186', duration: '2-3 hours' }
           },
           'exterior': {
-              'gold': { display: 'Gold Exterior Detail ($163 CAD)', price: '163', duration: '1-1.5 hours', formValue: 'gold' },
-              'platinum': { display: 'Premium Exterior Detail ($200 CAD)', price: '200', duration: '1.5-2 hours', formValue: 'platinum' }
+              'gold_exterior': { display: 'Gold Exterior Detail ($163 CAD)', price: '163', duration: '1-1.5 hours' },
+              'platinum_exterior': { display: 'Premium Exterior Detail ($200 CAD)', price: '200', duration: '1.5-2 hours' }
           }
       },
       'suv5': {
           'full': {
-              'bronze': { display: 'Bronze Full Detail ($171 CAD)', price: '171', duration: '1.5-2.5 hours', formValue: 'bronze' },
-              'gold': { display: 'Gold Full Detail ($217 CAD)', price: '217', duration: '2.5-3.5 hours', formValue: 'gold' },
-              'platinum': { display: 'Platinum Full Detail ($244 CAD)', price: '244', duration: '3.5-4.5 hours', formValue: 'platinum' }
+              'bronze_full': { display: 'Bronze Full Detail ($171 CAD)', price: '171', duration: '1.5-2.5 hours' },
+              'gold_full': { display: 'Gold Full Detail ($217 CAD)', price: '217', duration: '2.5-3.5 hours' },
+              'platinum_full': { display: 'Platinum Full Detail ($244 CAD)', price: '244', duration: '3.5-4.5 hours' }
           },
           'interior': {
-              'bronze': { display: 'Bronze Interior Detail ($137 CAD)', price: '137', duration: '1.5-2 hours', formValue: 'bronze' },
-              'gold': { display: 'Gold Interior Detail ($181 CAD)', price: '181', duration: '2-2.5 hours', formValue: 'gold' },
-              'platinum': { display: 'Platinum Interior Detail ($208 CAD)', price: '208', duration: '2.5-3.5 hours', formValue: 'platinum' }
+              'bronze_interior': { display: 'Bronze Interior Detail ($137 CAD)', price: '137', duration: '1.5-2 hours' },
+              'gold_interior': { display: 'Gold Interior Detail ($180 CAD)', price: '180', duration: '2-2.5 hours' },
+              'platinum_interior': { display: 'Platinum Interior Detail ($208 CAD)', price: '208', duration: '2.5-3.5 hours' }
           },
           'exterior': {
-              'gold': { display: 'Gold Exterior Detail ($181 CAD)', price: '181', duration: '1-2 hours', formValue: 'gold' },
-              'platinum': { display: 'Premium Exterior Detail ($228 CAD)', price: '228', duration: '1.5-2.5 hours', formValue: 'platinum' }
+              'gold_exterior': { display: 'Gold Exterior Detail ($181 CAD)', price: '181', duration: '1-2 hours' },
+              'platinum_exterior': { display: 'Premium Exterior Detail ($228 CAD)', price: '228', duration: '1.5-2.5 hours' }
           }
       },
       'suv7': {
           'full': {
-              'bronze': { display: 'Bronze Full Detail ($204 CAD)', price: '204', duration: '2-3 hours', formValue: 'bronze' },
-              'gold': { display: 'Gold Full Detail ($258 CAD)', price: '258', duration: '3-4 hours', formValue: 'gold' },
-              'platinum': { display: 'Platinum Full Detail ($285 CAD)', price: '285', duration: '4-5 hours', formValue: 'platinum' }
+              'bronze_full': { display: 'Bronze Full Detail ($204 CAD)', price: '204', duration: '2-3 hours' },
+              'gold_full': { display: 'Gold Full Detail ($258 CAD)', price: '258', duration: '3-4 hours' },
+              'platinum_full': { display: 'Platinum Full Detail ($285 CAD)', price: '285', duration: '4-5 hours' }
           },
           'interior': {
-              'bronze': { display: 'Bronze Interior Detail ($154 CAD)', price: '154', duration: '2-2.5 hours', formValue: 'bronze' },
-              'gold': { display: 'Gold Interior Detail ($208 CAD)', price: '208', duration: '2.5-3 hours', formValue: 'gold' },
-              'platinum': { display: 'Platinum Interior Detail ($235 CAD)', price: '235', duration: '3-4 hours', formValue: 'platinum' }
+              'bronze_interior': { display: 'Bronze Interior Detail ($154 CAD)', price: '154', duration: '2-2.5 hours' },
+              'gold_interior': { display: 'Gold Interior Detail ($208 CAD)', price: '208', duration: '2.5-3 hours' },
+              'platinum_interior': { display: 'Platinum Interior Detail ($235 CAD)', price: '235', duration: '3-4 hours' }
           },
           'exterior': {
-              'gold': { display: 'Gold Exterior Detail ($200 CAD)', price: '200', duration: '1.5-2 hours', formValue: 'gold' },
-              'platinum': { display: 'Premium Exterior Detail ($250 CAD)', price: '250', duration: '2-2.5 hours', formValue: 'platinum' }
+              'gold_exterior': { display: 'Gold Exterior Detail ($200 CAD)', price: '200', duration: '1.5-2 hours' },
+              'platinum_exterior': { display: 'Premium Exterior Detail ($250 CAD)', price: '250', duration: '2-2.5 hours' }
           }
       },
       'xlsuv': {
           'full': {
-              'bronze': { display: 'Bronze Full Detail ($213 CAD)', price: '213', duration: '2.5-3.5 hours', formValue: 'bronze' },
-              'gold': { display: 'Gold Full Detail ($267 CAD)', price: '267', duration: '3.5-4.5 hours', formValue: 'gold' },
-              'platinum': { display: 'Platinum Full Detail ($294 CAD)', price: '294', duration: '4.5-6 hours', formValue: 'platinum' }
+              'bronze_full': { display: 'Bronze Full Detail ($213 CAD)', price: '213', duration: '2.5-3.5 hours' },
+              'gold_full': { display: 'Gold Full Detail ($267 CAD)', price: '267', duration: '3.5-4.5 hours' },
+              'platinum_full': { display: 'Platinum Full Detail ($294 CAD)', price: '294', duration: '4.5-6 hours' }
           },
           'interior': {
-              'bronze': { display: 'Bronze Interior Detail ($163 CAD)', price: '163', duration: '2.5-3 hours', formValue: 'bronze' },
-              'gold': { display: 'Gold Interior Detail ($217 CAD)', price: '217', duration: '3-3.5 hours', formValue: 'gold' },
-              'platinum': { display: 'Platinum Interior Detail ($244 CAD)', price: '244', duration: '3.5-4.5 hours', formValue: 'platinum' }
+              'bronze_interior': { display: 'Bronze Interior Detail ($163 CAD)', price: '163', duration: '2.5-3 hours' },
+              'gold_interior': { display: 'Gold Interior Detail ($217 CAD)', price: '217', duration: '3-3.5 hours' },
+              'platinum_interior': { display: 'Platinum Interior Detail ($244 CAD)', price: '244', duration: '3.5-4.5 hours' }
           },
           'exterior': {
-              'gold': { display: 'Gold Exterior Detail ($213 CAD)', price: '213', duration: '2-2.5 hours', formValue: 'gold' },
-              'platinum': { display: 'Premium Exterior Detail ($286 CAD)', price: '286', duration: '2.5-3 hours', formValue: 'platinum' }
+              'gold_exterior': { display: 'Gold Exterior Detail ($213 CAD)', price: '213', duration: '2-2.5 hours' },
+              'platinum_exterior': { display: 'Premium Exterior Detail ($286 CAD)', price: '286', duration: '2.5-3 hours' }
           }
       }
   };
   
   // Default packages for each service type
   const defaultPackages = {
-      'full': 'gold',
-      'interior': 'gold',
-      'exterior': 'platinum'
+      'full': 'gold_full',
+      'interior': 'gold_interior',
+      'exterior': 'platinum_exterior'
+  };
+  
+  // Map between URL parameter values and form field values
+  const packageValueMap = {
+      'bronze_full': 'bronze',
+      'gold_full': 'gold',
+      'platinum_full': 'platinum',
+      'bronze_interior': 'bronze',
+      'gold_interior': 'gold', 
+      'platinum_interior': 'platinum',
+      'gold_exterior': 'gold',
+      'platinum_exterior': 'platinum'
   };
   
   document.addEventListener('DOMContentLoaded', function() {
@@ -371,8 +383,15 @@
       console.log('Initial parameters:', {vehicleType, serviceType, packageType});
       
       // Set dropdown values
-      document.getElementById('vehicleDropdown').value = vehicleType;
-      document.getElementById('serviceDropdown').value = serviceType;
+      const vehicleDropdown = document.getElementById('vehicleDropdown');
+      const serviceDropdown = document.getElementById('serviceDropdown');
+      
+      if (vehicleDropdown) vehicleDropdown.value = vehicleType;
+      if (serviceDropdown) serviceDropdown.value = serviceType;
+      
+      // Update hidden form fields
+      document.getElementById('id_vehicle_type').value = vehicleType;
+      document.getElementById('id_service_type').value = serviceType;
       
       // Populate package dropdown based on initial values
       populatePackageDropdown(vehicleType, serviceType, packageType);
@@ -394,6 +413,9 @@
           
           console.log('Redirecting to:', `${bookingUrl}?vehicle=${vehicle}&service=${service}&package=${defaultPackage}`);
           
+          // Update hidden form field
+          document.getElementById('id_vehicle_type').value = vehicle;
+          
           // Reload page with new parameters
           window.location.href = `${bookingUrl}?vehicle=${vehicle}&service=${service}&package=${defaultPackage}`;
       });
@@ -406,6 +428,9 @@
           
           console.log('Redirecting to:', `${bookingUrl}?vehicle=${vehicle}&service=${service}&package=${defaultPackage}`);
           
+          // Update hidden form field
+          document.getElementById('id_service_type').value = service;
+          
           // Reload page with new parameters
           window.location.href = `${bookingUrl}?vehicle=${vehicle}&service=${service}&package=${defaultPackage}`;
       });
@@ -416,7 +441,7 @@
           const vehicle = document.getElementById('vehicleDropdown').value;
           const service = document.getElementById('serviceDropdown').value;
           
-          console.log('Redirecting to:', `${bookingUrl}?vehicle=${vehicle}&service=${service}&package=${packageValue}`);
+          console.log('Updating package to:', packageValue);
           
           // Update the display without reloading
           updatePackageDisplay(vehicle, service, packageValue);
@@ -459,8 +484,8 @@
       
       const packageTypeElement = document.getElementById('id_package_type');
       if (packageTypeElement) {
-          // Use the formValue that matches what your Django form expects
-          packageTypeElement.value = packageInfo.formValue || packageType;
+          // Map the package type to what your form expects
+          packageTypeElement.value = packageValueMap[packageType] || packageType;
       }
       
       const packagePriceElement = document.getElementById('packagePrice');
@@ -470,7 +495,7 @@
   }
   
   function getPackageInfo(vehicleType, serviceType, packageType) {
-      return pricing[vehicleType]?.[serviceType]?.[packageType] || pricing['sedan']['full']['gold'];
+      return pricing[vehicleType]?.[serviceType]?.[packageType] || pricing['sedan']['full']['gold_full'];
   }
   
   function updateSummary(vehicleType, serviceType, packageType) {
