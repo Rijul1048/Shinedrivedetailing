@@ -3,14 +3,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>{% block title %}ShineDrive Detailing - Premium Car Care{% endblock %}</title>
+    <title>{% block title %}BEST CAR DETAILING SERVICE | SHINEDRIVE DETAILING{% endblock %}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {% block meta_description %}<meta name="description" content="ShineDrive Detailing offers premium car cleaning and detailing services to make your vehicle shine.">{% endblock %}
+    <meta name="robots" content="index, follow">
     {% block canonical_url %}
         <link rel="canonical" href="https://shinedrivedetailing.com{{ request.path }}" />
     {% endblock %}
+    
+    {# Open Graph (Facebook/LinkedIn) #}
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ShineDrive Detailing">
+    <meta property="og:title" content="{% block og_title %}ShineDrive Detailing - Premium Car Care{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Mobile car detailing in Kitchener, Waterloo, Cambridge and nearby. Interior & exterior detailing, paint correction, ceramic protection.{% endblock %}">
+    <meta property="og:url" content="https://shinedrivedetailing.com{{ request.path }}">
+    <meta property="og:image" content="{% block og_image %}https://shinedrivedetailing.com/static/images/Banner5.jpg{% endblock %}">
+    
+    {# Twitter Cards #}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% block twitter_title %}ShineDrive Detailing - Premium Car Care{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}Mobile car detailing in Kitchener, Waterloo, Cambridge and nearby. Interior & exterior detailing, paint correction, ceramic protection.{% endblock %}">
+    <meta name="twitter:image" content="{% block twitter_image %}https://shinedrivedetailing.com/static/images/Banner5.jpg{% endblock %}">
+    
+    <link rel="icon" type="image/svg+xml" href="{% static 'images/favicon.png' %}">
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
+    <link rel="apple-touch-icon" href="{% static 'images/favicon.png' %}">
     
     {% tailwind_css %}
        <link
@@ -42,6 +61,7 @@
     gtag('config', 'AW-16992886374');
   </script>
 
+
   <body>
     <!-- Preloader -->
     <div id="preloader">
@@ -54,7 +74,7 @@
               <!-- Logo -->
               <div class="flex items-center">
                   <div class="w-24 h-14 rounded-lg flex items-center justify-center mr-3 shadow-lg">
-                      <img src="{% static 'images/s.png'%}" alt="logo">
+                      <img src="{% static 'images/logo.png'%}" alt="logo">
                   </div>
                   
               </div>
@@ -81,7 +101,7 @@
 
               <!-- Call to Action -->
               <div class="hidden lg:flex items-center">
-                <a href="https://shinedrivedetailing.com#choose-your-car">
+                <a href="{% url 'booking' %}?vehicle=&service=&package=">
                   <button class="bg-gradient-to-r from-[#5f52a9] to-[#756AB6] text-white px-6 py-2.5 rounded-lg font-medium hover:shadow-xl transition-all hover:scale-105 shadow-lg">
                       <i class="fas fa-calendar-check mr-2"></i> Book Now
                   </button>
@@ -103,7 +123,7 @@
           <a href="{% url 'services' %}" class="block py-3 text-gray-700 hover:text-[#756AB6] font-medium border-b border-gray-100"><i class="fas fa-spa mr-3"></i> Services</a>
           <a href="https://shinedrivedetailing.com#price" class="block py-3 text-gray-700 hover:text-[#756AB6] font-medium border-b border-gray-100"><i class="fas fa-tag mr-3"></i> Pricing</a>
           <a href="{% url 'about' %}" class="block py-3 text-gray-700 hover:text-[#756AB6] font-medium border-b border-gray-100"><i class="fas fa-info-circle mr-3"></i> About Us</a>
-          <button href="https://shinedrivedetailing.com#choose-your-car" class="bg-gradient-to-r from-[#5f52a9] to-[#756AB6] text-white w-full py-3 rounded-lg font-medium mt-4 shadow-lg">
+          <button href="{% url 'booking' %}?vehicle=&service=&package=" class="bg-gradient-to-r from-[#5f52a9] to-[#756AB6] text-white w-full py-3 rounded-lg font-medium mt-4 shadow-lg">
               <i class="fas fa-calendar-check mr-2"></i> Book Now
           </button>
       </div>

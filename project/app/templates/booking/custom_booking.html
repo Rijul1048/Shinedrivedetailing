@@ -1,6 +1,28 @@
 {% extends "layout.html" %}
 {% load static %}
 {% block content %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Online Car Detailing Booking Service",
+  "description": "Book your premium car detailing service online with Shine Drive Detailing. Choose your vehicle type, service package, and schedule your appointment with ease.",
+  "url": "https://shinedrivedetailing.com/booking",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Shine Drive Detailing",
+    "telephone": "+15483987555",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Mobile Service",
+      "addressLocality": "Kitchener",
+      "addressRegion": "ON",
+      "postalCode": "N2E 2P6",
+      "addressCountry": "CA"
+    }
+  }
+}
+</script>
 
 <div class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pb-12 px-4 sm:px-6 lg:px-8 pt-24 md:pt-40">
     <div class="max-w-4xl mx-auto">

@@ -1,4 +1,73 @@
-{% extends "layout.html" %} {% load static %} {% block content %}
+{% extends "layout.html" %} {% load static %}
+{% block title %}Exterior Detailing | Wash, Decon, Protection | ShineDrive Detailing{% endblock %}
+{% block meta_description %}<meta name="description" content="Premium exterior detailing: wash, decon, clay, protection and gloss enhancement. Serving Kitchener, Waterloo, Cambridge.">{% endblock %}
+{% block og_title %}Exterior Car Detailing{% endblock %}
+{% block og_description %}Wash, decontamination and long-lasting protection for lasting shine.{% endblock %}
+{% block content %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Exterior Car Detailing Services",
+  "description": "Premium exterior car detailing services including decontamination, paint enhancement, and long-lasting protection.",
+  "url": "https://shinedrivedetailing.com/detailing/exterior_detail",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Shine Drive Detailing",
+    "telephone": "+15483987555",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Mobile Service",
+      "addressLocality": "Kitchener",
+      "addressRegion": "ON",
+      "postalCode": "N2E 2P6",
+      "addressCountry": "CA"
+    }
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Exterior Only Packages",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Gold Exterior Detail",
+          "description": "Premium exterior car detailing enhancement & protection. Ideal for vehicles needing thorough paint decontamination and enhanced shine with 6-12 months of paint protection.",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "CAD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "136",
+              "valueAddedTaxIncluded": true
+            },
+            "availability": "https://schema.org/InStock"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Platinum Exterior Detail",
+          "description": "Showroom-quality exterior car detailing restoration with advanced protection. Ideal for older vehicles or those needing significant paint correction and long-term ceramic protection.",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "CAD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "175",
+              "valueAddedTaxIncluded": true
+            },
+            "availability": "https://schema.org/InStock"
+          }
+        }
+      }
+    ]
+  }
+}
+</script>
 
 
 <!-- Hero Section -->

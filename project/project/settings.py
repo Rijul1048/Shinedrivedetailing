@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ''
+SECRET_KEY = 'django-insecure-2bvagg4g_-jqr1p7ct^=90yq(hxhm!008r&cgyuwww$n14_xi_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -148,12 +148,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Add your business email address
-BUSINESS_EMAIL = 'shinedrive2024@gmail.com'
+BUSINESS_EMAIL = 'rijul.vishal.ahuja@gmail.com'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'  # For Gmail, or your SMTP provider
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'shinedrive2024@gmail.com'  # Your email
-EMAIL_HOST_PASSWORD = ''  # App password (not regular password)
-DEFAULT_FROM_EMAIL = 'shinedrive2024@gmail.com'
+EMAIL_HOST_USER = 'rijul.vishal.ahuja@gmail.com'  # Your email
+EMAIL_HOST_PASSWORD = 'xgwq gbdw msfs sqkf'  # App password (not regular password)
+DEFAULT_FROM_EMAIL = 'rijul.vishal.ahuja@gmail.com'

@@ -1,4 +1,92 @@
-{% extends "layout.html" %} {% load static %} {% block content %}
+{% extends "layout.html" %} {% load static %}
+{% block title %}Interior Detailing | Deep Clean & Odor Removal | ShineDrive Detailing{% endblock %}
+{% block meta_description %}<meta name="description" content="Deep interior detailing: vacuum, shampoo, stain and odor removal, leather care. Serving Kitchener, Waterloo, Cambridge.">{% endblock %}
+{% block og_title %}Interior Car Detailing{% endblock %}
+{% block og_description %}Deep cleaning and restoration for a fresh, like‑new cabin.{% endblock %}
+{% block content %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Interior Car Detailing Services",
+  "description": "Premium interior car detailing services including deep cleaning, stain and odor removal, and leather conditioning for a fresh and rejuvenated cabin.",
+  "url": "https://shinedrivedetailing.com/detailing/interior_detail",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Shine Drive Detailing",
+    "telephone": "+15483987555",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Mobile Service",
+      "addressLocality": "Kitchener",
+      "addressRegion": "ON",
+      "postalCode": "N2E 2P6",
+      "addressCountry": "CA"
+    }
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Interior Only Packages",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Bronze Interior Detail",
+          "description": "Essential interior car cleaning for regular maintenance. Vehicles cleaned regularly that just need a quick refresh to maintain that new-car feel with a basic interior car detail.",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "CAD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "110",
+              "valueAddedTaxIncluded": true
+            },
+            "availability": "https://schema.org/InStock"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Gold Interior Detail",
+          "description": "Complete deep interior car cleaning. Vehicles that need more than maintenance - perfect for removing built-up dirt and restoring freshness with our gold interior detail.",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "CAD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "137",
+              "valueAddedTaxIncluded": true
+            },
+            "availability": "https://schema.org/InStock"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Platinum Interior Detail",
+          "description": "Showroom-quality interior car detailing restoration with deep cleaning. Severely soiled interiors or vehicles needing complete rejuvenation to look and smell like new with our platinum interior detail.",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "CAD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "181",
+              "valueAddedTaxIncluded": true
+            },
+            "availability": "https://schema.org/InStock"
+          }
+        }
+      }
+    ]
+  }
+}
+</script>
+
 
 
 <!-- Hero Section -->
@@ -223,56 +311,60 @@
                         </svg>
                         Bronze Interior Detailing Services
                     </h4>
-                    <ul class="space-y-2 text-[#5E5E5E] mb-6">
-                        <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 text-[#756AB6]"
-                                fill="currentColor" viewBox="0 0 640 640">
-                                <path
-                                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z" />
-                            </svg>
-                            Complete vacuum of all interior surfaces
-                        </li>
-                        <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 text-[#756AB6]"
-                                fill="currentColor" viewBox="0 0 640 640">
-                                <path
-                                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z" />
-                            </svg>
-                            Dashboard & console cleaning and protection
-                        </li>
-                        <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 text-[#756AB6]"
-                                fill="currentColor" viewBox="0 0 640 640">
-                                <path
-                                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z" />
-                            </svg>
-                            Door panel and trim wipe down & dressing
-                        </li>
-                        <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 text-[#756AB6]"
-                                fill="currentColor" viewBox="0 0 640 640">
-                                <path
-                                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z" />
-                            </svg>
-                            Leather, Vinyl, & Plastic scrubbed & protected
-                        </li>
-                        <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 text-[#756AB6]"
-                                fill="currentColor" viewBox="0 0 640 640">
-                                <path
-                                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z" />
-                            </svg>
-                            Rubber mat wash and dressing
-                        </li>
-                        <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 text-[#756AB6]"
-                                fill="currentColor" viewBox="0 0 640 640">
-                                <path
-                                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z" />
-                            </svg>
-                            Clean windows, AC vents & air freshener
-                        </li>
-                    </ul>
+                    <ul class="space-y-2 text-[#5E5E5E]">
+                      <li class="flex items-start">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="w-6 h-6 mr-2 text-[#756AB6]"
+                          fill="currentColor"
+                          viewBox="0 0 640 640"
+                        >
+                          <path
+                            d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                          />
+                        </svg>
+                        Complete vacuum of all surfaces
+                      </li>
+                      <li class="flex items-start">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="w-6 h-6 mr-2 text-[#756AB6]"
+                          fill="currentColor"
+                          viewBox="0 0 640 640"
+                        >
+                          <path
+                            d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                          />
+                        </svg>
+                        LVP Scrubbed wiped & conditioned
+                      </li>
+                      <li class="flex items-start">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="w-6 h-6 mr-2 text-[#756AB6]"
+                          fill="currentColor"
+                          viewBox="0 0 640 640"
+                        >
+                          <path
+                            d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                          />
+                        </svg>
+                        Clean windows/ AC vents
+                      </li>
+                      <li class="flex items-start">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="w-6 h-6 mr-2 text-[#756AB6]"
+                          fill="currentColor"
+                          viewBox="0 0 640 640"
+                        >
+                          <path
+                            d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                          />
+                        </svg>
+                        Ruber mat wash
+                      </li>
+                    </ul> 
 
                     <div class="mt-6 border-t border-[#EAEAEA] pt-4">
                         <h6 class="text-sm font-semibold text-[#756AB6] mb-4">
@@ -343,55 +435,85 @@
                         </svg>
                         Gold Interior Detailing Services
                     </h4>
-                    <ul class="space-y-2 text-[#5E5E5E] mb-6">
-                        <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 text-[#756AB6]"
-                                fill="currentColor" viewBox="0 0 640 640">
-                                <path
-                                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z" />
-                            </svg>
-                            Complete Car vacuum by Drill Brush for deep clean
-                        </li>
-                        <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 text-[#756AB6]"
-                                fill="currentColor" viewBox="0 0 640 640">
-                                <path
-                                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z" />
-                            </svg>
-                            Complete surface cleaning & interior protection
-                        </li>
-                        <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 text-[#756AB6]"
-                                fill="currentColor" viewBox="0 0 640 640">
-                                <path
-                                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z" />
-                            </svg>
-                            Rubber/Fabric Floor mat shampoo & extraction
-                        </li>
-                        <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 text-[#756AB6]"
-                                fill="currentColor" viewBox="0 0 640 640">
-                                <path
-                                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z" />
-                            </svg>
-                            Premium leather/vinyl conditioning & protection
-                        </li>
-                        <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 text-[#756AB6]"
-                                fill="currentColor" viewBox="0 0 640 640">
-                                <path
-                                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z" />
-                            </svg>
-                            Salt stain removal & odor elimination
-                        </li>
-                        <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 text-[#756AB6]"
-                                fill="currentColor" viewBox="0 0 640 640">
-                                <path
-                                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z" />
-                            </svg>
-                            Steam clean air refresher for a brand new scent
-                        </li>
+                    <ul class="space-y-2 text-[#5E5E5E]">
+                      <li class="flex items-start">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="w-6 h-6 mr-2 text-[#756AB6]"
+                          fill="currentColor"
+                          viewBox="0 0 640 640"
+                        >
+                          <path
+                            d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                          />
+                        </svg>
+                        Complete Car vacuum By Drill Brush
+                      </li>
+                      <li class="flex items-start">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="w-6 h-6 mr-2 text-[#756AB6]"
+                          fill="currentColor"
+                          viewBox="0 0 640 640"
+                        >
+                          <path
+                            d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                          />
+                        </svg>
+                        Dust Blow Out From Hard Surface by Air
+                      </li>
+                      <li class="flex items-start">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="w-6 h-6 mr-2 text-[#756AB6]"
+                          fill="currentColor"
+                          viewBox="0 0 640 640"
+                        >
+                          <path
+                            d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                          />
+                        </svg>
+                        LVP Clean and Polishing
+                      </li>
+                      <li class="flex items-start">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="w-6 h-6 mr-2 text-[#756AB6]"
+                          fill="currentColor"
+                          viewBox="0 0 640 640"
+                        >
+                          <path
+                            d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                          />
+                        </svg>
+                        Seats and Floor shampoo
+                      </li>
+                      <li class="flex items-start">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="w-6 h-6 mr-2 text-[#756AB6]"
+                          fill="currentColor"
+                          viewBox="0 0 640 640"
+                        >
+                          <path
+                            d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                          />
+                        </svg>
+                        Windows clean, Ac vents clean
+                      </li>
+                      <li class="flex items-start">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="w-6 h-6 mr-2 text-[#756AB6]"
+                          fill="currentColor"
+                          viewBox="0 0 640 640"
+                        >
+                          <path
+                            d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                          />
+                        </svg>
+                        Rubber/Fabric Mats wash, Salt Stain Remove
+                      </li>
                     </ul>
 
                     <div class="mt-6 border-t border-[#EAEAEA] pt-4">
@@ -463,49 +585,101 @@
                         </svg>
                         Platinum Interior Detailing Services
                     </h4>
-                    <ul class="space-y-2 text-[#5E5E5E] mb-6">
-                        <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 text-[#756AB6]"
-                                fill="currentColor" viewBox="0 0 640 640">
-                                <path
-                                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z" />
-                            </svg>
-                            Complete Car vacuum by Drill Brush with deep cleaning
-                        </li>
-                        <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 text-[#756AB6]"
-                                fill="currentColor" viewBox="0 0 640 640">
-                                <path
-                                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z" />
-                            </svg>
-                            Deep carpet & upholstery shampoo for stain and odor removal
-                        </li>
-                        <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 text-[#756AB6]"
-                                fill="currentColor" viewBox="0 0 640 640">
-                                <path
-                                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z" />
-                            </svg>
-                            Premium leather/vinyl conditioning & protection
-                        </li>
-                        <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 text-[#756AB6]"
-                                fill="currentColor" viewBox="0 0 640 640">
-                                <path
-                                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z" />
-                            </svg>
-                            Steam clean air refresher for a pristine cabin environment
-                        </li>
-                        <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 text-[#756AB6]"
-                                fill="currentColor" viewBox="0 0 640 640">
-                                <path
-                                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z" />
-                            </svg>
-                            Headliner spot cleaning for a complete refresh
-                        </li>
+                    <ul class="space-y-2 text-[#5E5E5E]">
+                      <li class="flex items-start">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="w-6 h-6 mr-2 text-[#756AB6]"
+                          fill="currentColor"
+                          viewBox="0 0 640 640"
+                        >
+                          <path
+                            d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                          />
+                        </svg>
+                        Complete Car vacuum by Drill Brush
+                      </li>
+                      <li class="flex items-start">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="w-6 h-6 mr-2 text-[#756AB6]"
+                          fill="currentColor"
+                          viewBox="0 0 640 640"
+                        >
+                          <path
+                            d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                          />
+                        </svg>
+                        Dust Blow Out From Hard Surface by Air
+                      </li>
+                      <li class="flex items-start">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="w-6 h-6 mr-2 text-[#756AB6]"
+                          fill="currentColor"
+                          viewBox="0 0 640 640"
+                        >
+                          <path
+                            d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                          />
+                        </svg>
+                        LVP Clean & Polishing
+                      </li>
+                      <li class="flex items-start">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="w-6 h-6 mr-2 text-[#756AB6]"
+                          fill="currentColor"
+                          viewBox="0 0 640 640"
+                        >
+                          <path
+                            d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                          />
+                        </svg>
+                        Seats & Floor Shampoo
+                      </li>
+                      <li class="flex items-start">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="w-6 h-6 mr-2 text-[#756AB6]"
+                          fill="currentColor"
+                          viewBox="0 0 640 640"
+                        >
+                          <path
+                            d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                          />
+                        </svg>
+                        Windows clean, Ac vents clean
+                      </li>
+                      <li class="flex items-start">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="w-6 h-6 mr-2 text-[#756AB6]"
+                          fill="currentColor"
+                          viewBox="0 0 640 640"
+                        >
+                          <path
+                            d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                          />
+                        </svg>
+                        Steam Clean Air Refresher
+                      </li>
+                      <li class="flex items-start">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="w-6 h-6 mr-2 text-[#756AB6]"
+                          fill="currentColor"
+                          viewBox="0 0 640 640"
+                        >
+                          <path
+                            d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                          />
+                        </svg>
+                        Rubber/Fabric Mats wash, Salt Stain Remove
+                      </li>
                     </ul>
-
+            
+            
                     <div class="mt-6 border-t border-[#EAEAEA] pt-4">
                         <h6 class="text-sm font-semibold text-[#756AB6] mb-4">
                             VEHICLE INTERIOR DETAILING PRICING
@@ -541,6 +715,7 @@
                     </a>
                 </div>
             </div>
+            
         </div>
     </div>
 </section>

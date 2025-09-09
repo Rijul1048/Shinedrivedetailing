@@ -1,5 +1,134 @@
-{% extends "layout.html" %} {% load static %} {% block content %}
-
+{% extends "layout.html" %} {% load static %}
+{% block title %}Sedan & Coupe Detailing | Interior, Exterior, Full | ShineDrive{% endblock %}
+{% block meta_description %}<meta name="description" content="Detailing packages for sedans & coupes: interior only, exterior only, or full detail. Serving Kitchener, Waterloo, Cambridge.">{% endblock %}
+{% block og_title %}Sedan/Coupe Detailing Packages{% endblock %}
+{% block og_description %}Interior, exterior and full detailing tailored for sedans and coupes.{% endblock %}
+{% block content %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Sedan/Coupe Car Detailing Services",
+  "description": "Tailored car detailing packages for Sedans and Coupes, including full detail, exterior only, and interior only options with various levels of service.",
+  "image": "https://shinedrivedetailing.com/static/images/Car-bg11.png",
+  "url": "https://shinedrivedetailing.com/sedan",
+  "brand": {
+    "@type": "Brand",
+    "name": "Shine Drive Detailing"
+  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Bronze Full Detail - Sedan/Coupe",
+      "priceCurrency": "CAD",
+      "price": "136",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock",
+      "url": "https://shinedrivedetailing.com/booking?vehicle=sedan&service=full&package=bronze_full",
+      "seller": {
+        "@type": "LocalBusiness",
+        "name": "Shine Drive Detailing"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Gold Full Detail - Sedan/Coupe",
+      "priceCurrency": "CAD",
+      "price": "195",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock",
+      "url": "https://shinedrivedetailing.com/booking?vehicle=sedan&service=full&package=gold_full",
+      "seller": {
+        "@type": "LocalBusiness",
+        "name": "Shine Drive Detailing"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Platinum Full Detail - Sedan/Coupe",
+      "priceCurrency": "CAD",
+      "price": "217",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock",
+      "url": "https://shinedrivedetailing.com/booking?vehicle=sedan&service=full&package=platinum_full",
+      "seller": {
+        "@type": "LocalBusiness",
+        "name": "Shine Drive Detailing"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Gold Exterior Detail - Sedan/Coupe",
+      "priceCurrency": "CAD",
+      "price": "163",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock",
+      "url": "https://shinedrivedetailing.com/booking?vehicle=sedan&service=exterior&package=gold_exterior",
+      "seller": {
+        "@type": "LocalBusiness",
+        "name": "Shine Drive Detailing"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Platinum Exterior Detail - Sedan/Coupe",
+      "priceCurrency": "CAD",
+      "price": "200",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock",
+      "url": "https://shinedrivedetailing.com/booking?vehicle=sedan&service=exterior&package=platinum_exterior",
+      "seller": {
+        "@type": "LocalBusiness",
+        "name": "Shine Drive Detailing"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Bronze Interior Detail - Sedan/Coupe",
+      "priceCurrency": "CAD",
+      "price": "110",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock",
+      "url": "https://shinedrivedetailing.com/booking?vehicle=sedan&service=interior&package=bronze_interior",
+      "seller": {
+        "@type": "LocalBusiness",
+        "name": "Shine Drive Detailing"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Gold Interior Detail - Sedan/Coupe",
+      "priceCurrency": "CAD",
+      "price": "165",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock",
+      "url": "https://shinedrivedetailing.com/booking?vehicle=sedan&service=interior&package=gold_interior",
+      "seller": {
+        "@type": "LocalBusiness",
+        "name": "Shine Drive Detailing"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Platinum Interior Detail - Sedan/Coupe",
+      "priceCurrency": "CAD",
+      "price": "195",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock",
+      "url": "https://shinedrivedetailing.com/booking?vehicle=sedan&service=interior&package=platinum_interior",
+      "seller": {
+        "@type": "LocalBusiness",
+        "name": "Shine Drive Detailing"
+      }
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "140"
+  }
+}
+</script>
 
     <!-- Service Selection Section -->
     <section class="py-16 px-5 max-w-screen-xl mx-auto">

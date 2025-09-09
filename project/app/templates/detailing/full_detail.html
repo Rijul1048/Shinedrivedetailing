@@ -1,4 +1,87 @@
-{% extends "layout.html" %} {% load static %} {% block content %}
+{% extends "layout.html" %} {% load static %} {% block title %}Full Car Detailing | Complete Interior & Exterior | ShineDrive Detailing{% endblock %} {% block meta_description %}<meta name="description" content="Complete car detailing packages: interior deep clean + exterior decon and protection. Serving Kitchener, Waterloo, Cambridge.">{% endblock %} {% block og_title %}Full Car Detailing Packages{% endblock %} {% block og_description %}Complete interior and exterior restoration with long-lasting protection.{% endblock %} {% block content %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Full Car Detailing Services",
+  "description": "Comprehensive full car detailing packages including interior and exterior cleaning, paint correction, and ceramic coating for a showroom shine.",
+  "url": "https://shinedrivedetailing.com/detailing/full_detail",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Shine Drive Detailing",
+    "telephone": "+15483987555",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Mobile Service",
+      "addressLocality": "Kitchener",
+      "addressRegion": "ON",
+      "postalCode": "N2E 2P6",
+      "addressCountry": "CA"
+    }
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Full Detail Packages",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Bronze Full Detail",
+          "description": "Maintenance for well-kept vehicles, detailed within the last 3-6 months that need thorough interior and exterior car cleaning to maintain that like-new condition.",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "CAD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "136",
+              "valueAddedTaxIncluded": true
+            },
+            "availability": "https://schema.org/InStock"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Gold Full Detail",
+          "description": "Restore your vehicle's beauty. For vehicles needing more than maintenance - removes 6-12 months of wear for a fresh, protected finish with our gold car detailing.",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "CAD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "195",
+              "valueAddedTaxIncluded": true
+            },
+            "availability": "https://schema.org/InStock"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Platinum Full Detail",
+          "description": "Showroom-quality full car detailing restoration. For neglected vehicles or those needing complete rejuvenation - we make them look and smell like new again with our platinum full detail.",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "CAD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "217",
+              "valueAddedTaxIncluded": true
+            },
+            "availability": "https://schema.org/InStock"
+          }
+        }
+      }
+    ]
+  }
+}
+</script>
+
 
 
 <!-- Hero Section -->
@@ -196,449 +279,694 @@
 
         <!-- Packages Container -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Bronze Package -->
-            <div
-                class="package-card bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-200">
-                <div class="bg-gradient-to-r from-[#756AB6] to-[#AC87C5] text-white p-8 text-center">
-                    <h3 class="text-2xl font-bold mb-2">Bronze Full Detail</h3>
-                    <div class="text-4xl font-bold my-4">$136<span class="text-xl font-normal"> CAD</span></div>
-                    <p class="opacity-90">Ideal full car detailing for well-kept vehicles</p>
-                </div>
-                <div class="p-8">
-                    <div class="mb-6">
-                        <span
-                            class="inline-block bg-[#FFE5E5] text-[#756AB6] text-xs px-3 py-1 rounded-full font-semibold mb-3">Perfect
-                            For</span>
-                        <p class="text-gray-600">Vehicles detailed within the last 3-6 months that need thorough interior and exterior car cleaning to maintain that like-new condition.</p>
-                    </div>
+    <!-- Bronze Package -->
+    <div
+      class="package-card full-detail bg-white rounded-2xl overflow-hidden shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-[#EAEAEA]"
+    >
+      <div
+        class="bg-gradient-to-r from-[#756AB6] to-[#AC87C5] text-white p-8 text-center"
+      >
+        <h3 class="text-2xl font-bold mb-2">Bronze Detail</h3>
+        <div class="text-4xl font-bold my-4">
+          $136<span class="text-xl font-normal"> CAD</span>
+        </div>
+        <p class="opacity-90">Maintenance for well-kept vehicles</p>
+      </div>
+      <div class="p-8">
+        <div class="mb-6">
+          <span
+            class="inline-block bg-[#FBFBFB] text-[#756AB6] text-md px-3 py-1 rounded-full font-semibold mb-3"
+            >Perfect For</span
+          >
+          <p class="text-[#5E5E5E]">
+            Vehicles detailed within the last 3-6 months that need thorough
+            cleaning to maintain that like-new condition.
+          </p>
+        </div>
 
-                    <div class="space-y-6">
-                        <div>
-                            <h5 class="font-bold mb-3 text-[#756AB6] flex items-center">
-                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                Interior Detailing Services (Bronze)
-                            </h5>
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-[#756AB6] mr-2 mt-0.5 flex-shrink-0" fill="currentColor"
-                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                    Complete vacuum of all interior surfaces
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-[#756AB6] mr-2 mt-0.5 flex-shrink-0" fill="currentColor"
-                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                    Dashboard & console cleaning and protection
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-[#756AB6] mr-2 mt-0.5 flex-shrink-0" fill="currentColor"
-                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                    Door panel and trim wipe down & dressing
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-[#756AB6] mr-2 mt-0.5 flex-shrink-0" fill="currentColor"
-                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                    Leather, Vinyl, & Plastic scrubbed & protected
-                                </li>
-                            </ul>
-                        </div>
+        <div class="space-y-6">
+          <div>
+            <h5 class="font-bold mb-3 text-[#756AB6] flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6 mr-2 text-[#756AB6]"
+                fill="currentColor"
+                viewBox="0 0 640 640"
+              >
+                <path
+                  d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                />
+              </svg>
 
-                        <div>
-                            <h5 class="font-bold mb-3 text-[#756AB6] flex items-center">
-                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                Exterior Car Cleaning (Bronze)
-                            </h5>
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-[#756AB6] mr-2 mt-0.5 flex-shrink-0" fill="currentColor"
-                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                    Thorough express hand wash
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-[#756AB6] mr-2 mt-0.5 flex-shrink-0" fill="currentColor"
-                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                    Rim & Wheel outer cleaning and tire dressing
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-[#756AB6] mr-2 mt-0.5 flex-shrink-0" fill="currentColor"
-                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                    Streak-free towel dry & spray wax application
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+              Interior Services
+            </h5>
+            <ul class="space-y-2 text-[#5E5E5E]">
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mr-2 text-[#756AB6]"
+                  fill="currentColor"
+                  viewBox="0 0 640 640"
+                >
+                  <path
+                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                  />
+                </svg>
+                Complete vacuum of all surfaces
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mr-2 text-[#756AB6]"
+                  fill="currentColor"
+                  viewBox="0 0 640 640"
+                >
+                  <path
+                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                  />
+                </svg>
+                LVP Scrubbed wiped & conditioned
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mr-2 text-[#756AB6]"
+                  fill="currentColor"
+                  viewBox="0 0 640 640"
+                >
+                  <path
+                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                  />
+                </svg>
+                Clean windows/ AC vents
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mr-2 text-[#756AB6]"
+                  fill="currentColor"
+                  viewBox="0 0 640 640"
+                >
+                  <path
+                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                  />
+                </svg>
+                Ruber mat wash
+              </li>
+            </ul>
+          </div>
 
-                    <div class="mt-8 pt-6 border-t border-gray-200">
-                        <h6 class="text-sm font-semibold text-[#756AB6] mb-4">VEHICLE FULL DETAILING PRICING</h6>
-                        <div class="space-y-3">
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-600 font-medium">Sedan/Coupe Full Detail</span>
-                                <span
-                                    class="bg-[#FFE5E5] text-[#756AB6] font-semibold px-3 py-1 rounded-full">$136</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-600 font-medium">SUV (5 Seat) Full Detail</span>
-                                <span
-                                    class="bg-[#FFE5E5] text-[#756AB6] font-semibold px-3 py-1 rounded-full">$156</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-600 font-medium">Pick Up/7-Seat SUV Full Detail</span>
-                                <span
-                                    class="bg-[#FFE5E5] text-[#756AB6] font-semibold px-3 py-1 rounded-full">$176</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-600 font-medium">XL SUV Full Detail</span>
-                                <span
-                                    class="bg-[#FFE5E5] text-[#756AB6] font-semibold px-3 py-1 rounded-full">$196</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="px-8 pb-8 text-center">
-                    <a href="{% url 'booking' %}?vehicle=&service=full&package=bronze_full"
-                        class="inline-block w-full py-3 px-6 bg-gradient-to-r from-[#756AB6] to-[#AC87C5] text-white font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#756AB6] focus:ring-opacity-50">
-                        Book Bronze Full Detail
-                    </a>
-                </div>
+          <div>
+            <h5 class="font-bold mb-3 text-[#756AB6] flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6 mr-2 text-[#756AB6]"
+                fill="currentColor"
+                viewBox="0 0 640 640"
+              >
+                <path
+                  d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                />
+              </svg>
+              Exterior Services
+            </h5>
+            <ul class="space-y-2 text-[#5E5E5E]">
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mr-2 text-[#756AB6]"
+                  fill="currentColor"
+                  viewBox="0 0 640 640"
+                >
+                  <path
+                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                  />
+                </svg>
+                Express hand wash
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mr-2 text-[#756AB6]"
+                  fill="currentColor"
+                  viewBox="0 0 640 640"
+                >
+                  <path
+                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                  />
+                </svg>
+                Rim & Wheel outer cleaning
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mr-2 text-[#756AB6]"
+                  fill="currentColor"
+                  viewBox="0 0 640 640"
+                >
+                  <path
+                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                  />
+                </svg>
+                Towel Dry
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-[#EAEAEA]">
+          <h6 class="text-sm font-semibold text-[#756AB6] mb-4">
+            VEHICLE PRICING
+          </h6>
+          <div class="space-y-3">
+            <div class="flex justify-between items-center">
+              <span class="text-[#5E5E5E] font-medium">Sedan/Coupe</span>
+              <span
+                class="bg-[#FBFBFB] text-[#756AB6] font-semibold px-3 py-1 rounded-full"
+                >$136</span
+              >
             </div>
-
-            <!-- Gold Package -->
-            <div
-                class="package-card bg-white rounded-2xl overflow-hidden shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border-2 border-[#756AB6] relative package-highlight">
-                <div
-                    class="absolute top-0 right-0 bg-[#756AB6] text-white text-xs font-bold px-4 py-1 rounded-bl-lg rounded-tr-lg">
-                    MOST POPULAR
-                </div>
-                <div class="bg-gradient-to-r from-[#756AB6] to-[#AC87C5] text-white p-8 text-center">
-                    <h3 class="text-2xl font-bold mb-2">Gold Full Detail</h3>
-                    <div class="text-4xl font-bold my-4">$195<span class="text-xl font-normal"> CAD</span></div>
-                    <p class="opacity-90">Restore your vehicle's beauty with our popular gold full detail</p>
-                </div>
-                <div class="p-8">
-                    <div class="mb-6">
-                        <span
-                            class="inline-block bg-[#FFE5E5] text-[#756AB6] text-xs px-3 py-1 rounded-full font-semibold mb-3">Perfect
-                            For</span>
-                        <p class="text-gray-600">Vehicles needing more than maintenance - removes 6-12 months of wear
-                            for a fresh, protected finish with our gold car detailing.</p>
-                    </div>
-
-                    <div class="space-y-6">
-                        <div>
-                            <h5 class="font-bold mb-3 text-[#756AB6] flex items-center">
-                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                Enhanced Interior Car Detailing
-                            </h5>
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-[#756AB6] mr-2 mt-0.5 flex-shrink-0" fill="currentColor"
-                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                    Complete Car vacuum by Drill Brush for deep clean
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-[#756AB6] mr-2 mt-0.5 flex-shrink-0" fill="currentColor"
-                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                    Complete surface cleaning & interior protection
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-[#756AB6] mr-2 mt-0.5 flex-shrink-0" fill="currentColor"
-                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                    Rubber/Fabric Floor mat shampoo for deep clean
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-[#756AB6] mr-2 mt-0.5 flex-shrink-0" fill="currentColor"
-                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                    Premium leather/vinyl conditioning
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h5 class="font-bold mb-3 text-[#756AB6] flex items-center">
-                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                Enhanced Exterior Car Care
-                            </h5>
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-[#756AB6] mr-2 mt-0.5 flex-shrink-0" fill="currentColor"
-                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                    Thorough express hand wash & decontamination
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-[#756AB6] mr-2 mt-0.5 flex-shrink-0" fill="currentColor"
-                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                    Rim & Wheel deep cleaning, tire dressing, & wheel well cleaning
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-[#756AB6] mr-2 mt-0.5 flex-shrink-0" fill="currentColor"
-                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                    Machine applied wax/sealant for lasting shine and protection
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="mt-8 pt-6 border-t border-gray-200">
-                        <h6 class="text-sm font-semibold text-[#756AB6] mb-4">VEHICLE FULL DETAILING PRICING</h6>
-                        <div class="space-y-3">
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-600 font-medium">Sedan/Coupe Full Detail</span>
-                                <span
-                                    class="bg-[#FFE5E5] text-[#756AB6] font-semibold px-3 py-1 rounded-full">$195</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-600 font-medium">SUV (5 Seat) Full Detail</span>
-                                <span
-                                    class="bg-[#FFE5E5] text-[#756AB6] font-semibold px-3 py-1 rounded-full">$225</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-600 font-medium">Pick Up/7-Seat SUV Full Detail</span>
-                                <span
-                                    class="bg-[#FFE5E5] text-[#756AB6] font-semibold px-3 py-1 rounded-full">$255</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-600 font-medium">XL SUV Full Detail</span>
-                                <span
-                                    class="bg-[#FFE5E5] text-[#756AB6] font-semibold px-3 py-1 rounded-full">$285</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="px-8 pb-8 text-center">
-                    <a href="{% url 'booking' %}?vehicle=&service=full&package=gold_full"
-                        class="inline-block w-full py-3 px-6 bg-gradient-to-r from-[#756AB6] to-[#AC87C5] text-white font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#756AB6] focus:ring-opacity-50">
-                        Book Gold Full Detail
-                    </a>
-                </div>
+            <div class="flex justify-between items-center">
+              <span class="text-[#5E5E5E] font-medium">SUV (5 Seat)</span>
+              <span
+                class="bg-[#FBFBFB] text-[#756AB6] font-semibold px-3 py-1 rounded-full"
+                >$171</span
+              >
             </div>
-
-            <!-- Platinum Package -->
-            <div
-                class="package-card bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-200">
-                <div class="bg-gradient-to-r from-[#756AB6] to-[#AC87C5] text-white p-8 text-center">
-                    <h3 class="text-2xl font-bold mb-2">Platinum Full Detail</h3>
-                    <div class="text-4xl font-bold my-4">$217<span class="text-xl font-normal"> CAD</span></div>
-                    <p class="opacity-90">Showroom-quality full car detailing restoration</p>
-                </div>
-                <div class="p-8">
-                    <div class="mb-6">
-                        <span
-                            class="inline-block bg-[#FFE5E5] text-[#756AB6] text-xs px-3 py-1 rounded-full font-semibold mb-3">Perfect
-                            For</span>
-                        <p class="text-gray-600">Neglected vehicles or those needing complete rejuvenation - we make
-                            them look and smell like new again with our latinum full detail.</p>
-                    </div>
-
-                    <div class="space-y-6">
-                        <div>
-                            <h5 class="font-bold mb-3 text-[#756AB6] flex items-center">
-                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                Interior Car Restoration (Platinum)
-                            </h5>
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-[#756AB6] mr-2 mt-0.5 flex-shrink-0" fill="currentColor"
-                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                    Complete Car vacuum by Drill Brush with deep cleaning
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-[#756AB6] mr-2 mt-0.5 flex-shrink-0" fill="currentColor"
-                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                    Deep carpet & upholstery shampoo for stain and odor removal
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-[#756AB6] mr-2 mt-0.5 flex-shrink-0" fill="currentColor"
-                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                    Premium leather conditioning & protection
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-[#756AB6] mr-2 mt-0.5 flex-shrink-0" fill="currentColor"
-                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                    Steam Clean Air Refresher for fresh cabin
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h5 class="font-bold mb-3 text-[#756AB6] flex items-center">
-                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                Exterior Car Restoration (Platinum)
-                            </h5>
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-[#756AB6] mr-2 mt-0.5 flex-shrink-0" fill="currentColor"
-                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                    Two-bucket hand wash with paint decontamination
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-[#756AB6] mr-2 mt-0.5 flex-shrink-0" fill="currentColor"
-                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                    Multi-stage paint correction for swirl & scratch removal
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-[#756AB6] mr-2 mt-0.5 flex-shrink-0" fill="currentColor"
-                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                    Professional-grade ceramic coating application
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-[#756AB6] mr-2 mt-0.5 flex-shrink-0" fill="currentColor"
-                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                    Plastic trim restoration & long-lasting tire dressing
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="mt-8 pt-6 border-t border-gray-200">
-                        <h6 class="text-sm font-semibold text-[#756AB6] mb-4">VEHICLE FULL DETAILING PRICING</h6>
-                        <div class="space-y-3">
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-600 font-medium">Sedan/Coupe Full Detail</span>
-                                <span
-                                    class="bg-[#FFE5E5] text-[#756AB6] font-semibold px-3 py-1 rounded-full">$217</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-600 font-medium">SUV (5 Seat) Full Detail</span>
-                                <span
-                                    class="bg-[#FFE5E5] text-[#756AB6] font-semibold px-3 py-1 rounded-full">$247</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-600 font-medium">Pick Up/7-Seat SUV Full Detail</span>
-                                <span
-                                    class="bg-[#FFE5E5] text-[#756AB6] font-semibold px-3 py-1 rounded-full">$277</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-600 font-medium">XL SUV Full Detail</span>
-                                <span
-                                    class="bg-[#FFE5E5] text-[#756AB6] font-semibold px-3 py-1 rounded-full">$307</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="px-8 pb-8 text-center">
-                    <a href="{% url 'booking' %}?vehicle=&service=full&package=platinum_full"
-                        class="inline-block w-full py-3 px-6 bg-gradient-to-r from-[#756AB6] to-[#AC87C5] text-white font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#756AB6] focus:ring-opacity-50">
-                        Book Platinum Full Detail
-                    </a>
-                </div>
+            <div class="flex justify-between items-center">
+              <span class="text-[#5E5E5E] font-medium">Pick Up/7-Seat SUV</span>
+              <span
+                class="bg-[#FBFBFB] text-[#756AB6] font-semibold px-3 py-1 rounded-full"
+                >$204</span
+              >
             </div>
+            <div class="flex justify-between items-center">
+              <span class="text-[#5E5E5E] font-medium">XL SUV</span>
+              <span
+                class="bg-[#FBFBFB] text-[#756AB6] font-semibold px-3 py-1 rounded-full"
+                >$213</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="px-8 pb-8 text-center">
+        <a
+          href="{% url 'booking' %}?vehicle=&service=full&package=bronze_full"
+          class="inline-block w-full py-3 px-6 bg-gradient-to-r from-[#756AB6] to-[#AC87C5] text-white font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#756AB6] focus:ring-opacity-50"
+        >
+          Book Now
+        </a>
+        <a
+          href="{% url 'full' %}"
+          class="inline-block w-1/2 py-2 px-4 bg-transparent text-[#756AB6] border border-[#756AB6] font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#756AB6] focus:ring-opacity-50 mt-3"
+        >
+          Know More
+        </a>
+      </div>
+    </div>
+
+    <!-- Gold Package -->
+    <div
+      class="package-card full-detail bg-white rounded-2xl overflow-hidden shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border-2 border-[#756AB6] relative"
+    >
+      <div
+        class="absolute top-0 right-0 bg-[#756AB6] text-white text-md font-bold px-4 py-1 rounded-bl-lg rounded-tr-lg"
+      >
+        MOST POPULAR
+      </div>
+      <div
+        class="bg-gradient-to-r from-[#756AB6] to-[#AC87C5] text-white p-8 text-center"
+      >
+        <h3 class="text-2xl font-bold mb-2">Gold Detail</h3>
+        <div class="text-4xl font-bold my-4">
+          $195<span class="text-xl font-normal"> CAD</span>
+        </div>
+        <p class="opacity-90">Restore your vehicle's beauty</p>
+      </div>
+      <div class="p-8">
+        <div class="mb-6">
+          <span
+            class="inline-block bg-[#FBFBFB] text-[#756AB6] text-md px-3 py-1 rounded-full font-semibold mb-3"
+            >Perfect For</span
+          >
+          <p class="text-[#5E5E5E]">
+            Vehicles needing more than maintenance - removes 6-12 months of wear
+            for a fresh, protected finish.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <div>
+            <h5 class="font-bold mb-3 text-[#756AB6] flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6 mr-2 text-[#756AB6]"
+                fill="currentColor"
+                viewBox="0 0 640 640"
+              >
+                <path
+                  d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                />
+              </svg>
+              Enhanced Interior
+            </h5>
+            <ul class="space-y-2 text-[#5E5E5E]">
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mr-2 text-[#756AB6]"
+                  fill="currentColor"
+                  viewBox="0 0 640 640"
+                >
+                  <path
+                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                  />
+                </svg>
+                Complete Car vacuum By Drill Brush
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mr-2 text-[#756AB6]"
+                  fill="currentColor"
+                  viewBox="0 0 640 640"
+                >
+                  <path
+                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                  />
+                </svg>
+                Dust Blow Out From Hard Surface by Air
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mr-2 text-[#756AB6]"
+                  fill="currentColor"
+                  viewBox="0 0 640 640"
+                >
+                  <path
+                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                  />
+                </svg>
+                LVP Clean and Polishing
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mr-2 text-[#756AB6]"
+                  fill="currentColor"
+                  viewBox="0 0 640 640"
+                >
+                  <path
+                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                  />
+                </svg>
+                Seats and Floor shampoo
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mr-2 text-[#756AB6]"
+                  fill="currentColor"
+                  viewBox="0 0 640 640"
+                >
+                  <path
+                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                  />
+                </svg>
+                Windows clean, Ac vents clean
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mr-2 text-[#756AB6]"
+                  fill="currentColor"
+                  viewBox="0 0 640 640"
+                >
+                  <path
+                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                  />
+                </svg>
+                Rubber/Fabric Mats wash, Salt Stain Remove
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h5 class="font-bold mb-3 text-[#756AB6] flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6 mr-2 text-[#756AB6]"
+                fill="currentColor"
+                viewBox="0 0 640 640"
+              >
+                <path
+                  d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                />
+              </svg>
+              Enhanced Exterior
+            </h5>
+            <ul class="space-y-2 text-[#5E5E5E]">
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mr-2 text-[#756AB6]"
+                  fill="currentColor"
+                  viewBox="0 0 640 640"
+                >
+                  <path
+                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                  />
+                </svg>
+                Express hand wash
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mr-2 text-[#756AB6]"
+                  fill="currentColor"
+                  viewBox="0 0 640 640"
+                >
+                  <path
+                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                  />
+                </svg>
+                Rim & Wheel outer cleaning
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mr-2 text-[#756AB6]"
+                  fill="currentColor"
+                  viewBox="0 0 640 640"
+                >
+                  <path
+                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                  />
+                </svg>
+                Towel Dry
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-[#EAEAEA]">
+          <h6 class="text-sm font-semibold text-[#756AB6] mb-4">
+            VEHICLE PRICING
+          </h6>
+          <div class="space-y-3">
+            <div class="flex justify-between items-center">
+              <span class="text-[#5E5E5E] font-medium">Sedan/Coupe</span>
+              <span
+                class="bg-[#FBFBFB] text-[#756AB6] font-semibold px-3 py-1 rounded-full"
+                >$195</span
+              >
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-[#5E5E5E] font-medium">SUV (5 Seat)</span>
+              <span
+                class="bg-[#FBFBFB] text-[#756AB6] font-semibold px-3 py-1 rounded-full"
+                >$217</span
+              >
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-[#5E5E5E] font-medium">Pick Up/7-Seat SUV</span>
+              <span
+                class="bg-[#FBFBFB] text-[#756AB6] font-semibold px-3 py-1 rounded-full"
+                >$258</span
+              >
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-[#5E5E5E] font-medium">XL SUV</span>
+              <span
+                class="bg-[#FBFBFB] text-[#756AB6] font-semibold px-3 py-1 rounded-full"
+                >$267</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="px-8 pb-8 text-center">
+        <a
+          href="{% url 'booking' %}?vehicle=&service=full&package=gold_full"
+          class="inline-block w-full py-3 px-6 bg-gradient-to-r from-[#756AB6] to-[#AC87C5] text-white font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#756AB6] focus:ring-opacity-50"
+        >
+          Book Now
+        </a>
+        <a
+          href="{% url 'full' %}"
+          class="inline-block w-1/2 py-2 px-4 bg-transparent text-[#756AB6] border border-[#756AB6] font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#756AB6] focus:ring-opacity-50 mt-3"
+        >
+          Know More
+        </a>
+      </div>
+    </div>
+
+    <!-- Platinum Package -->
+    <div
+      class="package-card full-detail bg-white rounded-2xl overflow-hidden shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-[#EAEAEA]"
+    >
+      <div
+        class="bg-gradient-to-r from-[#756AB6] to-[#AC87C5] text-white p-8 text-center"
+      >
+        <h3 class="text-2xl font-bold mb-2">Platinum Detail</h3>
+        <div class="text-4xl font-bold my-4">
+          $217<span class="text-xl font-normal"> CAD</span>
+        </div>
+        <p class="opacity-90">Showroom-quality restoration</p>
+      </div>
+      <div class="p-8">
+        <div class="mb-6">
+          <span
+            class="inline-block bg-[#FBFBFB] text-[#756AB6] text-md px-3 py-1 rounded-full font-semibold mb-3"
+            >Perfect For</span
+          >
+          <p class="text-[#5E5E5E]">
+            Neglected vehicles or those needing complete rejuvenation - we make
+            them look and smell like new again.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <div>
+            <h5 class="font-bold mb-3 text-[#756AB6] flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6 mr-2 text-[#756AB6]"
+                fill="currentColor"
+                viewBox="0 0 640 640"
+              >
+                <path
+                  d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                />
+              </svg>
+              Interior Restoration
+            </h5>
+            <ul class="space-y-2 text-[#5E5E5E]">
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mr-2 text-[#756AB6]"
+                  fill="currentColor"
+                  viewBox="0 0 640 640"
+                >
+                  <path
+                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                  />
+                </svg>
+                Complete Car vacuum by Drill Brush
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mr-2 text-[#756AB6]"
+                  fill="currentColor"
+                  viewBox="0 0 640 640"
+                >
+                  <path
+                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                  />
+                </svg>
+                Dust Blow Out From Hard Surface by Air
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mr-2 text-[#756AB6]"
+                  fill="currentColor"
+                  viewBox="0 0 640 640"
+                >
+                  <path
+                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                  />
+                </svg>
+                LVP Clean & Polishing
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mr-2 text-[#756AB6]"
+                  fill="currentColor"
+                  viewBox="0 0 640 640"
+                >
+                  <path
+                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                  />
+                </svg>
+                Seats & Floor Shampoo
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mr-2 text-[#756AB6]"
+                  fill="currentColor"
+                  viewBox="0 0 640 640"
+                >
+                  <path
+                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                  />
+                </svg>
+                Windows clean, Ac vents clean
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mr-2 text-[#756AB6]"
+                  fill="currentColor"
+                  viewBox="0 0 640 640"
+                >
+                  <path
+                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                  />
+                </svg>
+                Steam Clean Air Refresher
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mr-2 text-[#756AB6]"
+                  fill="currentColor"
+                  viewBox="0 0 640 640"
+                >
+                  <path
+                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                  />
+                </svg>
+                Rubber/Fabric Mats wash, Salt Stain Remove
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h5 class="font-bold mb-3 text-[#756AB6] flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6 mr-2 text-[#756AB6]"
+                fill="currentColor"
+                viewBox="0 0 640 640"
+              >
+                <path
+                  d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                />
+              </svg>
+              Exterior Restoration
+            </h5>
+            <ul class="space-y-2 text-[#5E5E5E]">
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mr-2 text-[#756AB6]"
+                  fill="currentColor"
+                  viewBox="0 0 640 640"
+                >
+                  <path
+                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                  />
+                </svg>
+                Express hand wash
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mr-2 text-[#756AB6]"
+                  fill="currentColor"
+                  viewBox="0 0 640 640"
+                >
+                  <path
+                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                  />
+                </svg>
+                Rim & Wheel outer cleaning
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mr-2 text-[#756AB6]"
+                  fill="currentColor"
+                  viewBox="0 0 640 640"
+                >
+                  <path
+                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"
+                  />
+                </svg>
+                Towel Dry
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-[#EAEAEA]">
+          <h6 class="text-sm font-semibold text-[#756AB6] mb-4">
+            VEHICLE PRICING
+          </h6>
+          <div class="space-y-3">
+            <div class="flex justify-between items-center">
+              <span class="text-[#5E5E5E] font-medium">Sedan/Coupe</span>
+              <span
+                class="bg-[#FBFBFB] text-[#756AB6] font-semibold px-3 py-1 rounded-full"
+                >$217</span
+              >
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-[#5E5E5E] font-medium">SUV (5 Seat)</span>
+              <span
+                class="bg-[#FBFBFB] text-[#756AB6] font-semibold px-3 py-1 rounded-full"
+                >$244</span
+              >
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-[#5E5E5E] font-medium">Pick Up/7-Seat SUV</span>
+              <span
+                class="bg-[#FBFBFB] text-[#756AB6] font-semibold px-3 py-1 rounded-full"
+                >$285</span
+              >
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-[#5E5E5E] font-medium">XL SUV</span>
+              <span
+                class="bg-[#FBFBFB] text-[#756AB6] font-semibold px-3 py-1 rounded-full"
+                >$294</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="px-8 pb-8 text-center">
+        <a
+          href="{% url 'booking' %}?vehicle=&service=full&package=platinum_full"
+          class="inline-block w-full py-3 px-6 bg-gradient-to-r from-[#756AB6] to-[#AC87C5] text-white font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#756AB6] focus:ring-opacity-50"
+        >
+          Book Now
+        </a>
+        <a
+          href="{% url 'full' %}"
+          class="inline-block w-1/2 py-2 px-4 bg-transparent text-[#756AB6] border border-[#756AB6] font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#756AB6] focus:ring-opacity-50 mt-3"
+        >
+          Know More
+        </a>
+      </div>
+    </div>>
         </div>
     </div>
 </section>
@@ -922,4 +1250,4 @@
     </div>
 </section>
 
-{% endblock %}y
+{% endblock %}

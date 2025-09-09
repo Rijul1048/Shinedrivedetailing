@@ -1,6 +1,66 @@
 {% extends "layout.html" %}
 {% load static %}
+{% block title %}About ShineDrive Detailing | Mobile Car Detailing in Waterloo Region{% endblock %}
+{% block meta_description %}<meta name="description" content="Learn about ShineDrive Detailing — premium mobile car detailing serving Kitchener, Waterloo, Cambridge and nearby. Interior & exterior detailing, paint correction, ceramic protection.">{% endblock %}
+{% block og_title %}About ShineDrive Detailing{% endblock %}
+{% block og_description %}Premium mobile car detailing serving Kitchener, Waterloo, Cambridge and nearby.{% endblock %}
 {% block content %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Shine Drive Detailing",
+  "description": "ShineDrive Detailing offers premium mobile car detailing services in Kitchener, Waterloo, Cambridge, Woolwich, St. Jacobs, and Elmira, Ontario. We specialize in interior and exterior car detailing, paint correction, ceramic coatings, and full car restoration, bringing showroom quality results directly to your location.",
+  "image": "https://shinedrivedetailing.com/static/images/Banner5.jpg",
+  "url": "https://shinedrivedetailing.com/about",
+  "telephone": "+15483987555",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Mobile Service",
+    "addressLocality": "Kitchener",
+    "addressRegion": "ON",
+    "postalCode": "N2E 2P6",
+    "addressCountry": "CA"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "07:00",
+      "closes": "19:00"
+    }
+  ],
+  "hasMap": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2895.4924648495494!2d-80.51293328884007!3d43.47119207099082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4787a94ecde48a1f%3A0x60bf8af6c74d80e5!2sShine%20drive%20Mobile%20detailing!5e0!3m2!1sen!2sin!4v1753963284395!5m2!1sen!2sin",
+  "priceRange": "$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "140"
+  },
+  "servesCuisine": "Car Detailing",
+  "serviceType": "Mobile Car Detailing Service",
+  "makesOffer": {
+    "@type": "Offer",
+    "itemOffered": {
+      "@type": "Service",
+      "name": "Car Detailing",
+      "description": "Comprehensive car detailing services including interior and exterior cleaning, paint correction, and ceramic coating.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Shine Drive Detailing"
+      }
+    }
+  }
+}
+</script>
 
 <!-- Hero Section with Parallax Effect -->
 <section class="relative h-[600px] flex items-center justify-center overflow-hidden ">
@@ -198,7 +258,7 @@
 </section>
 
 <!-- Our Work Section with Video -->
-<section class="py-20 px-5 bg-gradient-to-t from-[#FBFBFB] to-white" id="our_work">
+<section class="py-20 px-5 bg-gradient-to-t from-[#FBFBFB] to-white xl:hidden" >
     <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16">
             <span class="inline-block mb-4 text-[#AC87C5] font-semibold tracking-widest text-sm uppercase">Our Detailing
@@ -217,7 +277,7 @@
         <!-- For Mobile Only Start  -->
          
       
-        <div class="mobile-carousel relative h-[70vh] overflow-hidden xl:hidden">
+        <div class="mobile-carousel relative h-[70vh] overflow-hidden ">
             <div class="flex h-[70vh] items-center px-4">
                 <div class="relative w-full h-[70vh] overflow-hidden">
                     <!-- Navigation Buttons -->
@@ -273,55 +333,6 @@
         <!-- For Mobile Only End -->
 
 
-
-        <div class="relative    justify-center items-center overflow-hidden hidden xl:block ">
-            <!-- Navigation Buttons -->
-            <button
-                id="prevReel"
-                class="absolute left-4 z-30 bg-[#756AB6] text-white p-3 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 text-xl  "
-            >
-             &#9665;
-            </button>
-            <button
-                id="nextReel"
-                class="absolute right-4 z-30 bg-[#756AB6] text-white p-3 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 text-xl"
-            >
-            &#9655;
-            </button>
-    
-            <!-- Reels Wrapper -->
-            <div
-                id="reelContainer"
-                class="flex items-center justify-center gap-6 transition-transform duration-500 ease-in-out "
-            >
-                <!-- Individual Reels -->
-                <div
-                    class="reel relative w-[20rem] h-[32rem] bg-[#5f52a9] rounded-lg overflow-hidden transform scale-100 transition-transform duration-500 ease-in-out shadow-lg hover:scale-90"
-                >
-                    <video autoplay muted loop controls class="w-full h-full object-cover rounded-lg">
-                        <source src="{% static 'images/detailing_video3.mp4'%}" type="video/mp4" />
-                    </video>
-                </div>
-                <div
-                    class="reel relative w-[20rem] h-[32rem] bg-[#5f52a9] rounded-lg overflow-hidden transform scale-100 transition-transform duration-500 ease-in-out shadow-lg hover:scale-90  "
-                >
-               
-                <video autoplay muted loop controls class="w-full h-full object-cover rounded-lg">
-                    <source src="{% static 'images/detailing_video1.mp4'%}" type="video/mp4" />
-                </video>
-                
-                </div>
-                <div
-                    class=" reel relative w-[20rem] h-[32rem] bg-[#5f52a9] rounded-lg overflow-hidden transform scale-75 transition-transform duration-500 ease-in-out shadow-lg hover:scale-90 \"
-                >
-                    <video autoplay muted loop controls class="w-full h-full object-cover rounded-lg">
-                        <source src="{% static 'images/detailing_video2.mp4'%}" type="video/mp4" />
-                    </video>
-                </div>
-                
-
-            </div>
-        </div>
     </div>
 </div>  
 <!-- Reels Section Ends -->
@@ -341,7 +352,7 @@
 </section>
 
 <!-- Gallery Section with Masonry Layout -->
-<section class="py-20 px-5 bg-white">
+<section class="py-20 px-5 bg-white" id="our_work">
     <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16">
             <span class="inline-block mb-4 text-[#AC87C5] font-semibold tracking-widest text-sm uppercase">Our

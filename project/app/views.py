@@ -7,6 +7,7 @@ from .utils.email import send_booking_confirmation, send_booking_notification
 from django.core.mail import send_mail
 from django.conf import settings
 from django.http import JsonResponse
+from django.http import HttpResponseNotFound
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 import json
@@ -142,6 +143,14 @@ def booking_thank_you(request, slug):
         messages.error(request, 'Booking not found.')
         # Log the error here
         return redirect('index')
+
+def custom_404_view(request, exception=None):
+    response = render(request, '404.html', status=404)
+    return response
+
+def preview_404(request):
+    # Helpful while DEBUG=True to see the 404 page without forcing an actual 404
+    return HttpResponseNotFound(render(request, '404.html').content)
     
 @csrf_exempt
 @require_POST

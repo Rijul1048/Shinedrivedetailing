@@ -1,7 +1,57 @@
 {% extends "layout.html" %}
 {% load static %}
+{% block title %}Car Detailing Services | Interior, Exterior, Full | ShineDrive Detailing{% endblock %}
+{% block meta_description %}<meta name="description" content="Explore interior, exterior and full detailing packages. Mobile car detailing for Kitchener, Waterloo, Cambridge with paint correction and ceramic protection.">{% endblock %}
+{% block og_title %}Car Detailing Services | ShineDrive Detailing{% endblock %}
+{% block og_description %}Interior, exterior and full detailing packages for Kitchener, Waterloo, Cambridge.{% endblock %}
 
 {% block content %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Car Detailing Services",
+  "description": "Explore a comprehensive range of premium car detailing services from Shine Drive Detailing, including full interior and exterior detailing, paint correction, and ceramic coatings.",
+  "url": "https://shinedrivedetailing.com/services",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Shine Drive Detailing",
+    "telephone": "+15483987555",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Mobile Service",
+      "addressLocality": "Kitchener",
+      "addressRegion": "ON",
+      "postalCode": "N2E 2P6",
+      "addressCountry": "CA"
+    }
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Shine Drive Detailing Service Categories",
+    "itemListElement": [
+      {
+        "@type": "OfferCatalog",
+        "name": "Complete Full Car Detailing",
+        "description": "Comprehensive full car detailing service including thorough interior and exterior rejuvenation.",
+        "url": "https://shinedrivedetailing.com/detailing/full_detail"
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Expert Interior Car Detailing",
+        "description": "Deep interior car cleaning, sanitization, and conditioning.",
+        "url": "https://shinedrivedetailing.com/detailing/interior_detail"
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Premium Exterior Car Detailing",
+        "description": "Meticulous exterior car detailing including washing, paint correction, and protection.",
+        "url": "https://shinedrivedetailing.com/detailing/exterior_detail"
+      }
+    ]
+  }
+}
+</script>
 <div class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pb-12 px-4 sm:px-6 lg:px-8 pt-20 md:pt-40">
     <div class="max-w-5xl mx-auto py-12">
         <div class="text-center mb-16">
