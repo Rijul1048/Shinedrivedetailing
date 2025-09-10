@@ -7,7 +7,7 @@ from .utils.email import send_booking_confirmation, send_booking_notification
 from django.core.mail import send_mail
 from django.conf import settings
 from django.http import JsonResponse
-from django.http import HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseNotFound
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 import json
@@ -206,3 +206,12 @@ def send_booking_email(request):
         
     except Exception as e:
         return JsonResponse({'status': 'error', 'message': str(e)})
+
+def robots_txt(request):
+    lines = [
+        "User-agent: *",
+        "Disallow: /admin/",
+        "Disallow: /booking/thank-you/",
+        f"Sitemap: {request.build_absolute_uri(reverse('django.contrib.sitemaps.views.sitemap'))}",
+    ]
+    return HttpResponse("\n".join(lines), content_type="text/plain")

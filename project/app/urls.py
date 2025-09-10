@@ -29,6 +29,8 @@ urlpatterns = [
     # Email endpoint (for AJAX requests if needed)
     path('send-booking-email/', views.send_booking_email, name='send_booking_email'),
 
+    # robots.txt
+    path('robots.txt', views.robots_txt, name='robots_txt'),
 
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

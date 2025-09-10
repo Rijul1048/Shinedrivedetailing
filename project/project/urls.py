@@ -17,13 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from django.contrib.sitemaps.views import sitemap
-from app.sitemaps import StaticSitemap, BookingSitemap
+from app.sitemaps import StaticSitemap
 from app import views
 from django.conf import settings
 
 sitemaps = {
     'static': StaticSitemap,
-    'bookings': BookingSitemap,
 }
 
 urlpatterns = [
