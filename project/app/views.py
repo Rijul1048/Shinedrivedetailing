@@ -92,6 +92,22 @@ def full(request):
     }
     return render(request, "detailing/full_detail.html", context)
 
+def privacy_policy(request):
+    context = {
+        'active_page': 'privacy_policy',
+        'title': 'Privacy Policy - ShineDrive Detailing',
+        'meta_description': 'Read ShineDrive Detailing\'s Privacy Policy detailing how we collect, use, and protect your information.'
+    }
+    return render(request, 'privacy.html', context)
+
+def terms_conditions(request):
+    context = {
+        'active_page': 'terms_conditions',
+        'title': 'Terms and Conditions - ShineDrive Detailing',
+        'meta_description': 'Review the Terms and Conditions for using ShineDrive Detailing\'s website and services.'
+    }
+    return render(request, 'terms.html', context)
+
 def booking_view(request):
     if request.method == 'POST':
         form = BookingForm(request.POST)

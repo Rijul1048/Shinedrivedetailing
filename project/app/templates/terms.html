@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Terms and Conditions | ShineDrive Detailing{% endblock %}
+{% block meta_description %}<meta name="description" content="Terms and Conditions for ShineDrive Detailing website and services.">{% endblock %}
+{% block og_title %}Terms and Conditions - ShineDrive Detailing{% endblock %}
+{% block og_description %}Please read these Terms before using our services.{% endblock %}
+
+{% block content %}
+<section class="max-w-4xl mx-auto px-4 py-10 pt-40 bg-white rounded-xl shadow-sm ring-1 ring-slate-200">
+    <div class="prose prose-slate">
+    <h1 class="text-3xl font-semibold text-slate-900 mb-2">Terms and Conditions</h1>
+    <p class="text-slate-600">Effective date:  2025/09/11</p>
+
+    <h2 class="mt-8 text-xl font-semibold text-slate-900">Acceptance of Terms</h2>
+    <p class="text-slate-700 leading-relaxed">By accessing our website or booking services, you agree to these Terms and Conditions ("Terms"). If you do not agree, please do not use the site or services.</p>
+
+    <h2 class="mt-8 text-xl font-semibold text-slate-900">Services</h2>
+    <p class="text-slate-700 leading-relaxed">We provide mobile car detailing services. Service availability and pricing may vary by location and vehicle condition. We reserve the right to refuse service in unsafe or unsuitable conditions.</p>
+
+    <h2 class="mt-8 text-xl font-semibold text-slate-900">Bookings and Cancellations</h2>
+    <ul class="list-disc pl-6 space-y-2">
+        <li>Appointments are confirmed upon receipt of booking details.</li>
+        <li>Please provide at least 24 hours' notice for cancellations or rescheduling.</li>
+        <li>Additional charges may apply for excessive dirt, pet hair, or stains.</li>
+    </ul>
+
+    <h2 class="mt-8 text-xl font-semibold text-slate-900">Customer Responsibilities</h2>
+    <ul class="list-disc pl-6 space-y-2">
+        <li>Ensure access to the vehicle and sufficient space for our team to work safely.</li>
+        <li>Remove personal belongings from the vehicle before the appointment.</li>
+        <li>Disclose any pre-existing damage or sensitive areas.</li>
+    </ul>
+
+    <h2 class="mt-8 text-xl font-semibold text-slate-900">Payments</h2>
+    <p class="text-slate-700 leading-relaxed">Payment is due upon completion unless otherwise agreed. We may require deposits for certain services. Prices are in CAD unless stated otherwise.</p>
+
+    <h2 class="mt-8 text-xl font-semibold text-slate-900">Warranty and Liability</h2>
+    <p class="text-slate-700 leading-relaxed">We strive for high-quality results. However, outcomes vary by vehicle condition. To the fullest extent permitted by law, we are not liable for indirect or consequential damages.</p>
+
+    <h2 class="mt-8 text-xl font-semibold text-slate-900">Intellectual Property</h2>
+    <p class="text-slate-700 leading-relaxed">All content on this site, including text, graphics, and logos, is owned by or licensed to ShineDrive Detailing and protected by applicable laws.</p>
+
+    <h2 class="mt-8 text-xl font-semibold text-slate-900">Privacy</h2>
+    <p class="text-slate-700 leading-relaxed">Your use of our site is also governed by our <a class="text-blue-600 hover:text-blue-700 underline underline-offset-4" href="{% url 'privacy' %}">Privacy Policy</a>.</p>
+
+    <h2 class="mt-8 text-xl font-semibold text-slate-900">Changes to Terms</h2>
+    <p class="text-slate-700 leading-relaxed">We may update these Terms from time to time. Continued use of the site after changes constitutes acceptance of the updated Terms.</p>
+
+    <h2 class="mt-8 text-xl font-semibold text-slate-900">Contact</h2>
+    <p class="text-slate-700 leading-relaxed">Questions about these Terms? Email us at <a class="text-blue-600 hover:text-blue-700 underline underline-offset-4" href="mailto:{{ settings.BUSINESS_EMAIL|default:'shinedrive2024@gmail.com' }}">{{ settings.BUSINESS_EMAIL|default:'Shinedrive2024.com' }}</a>.</p>
+
+    <p class="text-slate-500 mt-8">Last updated: 2025/09/01</p>
+    </div>
+</section>
+{% endblock %}
+
+

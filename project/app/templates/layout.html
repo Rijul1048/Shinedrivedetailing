@@ -16,7 +16,7 @@
     {# Open Graph (Facebook/LinkedIn) #}
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="ShineDrive Detailing">
-    <meta property="og:title" content="{% block og_title %}ShineDrive Detailing - Premium Car Care{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}#1 Mobile Car Detailing in Waterloo, Kitchener, Cambridge & Surroundings | Shinedrivedetailing (5★){% endblock %}">
     <meta property="og:description" content="{% block og_description %}Mobile car detailing in Kitchener, Waterloo, Cambridge and nearby. Interior & exterior detailing, paint correction, ceramic protection.{% endblock %}">
     <meta property="og:url" content="https://shinedrivedetailing.com{{ request.path }}">
     <meta property="og:image" content="{% block og_image %}https://shinedrivedetailing.com/static/images/Banner5.jpg{% endblock %}">
@@ -52,13 +52,12 @@
   </head>
 
   <!-- GA4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16992886374"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4RF9E6M4JX"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'AW-16992886374');
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4RF9E6M4JX');
   </script>
 
 
@@ -364,17 +363,17 @@
           </p>
           <div class="flex space-x-6">
             <a
-              href="#"
+              href="{% url 'privacy' %}"
               class="text-[#e2d7ff] hover:text-white text-sm transition-colors duration-300"
               >Privacy Policy</a
             >
             <a
-              href="#"
+              href="{% url 'terms' %}"
               class="text-[#e2d7ff] hover:text-white text-sm transition-colors duration-300"
               >Terms of Service</a
             >
             <a
-              href="#"
+              href="https://shinedrivedetailing.com/sitemap.xml"
               class="text-[#e2d7ff] hover:text-white text-sm transition-colors duration-300"
               >Sitemap</a
             >
@@ -425,6 +424,52 @@
       </button>
     </footer>
 
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent" class="fixed bottom-4 left-4 right-4 md:left-6 md:right-auto md:max-w-xl bg-white border border-slate-200 shadow-xl rounded-xl p-4 md:p-5 z-[60] hidden">
+      <div class="flex items-start gap-4">
+        <div class="shrink-0 mt-1">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#5f52a9]" viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8 0-.46.04-.91.12-1.35.42.23.9.35 1.41.35 1.66 0 3-1.34 3-3 0-.51-.13-.99-.35-1.41.44-.08.89-.12 1.35-.12 4.42 0 8 3.58 8 8s-3.58 8-8 8z"/></svg>
+        </div>
+        <div class="text-slate-700">
+          <p class="font-semibold text-slate-900">We use cookies</p>
+          <p class="text-sm leading-relaxed mt-1">We use essential cookies to make our site work and analytics cookies to improve your experience. By clicking “Accept”, you agree to our use of cookies. See our <a href="{% url 'privacy' %}#cookies" class="text-blue-600 hover:text-blue-700 underline underline-offset-4">Privacy Policy</a>.</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <button id="cookie-accept" class="px-4 py-2 bg-[#5f52a9] hover:bg-[#756AB6] text-white rounded-lg text-sm">Accept</button>
+            <button id="cookie-decline" class="px-4 py-2 bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 rounded-lg text-sm">Decline non-essential</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function() {
+        try {
+          var banner = document.getElementById('cookie-consent');
+          var acceptBtn = document.getElementById('cookie-accept');
+          var declineBtn = document.getElementById('cookie-decline');
+          var consent = localStorage.getItem('cookie_consent');
+
+          function hideBanner() { if (banner) { banner.classList.add('hidden'); } }
+          function showBanner() { if (banner) { banner.classList.remove('hidden'); } }
+
+          if (!consent) { showBanner(); }
+
+          if (acceptBtn) {
+            acceptBtn.addEventListener('click', function() {
+              localStorage.setItem('cookie_consent', 'accepted');
+              hideBanner();
+            });
+          }
+          if (declineBtn) {
+            declineBtn.addEventListener('click', function() {
+              localStorage.setItem('cookie_consent', 'declined');
+              hideBanner();
+            });
+          }
+        } catch (e) { /* no-op */ }
+      })();
+    </script>
 
     <script src="{% static 'js/script.js'%}"></script>
 </body>

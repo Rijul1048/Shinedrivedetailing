@@ -32,6 +32,10 @@ urlpatterns = [
     # robots.txt
     path('robots.txt', views.robots_txt, name='robots_txt'),
 
+    # Legal pages
+    path('privacy-policy/', views.privacy_policy, name='privacy'),
+    path('terms-and-conditions/', views.terms_conditions, name='terms'),
+
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

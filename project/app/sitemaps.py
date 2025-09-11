@@ -19,6 +19,8 @@ class StaticSitemap(Sitemap):
             'suv_5seat',
             'suv_7seat',
             'xl_suv',
+            'privacy',
+            'terms',
         ]
 
     def location(self, item):
