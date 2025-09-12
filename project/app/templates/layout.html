@@ -393,7 +393,7 @@
 
     <!-- Mobile Bottom Navigation -->
     <div class="md:hidden fixed bottom-0 left-0 right-0 z-50">
-      <div class="mx-3 mb-3 rounded-2xl border border-purple-200/60 bg-white/90 backdrop-blur shadow-[0_10px_30px_-10px_rgba(117,106,182,0.35)]">
+      <div class="mx-3 mb-3 rounded-2xl border border-purple-200/60 bg-white/90 shadow-[0_10px_30px_-10px_rgba(117,106,182,0.35)]">
           <div class="flex justify-around py-2 px-2">
               <a href="{% url 'index'%}" class="group relative flex flex-col items-center gap-0.5 px-4 py-2 rounded-xl transition-all duration-200 {% if active_page == 'index' %}text-[#5f52a9] bg-purple-50/70 ring-1 ring-purple-200{% else %}text-gray-600 hover:text-[#5f52a9] hover:bg-gray-50{% endif %}">
                   {% if active_page == 'index' %}<span class="absolute -top-1 h-1 w-8 rounded-full bg-gradient-to-r from-[#5f52a9] to-[#756AB6]"></span>{% endif %}
