@@ -304,9 +304,6 @@
 </div>
 
 <script>
-  // Get the booking URL from the data attribute
-  const bookingUrl = document.getElementById('bookingUrl').getAttribute('data-url');
-  
   // Pricing data
   const pricing = {
       'sedan': {
@@ -374,29 +371,15 @@
           }
       }
   };
-  
+
   // Default packages for each service type
   const defaultPackages = {
       'full': 'gold_full',
       'interior': 'gold_interior',
       'exterior': 'platinum_exterior'
   };
-  
-  // Map between URL parameter values and form field values
-  const packageValueMap = {
-      'bronze_full': 'bronze',
-      'gold_full': 'gold',
-      'platinum_full': 'platinum',
-      'bronze_interior': 'bronze',
-      'gold_interior': 'gold', 
-      'platinum_interior': 'platinum',
-      'gold_exterior': 'gold',
-      'platinum_exterior': 'platinum'
-  };
-  
+
   document.addEventListener('DOMContentLoaded', function() {
-      console.log('DOM loaded - testing script execution');
-      
       // Initialize form with URL parameters
       const urlParams = new URLSearchParams(window.location.search);
       const vehicleType = urlParams.get('vehicle') || 'sedan';
@@ -429,46 +412,36 @@
       
       // Add event listeners to dropdowns
       document.getElementById('vehicleDropdown').addEventListener('change', function() {
-          console.log('Vehicle dropdown changed');
           const vehicle = this.value;
           const service = document.getElementById('serviceDropdown').value;
           const defaultPackage = defaultPackages[service];
-          
-          console.log('Redirecting to:', `${bookingUrl}?vehicle=${vehicle}&service=${service}&package=${defaultPackage}`);
           
           // Update hidden form field
           document.getElementById('id_vehicle_type').value = vehicle;
           
           // Reload page with new parameters
-          window.location.href = `${bookingUrl}?vehicle=${vehicle}&service=${service}&package=${defaultPackage}`;
+          window.location.href = "{% url 'booking' %}?vehicle=" + vehicle + "&service=" + service + "&package=" + defaultPackage;
       });
       
       document.getElementById('serviceDropdown').addEventListener('change', function() {
-          console.log('Service dropdown changed');
           const service = this.value;
           const vehicle = document.getElementById('vehicleDropdown').value;
           const defaultPackage = defaultPackages[service];
-          
-          console.log('Redirecting to:', `${bookingUrl}?vehicle=${vehicle}&service=${service}&package=${defaultPackage}`);
           
           // Update hidden form field
           document.getElementById('id_service_type').value = service;
           
           // Reload page with new parameters
-          window.location.href = `${bookingUrl}?vehicle=${vehicle}&service=${service}&package=${defaultPackage}`;
+          window.location.href = "{% url 'booking' %}?vehicle=" + vehicle + "&service=" + service + "&package=" + defaultPackage;
       });
       
       document.getElementById('packageDropdown').addEventListener('change', function() {
-          console.log('Package dropdown changed');
           const packageValue = this.value;
           const vehicle = document.getElementById('vehicleDropdown').value;
           const service = document.getElementById('serviceDropdown').value;
           
-          console.log('Updating package to:', packageValue);
-          
-          // Update the display without reloading
-          updatePackageDisplay(vehicle, service, packageValue);
-          updateSummary(vehicle, service, packageValue);
+          // Reload page with new parameters
+          window.location.href = "{% url 'booking' %}?vehicle=" + vehicle + "&service=" + service + "&package=" + packageValue;
       });
   });
   
@@ -508,6 +481,16 @@
       const packageTypeElement = document.getElementById('id_package_type');
       if (packageTypeElement) {
           // Map the package type to what your form expects
+          const packageValueMap = {
+              'bronze_full': 'bronze',
+              'gold_full': 'gold',
+              'platinum_full': 'platinum',
+              'bronze_interior': 'bronze',
+              'gold_interior': 'gold', 
+              'platinum_interior': 'platinum',
+              'gold_exterior': 'gold',
+              'platinum_exterior': 'platinum'
+          };
           packageTypeElement.value = packageValueMap[packageType] || packageType;
       }
       
