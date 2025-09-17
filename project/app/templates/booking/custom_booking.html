@@ -115,7 +115,7 @@
         </div>
         
         <!-- Service Selection -->
-        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:border-indigo-200 transition-colors">
+        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:border-indigo-200 transition-colors" id="your-selection">
           <p class="text-sm text-gray-500 mb-1">Service</p>
           <select id="serviceDropdown" class="w-full p-2 border rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white">
             <option value="full">Full Detail</option>
@@ -144,7 +144,7 @@
     </div>
 
     <!-- Personal Information Section -->
-    <div class="space-y-6">
+    <div class="space-y-6" >
       <h2 class="text-2xl font-bold text-gray-800 pb-2 border-b border-gray-200 flex items-center">
         <svg class="w-6 h-6 text-gray-700 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
@@ -287,13 +287,18 @@
           <div class="text-indigo-600 font-medium text-sm"><span class="text-indigo-700 font-bold text-lg" id="summaryTotal"></span>+HST</div>
           
         </div>
+        <div class="flex justify-around border-t border-gray-200 pt-3 mt-3">
+          <p class="font-medium italic text-[#756AB6]" >Pay After Service. Your Satisfaction is Our Guarantee. </p>
+          
+          
+        </div> 
       </div>
       
       <button type="submit" class="w-full bg-gradient-to-r from-[#4b4188ff] to-[#5f52a9] hover:from-[#6f62c4] hover:to-[#7268ae] text-white font-bold py-3 px-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 flex items-center justify-center">
         <svg class="w-5 h-5 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
         </svg>
-        Confirm Booking
+        Confirm Appointment
       </button>
     </div>
   </form>
@@ -375,7 +380,7 @@
   // Default packages for each service type
   const defaultPackages = {
       'full': 'gold_full',
-      'interior': 'gold_interior',
+      'interior': 'gold_interior',  
       'exterior': 'platinum_exterior'
   };
 
@@ -420,7 +425,7 @@
           document.getElementById('id_vehicle_type').value = vehicle;
           
           // Reload page with new parameters
-          window.location.href = "{% url 'booking' %}?vehicle=" + vehicle + "&service=" + service + "&package=" + defaultPackage;
+          window.location.href = "{% url 'booking' %}?vehicle=" + vehicle + "&service=" + service + "&package=" + defaultPackage + "#your-selection";
       });
       
       document.getElementById('serviceDropdown').addEventListener('change', function() {
@@ -432,7 +437,7 @@
           document.getElementById('id_service_type').value = service;
           
           // Reload page with new parameters
-          window.location.href = "{% url 'booking' %}?vehicle=" + vehicle + "&service=" + service + "&package=" + defaultPackage;
+          window.location.href = "{% url 'booking' %}?vehicle=" + vehicle + "&service=" + service + "&package=" + defaultPackage + "#your-selection";  
       });
       
       document.getElementById('packageDropdown').addEventListener('change', function() {
@@ -441,7 +446,7 @@
           const service = document.getElementById('serviceDropdown').value;
           
           // Reload page with new parameters
-          window.location.href = "{% url 'booking' %}?vehicle=" + vehicle + "&service=" + service + "&package=" + packageValue;
+          window.location.href = "{% url 'booking' %}?vehicle=" + vehicle + "&service=" + service + "&package=" + packageValue + "#your-selection";
       });
   });
   
@@ -524,5 +529,6 @@
       if (summaryTotal) summaryTotal.textContent = `$${packageInfo.price} CAD`;
   }
 </script>
+
 
 {% endblock %}

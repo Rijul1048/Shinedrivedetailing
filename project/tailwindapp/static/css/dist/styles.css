@@ -1226,6 +1226,9 @@
   .object-cover {
     object-fit: cover;
   }
+  .p-1 {
+    padding: calc(var(--spacing) * 1);
+  }
   .p-2 {
     padding: calc(var(--spacing) * 2);
   }
@@ -1342,6 +1345,12 @@
   }
   .pb-20 {
     padding-bottom: calc(var(--spacing) * 20);
+  }
+  .pb-28 {
+    padding-bottom: calc(var(--spacing) * 28);
+  }
+  .pb-30 {
+    padding-bottom: calc(var(--spacing) * 30);
   }
   .pb-40 {
     padding-bottom: calc(var(--spacing) * 40);
@@ -2124,6 +2133,11 @@
   @media (width >= 48rem) {
     .md\:pt-40 {
       padding-top: calc(var(--spacing) * 40);
+    }
+  }
+  @media (width >= 48rem) {
+    .md\:pb-10 {
+      padding-bottom: calc(var(--spacing) * 10);
     }
   }
   @media (width >= 48rem) {

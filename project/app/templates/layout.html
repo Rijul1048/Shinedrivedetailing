@@ -13,11 +13,10 @@
         <link rel="canonical" href="https://shinedrivedetailing.com{{ request.path }}" />
     {% endblock %}
     
-    {# Open Graph (Facebook/LinkedIn) #}
+    {# Open Graph (Facebook/LinkedIn) #}  
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="ShineDrive Detailing">
-    <meta property="og:title" content="{% block og_title %}#1 Mobile Car Detailing in Waterloo, Kitchener, Cambridge & Surroundings | Shinedrivedetailing (5★){% endblock %}">
-    <meta property="og:description" content="{% block og_description %}Mobile car detailing in Kitchener, Waterloo, Cambridge and nearby. Interior & exterior detailing, paint correction, ceramic protection.{% endblock %}">
+    <meta property="og:title" content="ShineDriveDetailing: 5-Star Mobile Detailing at Your Doorstep | Waterloo, Kitchener, Cambridge ">    <meta property="og:description" content="{% block og_description %}Mobile car detailing in Kitchener, Waterloo, Cambridge and nearby. Interior & exterior detailing, paint correction, ceramic protection.{% endblock %}">
     <meta property="og:url" content="https://shinedrivedetailing.com{{ request.path }}">
     <meta property="og:image" content="{% block og_image %}https://shinedrivedetailing.com/static/images/Banner5.jpg{% endblock %}">
     
@@ -82,9 +81,11 @@
           <div class="flex justify-between items-center py-4">
               <!-- Logo -->
               <div class="flex items-center">
+                <a href="https://shinedrivedetailing.com/booking/">
                   <div class="w-24 h-14 rounded-lg flex items-center justify-center mr-3 shadow-lg">
                       <img src="{% static 'images/logo.png'%}" alt="logo">
                   </div>
+                </a>
                   
               </div>
 
@@ -144,7 +145,7 @@
 
         <!-- Footer Section -->
     <footer
-      class="bg-gradient-to-b from-[#4b4188ff] to-[#5f52a9] text-white pt-16  px-4 sm:px-6 lg:px-8 pb-20"
+      class="bg-gradient-to-b from-[#4b4188ff] to-[#5f52a9] text-white pt-16  px-4 sm:px-6 lg:px-8 pb-30 md:pb-10"
     >
       <div class="max-w-7xl mx-auto">
         <div
