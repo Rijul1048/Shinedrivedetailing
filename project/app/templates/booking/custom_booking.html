@@ -26,45 +26,10 @@
 
 <div class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pb-12 px-4 sm:px-6 lg:px-8 pt-24 md:pt-40">
     <div class="max-w-4xl mx-auto">
-        <!-- Progress Indicator -->
-        <div class="flex justify-center mb-12 px-4">
-            <div class="flex flex-col md:flex-row items-center w-full max-w-md md:max-w-none">
-                <!-- Step 1 -->
-                <div class="flex items-center mb-4 md:mb-0 relative">
-                    <div class="w-10 h-10 rounded-full bg-[#AC87C5] flex items-center justify-center text-white font-bold shadow-md z-10">
-                        1
-                    </div>
-                    <div class="ml-3 text-sm md:text-base font-medium text-gray-700 whitespace-nowrap">Vehicle Selected</div>
-                </div>
-                
-                <!-- Connector 1 -->
-                <div class="hidden md:block w-24 h-1 bg-gradient-to-r from-[#AC87C5] to-[#756AB6] mx-2"></div>
-                <div class="md:hidden h-8 w-1 bg-gradient-to-b from-[#AC87C5] to-[#756AB6] my-1"></div>
-                
-                <!-- Step 2 -->
-                <div class="flex items-center mb-4 md:mb-0 relative">
-                    <div class="w-10 h-10 rounded-full bg-[#AC87C5] flex items-center justify-center text-white font-bold shadow-md z-10">
-                        2
-                    </div>
-                    <div class="ml-3 text-sm md:text-base font-medium text-gray-700 whitespace-nowrap">Choose Service</div>
-                </div>
-                
-                <!-- Connector 2 -->
-                <div class="hidden md:block w-24 h-1 bg-gradient-to-r from-[#AC87C5] to-[#756AB6] mx-2"></div>
-                <div class="md:hidden h-8 w-1 bg-gradient-to-b from-[#AC87C5] to-[#756AB6] my-1"></div>
-                
-                <!-- Step 3 -->
-                <div class="flex items-center relative">
-                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#756AB6] to-[#AC87C5] flex items-center justify-center text-white font-bold shadow-lg ring-2 ring-[#756AB6] ring-offset-2 z-10">
-                        3
-                    </div>
-                    <div class="ml-3 text-sm md:text-base font-bold text-[#756AB6] whitespace-nowrap">Book Appointment</div>
-                </div>
-            </div>
-        </div>  
+
         <!-- Header -->
         <div class="text-center mb-12">
-            <h1 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#4b4188ff] to-[#5f52a9] mb-4">
+            <h1 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#4b4188ff] to-[#5f52a9] mb-2">
                 Book Your Detailing Service
             </h1>
             <p class="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -77,7 +42,7 @@
 <div class="md:flex">
 <!-- Booking Form Section -->
 <div class="w-full p-6 md:p-8">
-  <!-- Store the booking URL in a data attribute -->
+  <!-- Store the booking URL in a data attribute -->  
   <div id="bookingUrl" data-url="{% url 'booking' %}" style="display: none;"></div>
   
   <form id="bookingForm" method="POST" action="{% url 'booking' %}" class="space-y-8" novalidate>
@@ -102,7 +67,7 @@
         <!-- Vehicle Selection -->
         <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:border-indigo-200 transition-colors">
           <p class="text-sm text-gray-500 mb-1">Vehicle</p>
-          <select id="vehicleDropdown" class="w-full p-2 border rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white">
+          <select id="vehicleDropdown" class="w-full p-2 border border-indigo-800 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white">
             <option value="sedan">Sedan/Coupe (2 Seats)</option>
             <option value="suv5">SUV (5 Seats)</option>
             <option value="suv7">Pick Up/7-Seat SUV</option>
@@ -116,8 +81,8 @@
         
         <!-- Service Selection -->
         <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:border-indigo-200 transition-colors" id="your-selection">
-          <p class="text-sm text-gray-500 mb-1">Service</p>
-          <select id="serviceDropdown" class="w-full p-2 border rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white">
+          <p class="text-sm text-gray-500 mb-1">Service</p> 
+          <select id="serviceDropdown" class="w-full p-2 border border-indigo-800 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white">
             <option value="full">Full Detail</option>
             <option value="interior">Interior Detail</option>
             <option value="exterior">Exterior Detail</option>
@@ -131,7 +96,7 @@
         <!-- Package Selection -->
         <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:border-indigo-200 transition-colors">
           <p class="text-sm text-gray-500 mb-1">Package</p>
-          <select id="packageDropdown" class="w-full p-2 border rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white">
+          <select id="packageDropdown" class="w-full p-2 border border-indigo-800 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white">
             <!-- Options will be populated dynamically -->
           </select>
           {{ form.package_type.as_hidden }}
@@ -261,7 +226,7 @@
     </div>
 
     <!-- Order Summary & Submit -->
-    <div class="bg-indigo-50 p-6 rounded-xl border border-indigo-100 mt-8 transition-colors duration-200 hover:border-indigo-200">
+    <div class="bg-indigo-50 p-6 rounded-xl border border-indigo-100 mt-8 transition-colors duration-200 hover:border-indigo-200 hidden">
       <h2 class="text-xl font-bold text-indigo-800 mb-5 flex items-center">
         <svg class="w-5 h-5 text-indigo-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
           <path fill-rule="evenodd" d="M10 2a4 4 0 00- 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1  00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd"></path>
@@ -294,13 +259,14 @@
         </div> 
       </div>
       
-      <button type="submit" class="w-full bg-gradient-to-r from-[#4b4188ff] to-[#5f52a9] hover:from-[#6f62c4] hover:to-[#7268ae] text-white font-bold py-3 px-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 flex items-center justify-center">
+      
+    </div>
+    <button type="submit" class="w-full bg-gradient-to-r from-[#4b4188ff] to-[#5f52a9] hover:from-[#6f62c4] hover:to-[#7268ae] text-white font-bold py-3 px-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 flex items-center justify-center">
         <svg class="w-5 h-5 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
         </svg>
-        Confirm Appointment
+        Request Appointment
       </button>
-    </div>
   </form>
 </div>
 </div>
