@@ -310,8 +310,14 @@
   .top-3 {
     top: calc(var(--spacing) * 3);
   }
+  .-right-6 {
+    right: calc(var(--spacing) * -6);
+  }
   .-right-8 {
     right: calc(var(--spacing) * -8);
+  }
+  .-right-10 {
+    right: calc(var(--spacing) * -10);
   }
   .-right-20 {
     right: calc(var(--spacing) * -20);
@@ -346,20 +352,17 @@
   .bottom-28 {
     bottom: calc(var(--spacing) * 28);
   }
-  .bottom-32 {
-    bottom: calc(var(--spacing) * 32);
-  }
   .bottom-34 {
     bottom: calc(var(--spacing) * 34);
+  }
+  .bottom-36 {
+    bottom: calc(var(--spacing) * 36);
   }
   .bottom-38 {
     bottom: calc(var(--spacing) * 38);
   }
   .bottom-40 {
     bottom: calc(var(--spacing) * 40);
-  }
-  .bottom-42 {
-    bottom: calc(var(--spacing) * 42);
   }
   .-left-20 {
     left: calc(var(--spacing) * -20);
@@ -430,6 +433,9 @@
     .container {
       max-width: 96rem;
     }
+  }
+  .m-2 {
+    margin: calc(var(--spacing) * 2);
   }
   .mx-2 {
     margin-inline: calc(var(--spacing) * 2);
@@ -934,6 +940,14 @@
   .rounded-xl {
     border-radius: var(--radius-xl);
   }
+  .rounded-l-lg {
+    border-top-left-radius: var(--radius-lg);
+    border-bottom-left-radius: var(--radius-lg);
+  }
+  .rounded-l-xl {
+    border-top-left-radius: var(--radius-xl);
+    border-bottom-left-radius: var(--radius-xl);
+  }
   .rounded-tr-lg {
     border-top-right-radius: var(--radius-lg);
   }
@@ -1066,9 +1080,6 @@
   .bg-blue-200 {
     background-color: var(--color-blue-200);
   }
-  .bg-blue-600 {
-    background-color: var(--color-blue-600);
-  }
   .bg-gray-50 {
     background-color: var(--color-gray-50);
   }
@@ -1164,10 +1175,6 @@
   }
   .from-\[\#756AB6\] {
     --tw-gradient-from: #756AB6;
-    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
-  }
-  .from-\[\#AC87C5\] {
-    --tw-gradient-from: #AC87C5;
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
   .from-\[\#FBFBFB\] {
@@ -1649,22 +1656,11 @@
     --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
-  .ring-2 {
-    --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .ring-\[\#756AB6\] {
-    --tw-ring-color: #756AB6;
-  }
   .ring-purple-200 {
     --tw-ring-color: var(--color-purple-200);
   }
   .ring-slate-200 {
     --tw-ring-color: var(--color-slate-200);
-  }
-  .ring-offset-2 {
-    --tw-ring-offset-width: 2px;
-    --tw-ring-offset-shadow: var(--tw-ring-inset,) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   }
   .blur {
     --tw-blur: blur(8px);
@@ -1894,11 +1890,6 @@
     }
   }
   @media (hover: hover) {
-    .hover\:bg-blue-700:hover {
-      background-color: var(--color-blue-700);
-    }
-  }
-  @media (hover: hover) {
     .hover\:bg-gray-50:hover {
       background-color: var(--color-gray-50);
     }
@@ -1938,6 +1929,11 @@
   @media (hover: hover) {
     .hover\:text-\[\#5f52a9\]:hover {
       color: #5f52a9;
+    }
+  }
+  @media (hover: hover) {
+    .hover\:text-\[\#9a76b3\]:hover {
+      color: #9a76b3;
     }
   }
   @media (hover: hover) {
@@ -2046,6 +2042,21 @@
     }
   }
   @media (width >= 48rem) {
+    .md\:bottom-4 {
+      bottom: calc(var(--spacing) * 4);
+    }
+  }
+  @media (width >= 48rem) {
+    .md\:bottom-6 {
+      bottom: calc(var(--spacing) * 6);
+    }
+  }
+  @media (width >= 48rem) {
+    .md\:bottom-10 {
+      bottom: calc(var(--spacing) * 10);
+    }
+  }
+  @media (width >= 48rem) {
     .md\:left-6 {
       left: calc(var(--spacing) * 6);
     }
@@ -2123,11 +2134,6 @@
   @media (width >= 48rem) {
     .md\:p-8 {
       padding: calc(var(--spacing) * 8);
-    }
-  }
-  @media (width >= 48rem) {
-    .md\:p-12 {
-      padding: calc(var(--spacing) * 12);
     }
   }
   @media (width >= 48rem) {
