@@ -2,46 +2,88 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Appointment Confirmation</title>
+    <title>Appointment Request</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        .header { background-color: #4b4188; color: white; padding: 20px; text-align: center; }
-        .content { background-color: #f9f9f9; padding: 20px; }
-        .footer { background-color: #eee; padding: 10px; text-align: center; font-size: 12px; }
-        .booking-details { margin: 15px 0; }
-        .detail-item { margin: 8px 0; }
+        body { 
+            font-family: Arial, sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container { 
+            max-width: 600px; 
+            margin: 30px auto; 
+            background: #ffffff; 
+            border-radius: 10px; 
+            overflow: hidden; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .header { 
+            background-color: #4b4188; 
+            color: white; 
+            padding: 25px; 
+            text-align: center; 
+        }
+        .header h1 { margin: 0; font-size: 24px; }
+        .header h2 { margin: 8px 0 0; font-weight: 400; font-size: 18px; }
+        .content { padding: 25px; background-color: #fafafa; }
+        .content p { margin-bottom: 15px; }
+        .booking-details { 
+            background: #fff; 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            padding: 15px; 
+            margin: 20px 0; 
+        }
+        .booking-details h3 { margin-top: 0; color: #4b4188; font-size: 18px; }
+        .detail-item { margin: 10px 0; }
+        .footer { 
+            background-color: #f0f0f0; 
+            padding: 15px; 
+            text-align: center; 
+            font-size: 13px; 
+            color: #555; 
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Header -->
         <div class="header">
-            <h1>Shine Car Detailing</h1>
-            <h2>Appointment Confirmation</h2>
+            <h1>ShineDrive Detailing</h1>
+            <h2>Appointment Request Received</h2>
         </div>
         
+        <!-- Content -->
         <div class="content">
-            <p>Dear {{ booking.full_name }},</p>
-            <p>Thank you for booking with Shine Car Detailing! Your appointment has been confirmed.</p>
+            <p>Hi {{ booking.full_name }},</p>
+            <p>We’ve received your appointment request with <strong>Shine Car Detailing</strong>.  
+            Our team will give you a quick call or text shortly to confirm your booking details and finalize your appointment.</p>
             
             <div class="booking-details">
-                <h3>Appointment Details:</h3>
+                <h3>Your Requested Details</h3>
                 <div class="detail-item"><strong>Service:</strong> {{ service_type_display }} - {{ package_type_display }}</div>
                 <div class="detail-item"><strong>Vehicle:</strong> {{ vehicle_type_display }}</div>
-                <div class="detail-item"><strong>Date:</strong> {{ booking_date }}</div>
+                <div class="detail-item"><strong>Preferred Date:</strong> {{ booking_date }}</div>
                 {% if booking.special_requests %}
                 <div class="detail-item"><strong>Special Requests:</strong> {{ booking.special_requests }}</div>
                 {% endif %}
             </div>
             
-            <p>We look forward to serving you! If you need to make any changes to your appointment, please contact us at least 24 hours in advance.</p>
+            <p>If you’d like to make changes before our call, feel free to reach us at:</p>
+            <p><strong>+1 548 398 7555</strong> or <a href="mailto:Shinedrive2024@gmail.com">Shinedrive2024@gmail.com</a></p>
             
-            <p>Best regards,<br>The Shine Car Detailing Team</p>
+            <p>Thank you for choosing us — we look forward to making your car shine like new!</p>
+            
+            <p>Best regards,<br><strong>The Shine Car Detailing Team</strong></p>
         </div>
         
+        <!-- Footer -->
         <div class="footer">
             <p>© {% now "Y" %} Shine Car Detailing. All rights reserved.</p>
-            <p>Contact us: +1 548 398 7555 | Shinedrive2024@gmail.com</p>
+            <p>Waterloo • Kitchener • Cambridge & Surroundings</p>
         </div>
     </div>
 </body>
