@@ -4,7 +4,7 @@
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "Full Car Detailing Services",
-  "description": "Comprehensive full car detailing packages including interior and exterior cleaning, paint correction, and ceramic coating for a showroom shine.",
+  "description": "Comprehensive full car detailing packages including interior and exterior cleaning and ceramic coating for a showroom shine.",
   "url": "https://shinedrivedetailing.com/detailing/full_detail",
   "provider": {
     "@type": "LocalBusiness",
@@ -82,8 +82,7 @@
 }
 </script>
 
-
-
+ 
 <!-- Hero Section -->
 <section class="relative h-screen flex items-center justify-center bg-gray-900">
     <div class="absolute inset-0 bg-black opacity-50"></div>
@@ -101,65 +100,176 @@
     </div>
 </section>
 
-<!-- Service Intro -->
-<section class="py-16 bg-white">
+<!-- Modern Process Section -->
+<section class="py-16 bg-[#FBFBFB] pt-26" id="processSection">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Complete Auto Detailing Process</h2>
+            <h2 class="text-3xl font-bold text-black mb-4">How We Bring Your Car Back to Life</h2>
             <div class="w-20 h-1 bg-[#756AB6] mx-auto mb-6"></div>
             <p class="text-gray-600 max-w-3xl mx-auto">
-                Our full car detailing services combine meticulous interior and exterior treatments to completely rejuvenate your
-                vehicle. Whether you need maintenance cleaning or deep car restoration, we have the perfect package for your needs.
+                Each package follows a systematic process designed to match your car’s needs. Select your level of care to see what’s included.
             </p>
+
+            <!-- Package Selector -->
+            <div class="flex justify-center gap-4 mt-8 flex-wrap">
+                <button class="package-btn px-6 py-3 rounded-lg font-medium transition-all duration-300 bg-white border border-[#756AB6] text-[#756AB6] hover:bg-[#756AB6] hover:text-white shadow-sm" data-package="bronze">
+                    Bronze Process
+                </button>
+                <button class="package-btn px-6 py-3 rounded-lg font-medium transition-all duration-300 bg-white border border-[#756AB6] text-[#756AB6] hover:bg-[#756AB6] hover:text-white shadow-sm" data-package="gold">
+                    Gold Process
+                </button>
+                <button class="package-btn px-6 py-3 rounded-lg font-medium transition-all duration-300 bg-[#756AB6] text-white shadow-md" data-package="platinum">
+                    Platinum Process
+                </button>
+            </div>
         </div>
 
-        <!-- Benefits Grid -->
-        <div class="grid md:grid-cols-3 gap-8 mb-16">
-            <div class="bg-gray-50 p-6 rounded-lg text-center">
-                <div class="w-16 h-16 bg-[#756AB6] rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                    </svg>
+        <!-- Process Steps Container -->
+        <div class="process-container">
+
+            <!-- Bronze Process -->
+            <div class="process-content hidden" data-process="bronze">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 text-center hover:border-[#AC87C5] transition-all">
+                        <i class="fa-solid fa-soap text-[#AC87C5] text-3xl mb-3"></i>
+                        <h3 class="text-lg font-semibold mb-2 text-[#756AB6]">Vacuum & Interior Clean</h3>
+                        <p class="text-gray-600 text-sm">Complete vacuum of all surfaces, wipe & condition LVP, and clean windows/vents.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 text-center hover:border-[#AC87C5] transition-all">
+                        <i class="fas fa-car-side text-[#AC87C5] text-3xl mb-3"></i>
+                        <h3 class="text-lg font-semibold mb-2 text-[#756AB6]">Mat & Surface Wash</h3>
+                        <p class="text-gray-600 text-sm">Rubber mat wash and basic surface cleaning to refresh your car’s look.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 text-center hover:border-[#AC87C5] transition-all">
+                        <i class="fas fa-hand-sparkles text-[#AC87C5] text-3xl mb-3"></i>
+                        <h3 class="text-lg font-semibold mb-2 text-[#756AB6]">Exterior Hand Wash</h3>
+                        <p class="text-gray-600 text-sm">Gentle hand wash, wheel cleaning, and towel drying for a clean finish.</p>
+                    </div>
                 </div>
-                <h3 class="text-xl font-semibold mb-2 text-gray-800">Efficient Full Detailing</h3>
-                <p class="text-gray-600">Most full detailing services completed efficiently in 2-4 hours depending on package and vehicle size.</p>
             </div>
 
-            <div class="bg-gray-50 p-6 rounded-lg text-center">
-                <div class="w-16 h-16 bg-[#756AB6] rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
-                        </path>
-                    </svg>
+            <!-- Gold Process -->
+            <div class="process-content hidden" data-process="gold">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 text-center hover:border-[#AC87C5] transition-all">
+                        <i class="fas fa-broom text-[#AC87C5] text-3xl mb-3"></i>
+                        <h3 class="text-lg font-semibold mb-2 text-[#756AB6]">Enhanced Interior</h3>
+                        <p class="text-gray-600 text-sm">Drill brush vacuum, air dust removal, LVP polishing, and seats/floor shampoo.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 text-center hover:border-[#AC87C5] transition-all">
+                        <i class="fas fa-tint text-[#AC87C5] text-3xl mb-3"></i>
+                        <h3 class="text-lg font-semibold mb-2 text-[#756AB6]">Mat & Stain Care</h3>
+                        <p class="text-gray-600 text-sm">Rubber/fabric mats washed and salt stains removed for a fresh, clean finish.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 text-center hover:border-[#AC87C5] transition-all">
+                        <i class="fas fa-water text-[#AC87C5] text-3xl mb-3"></i>
+                        <h3 class="text-lg font-semibold mb-2 text-[#756AB6]">Enhanced Exterior</h3>
+                        <p class="text-gray-600 text-sm">Hand wash, wheel cleaning, and towel dry to restore shine.</p>
+                    </div>
                 </div>
-                <h3 class="text-xl font-semibold mb-2 text-gray-800">Premium Detailing Products</h3>
-                <p class="text-gray-600">We use only the highest quality, professional-grade car detailing products for superior results.</p>
             </div>
 
-            <div class="bg-gray-50 p-6 rounded-lg text-center">
-                <div class="w-16 h-16 bg-[#756AB6] rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z">
-                        </path>
-                    </svg>
+            <!-- Platinum Process (default visible) -->
+            <div class="process-content" data-process="platinum">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 text-center hover:border-[#AC87C5] transition-all">
+                        <i class="fas fa-spray-can-sparkles text-[#AC87C5] text-3xl mb-3"></i>
+                        <h3 class="text-lg font-semibold mb-2 text-[#756AB6]">Interior Restoration</h3>
+                        <p class="text-gray-600 text-sm">Drill brush vacuum, air dust removal, LVP polish, shampoo, and steam clean seats & floors.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 text-center hover:border-[#AC87C5] transition-all">
+                        <i class="fas fa-pump-soap text-[#AC87C5] text-3xl mb-3"></i>
+                        <h3 class="text-lg font-semibold mb-2 text-[#756AB6]">Mat & Stain Removal</h3>
+                        <p class="text-gray-600 text-sm">Rubber/fabric mats cleaned and tough salt stains removed completely.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 text-center hover:border-[#AC87C5] transition-all">
+                        <i class="fas fa-car-side text-[#AC87C5] text-3xl mb-3"></i>
+                        <h3 class="text-lg font-semibold mb-2 text-[#756AB6]">Exterior Restoration</h3>
+                        <p class="text-gray-600 text-sm">Hand wash, rim & wheel cleaning, and streak-free towel dry for a premium look.</p>
+                    </div>
                 </div>
-                <h3 class="text-xl font-semibold mb-2 text-gray-800">Certified Auto Detailers</h3>
-                <p class="text-gray-600">Our auto detailers are trained professionals with years of experience in car restoration.</p>
             </div>
+
         </div>
     </div>
 </section>
+
+
+<!-- Service Intro -->
+<section class="py-20 bg-gradient-to-b from-white to-gray-50">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <!-- Heading -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">
+        Complete Car Care, Three Ways
+      </h2>
+      <div class="w-24 h-1 bg-[#756AB6] mx-auto mb-6 rounded-full"></div>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        Whether you want a quick refresh or a full transformation, our detailing packages 
+        restore your vehicle’s beauty and protect it for the road ahead. 
+        Choose the care level that fits your lifestyle.
+      </p>
+    </div>
+
+    <!-- Benefits Grid -->
+    <div class="grid md:grid-cols-3 gap-10">
+      <!-- Card 1 -->
+      <div class="group bg-white shadow-md hover:shadow-xl transition-all rounded-2xl p-8 text-center border border-gray-100">
+        <div class="w-16 h-16 bg-[#756AB6] rounded-full flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Time-Friendly Service</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Most vehicles are detailed in just <span class="font-medium text-gray-800">2–4 hours</span>, 
+          so you can get back on the road the same day.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="group bg-white shadow-md hover:shadow-xl transition-all rounded-2xl p-8 text-center border border-gray-100">
+        <div class="w-16 h-16 bg-[#756AB6] rounded-full flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Certified Expert Care</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Our <span class="font-medium text-gray-800">trained professionals</span> use premium-grade 
+          products and proven techniques to ensure flawless results.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="group bg-white shadow-md hover:shadow-xl transition-all rounded-2xl p-8 text-center border border-gray-100">
+        <div class="w-16 h-16 bg-[#756AB6] rounded-full flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Showroom-Worthy Results</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Experience that <span class="font-medium text-gray-800">brand-new feeling</span> again— 
+          spotless interiors and mirror-like exteriors every time.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- Before & After Section -->
 <div class="bg-[#FBFBFB] py-16 px-5 max-w-screen mx-auto">
     <!-- Section Header -->
     <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#AC87C5] mb-4">Full Detailing Transformation Gallery</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-[#756AB6] mb-4">Full Detailing Transformation Gallery</h2>
         <p class="text-lg text-gray-600 max-w-3xl mx-auto">
             See the dramatic results of our remium full car detailing services
         </p>
@@ -254,7 +364,7 @@
                 </div>
             </div>
             <div class="p-6">
-                <h3 class="text-xl font-bold text-[#756AB6] mb-2">Full Detailing with Paint Correction</h3>
+                <h3 class="text-xl font-bold text-[#756AB6] mb-2">Full Detailing</h3>
                 <p class="text-gray-600 mb-4">Scratch removal and ceramic coating included in our full detail service</p>
                 <div class="flex justify-between items-center">
                     <span class="text-[#AC87C5] font-bold">Gold Full Detail Package</span>
@@ -957,146 +1067,6 @@
 </section>
 
 
-
-<!-- Modern Process Section -->
-<section class="py-16 bg-[#FBFBFB]" id="processSection">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-[#AC87C5] mb-4">Our Meticulous Full Car Detailing Process</h2>
-            <div class="w-20 h-1 bg-[#756AB6] mx-auto mb-6"></div>
-            <p class="text-gray-600 max-w-3xl mx-auto">
-                Discover the meticulous steps we take to restore your vehicle's beauty with our full auto detailing process.
-            </p>
-
-            <!-- Package Selector -->
-            <div class="flex justify-center gap-4 mt-8 flex-wrap">
-                <button
-                    class="package-btn px-6 py-3 rounded-lg font-medium transition-all duration-300 bg-white border border-[#756AB6] text-[#756AB6] hover:bg-[#756AB6] hover:text-white shadow-sm"
-                    data-package="bronze">
-                    Bronze Full Detail Process
-                </button>
-                <button
-                    class="package-btn px-6 py-3 rounded-lg font-medium transition-all duration-300 bg-white border border-[#756AB6] text-[#756AB6] hover:bg-[#756AB6] hover:text-white shadow-sm"
-                    data-package="gold">
-                    Gold Full Detail Process
-                </button>
-                <button
-                    class="package-btn px-6 py-3 rounded-lg font-medium transition-all duration-300 bg-[#756AB6] text-white shadow-md"
-                    data-package="platinum">
-                    Platinum Full Detail Process
-                </button>
-            </div>
-        </div>
-
-        <!-- Process Steps Container -->
-        <div class="process-container">
-            <!-- Bronze Process -->
-            <div class="process-content hidden" data-process="bronze">
-                <div class="grid md:grid-cols-4 gap-8">
-                    <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#AC87C5] transition-all">
-                        <div
-                            class="w-16 h-16 bg-[#AC87C5] rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold">
-                            1</div>
-                        <h3 class="text-lg font-semibold mb-2 text-[#756AB6]">Interior Bronze Detailing</h3>
-                        <p class="text-gray-600 text-sm">Deep vacuuming, surface cleaning, and odor elimination for your car interior.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#AC87C5] transition-all">
-                        <div
-                            class="w-16 h-16 bg-[#AC87C5] rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold">
-                            2</div>
-                        <h3 class="text-lg font-semibold mb-2 text-[#756AB6]">Exterior Bronze Wash</h3>
-                        <p class="text-gray-600 text-sm">Two-bucket hand wash with precise wheel detailing for your car's exterior.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#AC87C5] transition-all">
-                        <div
-                            class="w-16 h-16 bg-[#AC87C5] rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold">
-                            3</div>
-                        <h3 class="text-lg font-semibold mb-2 text-[#756AB6]">Bronze Paint Protection</h3>
-                        <p class="text-gray-600 text-sm">Spray wax and interior protectants applied for basic aint protection.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#AC87C5] transition-all">
-                        <div
-                            class="w-16 h-16 bg-[#AC87C5] rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold">
-                            4</div>
-                        <h3 class="text-lg font-semibold mb-2 text-[#756AB6]">Final Car Detailing Touches</h3>
-                        <p class="text-gray-600 text-sm">Streak-free glass and premium air freshener for a complete car detail.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Gold Process -->
-            <div class="process-content hidden" data-process="gold">
-                <div class="grid md:grid-cols-4 gap-8">
-                    <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#AC87C5] transition-all">
-                        <div
-                            class="w-16 h-16 bg-[#AC87C5] rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold">
-                            1</div>
-                        <h3 class="text-lg font-semibold mb-2 text-[#756AB6]">Gold Interior Detailing Revival</h3>
-                        <p class="text-gray-600 text-sm">Shampoo carpets, condition leather, and deep clean all interior surfaces for a gold car detailing experience.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#AC87C5] transition-all">
-                        <div
-                            class="w-16 h-16 bg-[#AC87C5] rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold">
-                            2</div>
-                        <h3 class="text-lg font-semibold mb-2 text-[#756AB6]">Gold Paint Decontamination & Polish</h3>
-                        <p class="text-gray-600 text-sm">Clay bar treatment to remove embedded contaminants, followed by light machine polish to restore gloss and clarity for car paint enhancement.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#AC87C5] transition-all">
-                        <div
-                            class="w-16 h-16 bg-[#AC87C5] rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold">
-                            3</div>
-                        <h3 class="text-lg font-semibold mb-2 text-[#756AB6]">Gold Paint Enhancement & Protection</h3>
-                        <p class="text-gray-600 text-sm">Light machine polish to restore gloss and clarity with a 6-month ceramic spray sealant applied to all surfaces for long-lasting car protection.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#AC87C5] transition-all">
-                        <div
-                            class="w-16 h-16 bg-[#AC87C5] rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold">
-                            4</div>
-                        <h3 class="text-lg font-semibold mb-2 text-[#756AB6]">Gold Ceramic Protection & Finish</h3>
-                        <p class="text-gray-600 text-sm">6-month ceramic spray sealant applied to all surfaces for durable ceramic coating protection.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Platinum Process (default visible) -->
-            <div class="process-content" data-process="platinum">
-                <div class="grid md:grid-cols-4 gap-8">
-                    <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#AC87C5] transition-all">
-                        <div
-                            class="w-16 h-16 bg-[#AC87C5] rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold">
-                            1</div>
-                        <h3 class="text-lg font-semibold mb-2 text-[#756AB6]">Platinum Interior Car Detailing</h3>
-                        <p class="text-gray-600 text-sm">Steam cleaning, stain removal, and complete odor elimination for luxury car interiors.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#AC87C5] transition-all">
-                        <div
-                            class="w-16 h-16 bg-[#AC87C5] rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold">
-                            2</div>
-                        <h3 class="text-lg font-semibold mb-2 text-[#756AB6]">Platinum Paint Correction Service</h3>
-                        <p class="text-gray-600 text-sm">Multi-stage polishing to remove 90%+ of defects, a truly remium paint correction service.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#AC87C5] transition-all">
-                        <div
-                            class="w-16 h-16 bg-[#AC87C5] rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold">
-                            3</div>
-                        <h3 class="text-lg font-semibold mb-2 text-[#756AB6]">Professional Ceramic Coating</h3>
-                        <p class="text-gray-600 text-sm">Professional-grade ceramic coating application for ultimate paint protection.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#AC87C5] transition-all">
-                        <div
-                            class="w-16 h-16 bg-[#AC87C5] rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold">
-                            4</div>
-                        <h3 class="text-lg font-semibold mb-2 text-[#756AB6]">Platinum Finishing Touches</h3>
-                        <p class="text-gray-600 text-sm">Glass coating, trim restoration, and leather conditioning for a showroom finish.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
 <!-- FAQ Section -->
 <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1179,22 +1149,6 @@
                     <div class="faq-content hidden p-4 pt-0">
                         <p class="text-gray-600">
                             We require at least 24 hours notice for cancellations or rescheduling of full detailing appointments. Appointments cancelled with less than 24 hours notice may be subject to a $25 cancellation fee. No-shows will be charged 50% of the service price.
-                        </p>
-                    </div>
-                </div>
-                <div class="border border-gray-200 rounded-lg overflow-hidden">
-                    <button
-                        class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 focus:outline-none">
-                        <h3 class="text-lg font-medium text-left text-gray-800">Can I get mobile paint correction or ceramic coating with a full detail?</h3>
-                        <svg class="w-5 h-5 text-[#756AB6] transform transition-transform duration-300" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </button>
-                    <div class="faq-content hidden p-4 pt-0">
-                        <p class="text-gray-600">
-                            Yes! Our mobile service is fully equipped to perform professional-grade aint correction and ceramic coating as part of a full detailing package. We bring specialized polishing equipment, proper lighting, and all necessary materials. These services do require a shaded or covered area - we'll discuss the best setup for your location when you book your full detail.
                         </p>
                     </div>
                 </div>
