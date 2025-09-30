@@ -818,9 +818,6 @@
   .gap-2 {
     gap: calc(var(--spacing) * 2);
   }
-  .gap-3 {
-    gap: calc(var(--spacing) * 3);
-  }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
   }
@@ -1597,6 +1594,9 @@
   .italic {
     font-style: italic;
   }
+  .font-stretch-100\% {
+    font-stretch: 100%;
+  }
   .no-underline {
     text-decoration-line: none;
   }
@@ -1605,9 +1605,6 @@
   }
   .underline-offset-4 {
     text-underline-offset: 4px;
-  }
-  .placeholder-\[\#e2d7ff\]::placeholder {
-    color: #e2d7ff;
   }
   .opacity-0 {
     opacity: 0%;
@@ -1999,18 +1996,12 @@
   .focus\:border-indigo-500:focus {
     border-color: var(--color-indigo-500);
   }
-  .focus\:border-transparent:focus {
-    border-color: transparent;
-  }
   .focus\:ring-2:focus {
     --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .focus\:ring-\[\#756AB6\]:focus {
     --tw-ring-color: #756AB6;
-  }
-  .focus\:ring-\[\#e2d7ff\]:focus {
-    --tw-ring-color: #e2d7ff;
   }
   .focus\:ring-indigo-500:focus {
     --tw-ring-color: var(--color-indigo-500);
