@@ -343,11 +343,11 @@
       }
   };
 
-  // Default packages for each service type
+ // Default packages for each service type
   const defaultPackages = {
       'full': 'gold_full',
       'interior': 'gold_interior',  
-      'exterior': 'platinum_exterior'
+      'exterior': 'gold_exterior'
   };
 
   document.addEventListener('DOMContentLoaded', function() {
@@ -377,21 +377,27 @@
       updatePackageDisplay(vehicleType, serviceType, packageType);
       updateSummary(vehicleType, serviceType, packageType);
       
+      // Update URL without reloading (initial setup)
+      updateURL(vehicleType, serviceType, packageType);
+      
       // Set minimum date to today
       const today = new Date().toISOString().split('T')[0];
       document.getElementById('id_date').min = today;
       
-      // Add event listeners to dropdowns
+      // Add event listeners to dropdowns (NO PAGE RELOADS)
       document.getElementById('vehicleDropdown').addEventListener('change', function() {
           const vehicle = this.value;
           const service = document.getElementById('serviceDropdown').value;
-          const defaultPackage = defaultPackages[service];
+          const package = document.getElementById('packageDropdown').value;
           
           // Update hidden form field
           document.getElementById('id_vehicle_type').value = vehicle;
           
-          // Reload page with new parameters
-          window.location.href = "{% url 'booking' %}?vehicle=" + vehicle + "&service=" + service + "&package=" + defaultPackage + "#your-selection";
+          // Update package dropdown and summary WITHOUT reloading
+          populatePackageDropdown(vehicle, service, package);
+          updatePackageDisplay(vehicle, service, package);
+          updateSummary(vehicle, service, package);
+          updateURL(vehicle, service, package);
       });
       
       document.getElementById('serviceDropdown').addEventListener('change', function() {
@@ -402,8 +408,11 @@
           // Update hidden form field
           document.getElementById('id_service_type').value = service;
           
-          // Reload page with new parameters
-          window.location.href = "{% url 'booking' %}?vehicle=" + vehicle + "&service=" + service + "&package=" + defaultPackage + "#your-selection";  
+          // Update package dropdown and summary WITHOUT reloading
+          populatePackageDropdown(vehicle, service, defaultPackage);
+          updatePackageDisplay(vehicle, service, defaultPackage);
+          updateSummary(vehicle, service, defaultPackage);
+          updateURL(vehicle, service, defaultPackage);
       });
       
       document.getElementById('packageDropdown').addEventListener('change', function() {
@@ -411,10 +420,18 @@
           const vehicle = document.getElementById('vehicleDropdown').value;
           const service = document.getElementById('serviceDropdown').value;
           
-          // Reload page with new parameters
-          window.location.href = "{% url 'booking' %}?vehicle=" + vehicle + "&service=" + service + "&package=" + packageValue + "#your-selection";
+          // Update display WITHOUT reloading
+          updatePackageDisplay(vehicle, service, packageValue);
+          updateSummary(vehicle, service, packageValue);
+          updateURL(vehicle, service, packageValue);
       });
   });
+  
+  // Function to update URL without page reload
+  function updateURL(vehicle, service, package) {
+      const newUrl = `${window.location.pathname}?vehicle=${vehicle}&service=${service}&package=${package}#your-selection`;
+      window.history.replaceState({}, '', newUrl);
+  }
   
   function populatePackageDropdown(vehicleType, serviceType, selectedPackage) {
       const packageDropdown = document.getElementById('packageDropdown');
@@ -423,6 +440,10 @@
           return;
       }
       
+      // Store current selection
+      const currentSelection = packageDropdown.value;
+      
+      // Clear and repopulate
       packageDropdown.innerHTML = '';
       
       const packages = pricing[vehicleType]?.[serviceType] || {};
@@ -437,7 +458,7 @@
           packageDropdown.appendChild(option);
       }
       
-      // If the selected package doesn't exist in the new options, select the first one
+      // If selected package doesn't exist, select first available
       if (!packages[selectedPackage] && Object.keys(packages).length > 0) {
           const firstPackage = Object.keys(packages)[0];
           packageDropdown.value = firstPackage;
