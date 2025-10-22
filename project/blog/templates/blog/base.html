@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block extra_head %}
+<meta name="description" content="{{ meta_description|default:'Default blog description' }}">
+<meta property="og:title" content="{{ meta_title|default:'Blog' }}">
+<meta property="og:description" content="{{ meta_description|default:'Default blog description' }}">
+<meta property="og:type" content="website">
+{% if canonical_url %}<link rel="canonical" href="{{ canonical_url }}">{% endif %}
+{% endblock %}
+
+{% block content %}
+{% endblock %}

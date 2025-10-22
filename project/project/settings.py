@@ -46,9 +46,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
     'import_export',
+    'ckeditor',
+    'ckeditor_uploader',
     'app',
     'tailwind',
-    'tailwindapp'
+    'tailwindapp',
+    'blog',
 ]
 
 TAILWIND_APP_NAME = 'tailwindapp'
@@ -146,6 +149,65 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# CKEditor Configuration
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_IMAGE_BACKEND = "pillow"
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 300,
+        'width': '100%',
+        'extraPlugins': ','.join([
+            'codesnippet',
+            'widget',
+            'dialog',
+        ]),
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source'],
+            ['Image', 'Table', 'HorizontalRule'],
+            ['Styles', 'Format', 'Font', 'FontSize'],
+            ['TextColor', 'BGColor'],
+            ['Maximize'],
+        ],
+        'toolbar': 'Custom',
+        'stylesSet': [
+            {'name': 'Heading 1', 'element': 'h1'},
+            {'name': 'Heading 2', 'element': 'h2'},
+            {'name': 'Heading 3', 'element': 'h3'},
+            {'name': 'Heading 4', 'element': 'h4'},
+            {'name': 'Paragraph', 'element': 'p'},
+            {'name': 'Blockquote', 'element': 'blockquote'},
+        ],
+    },
+    'blog_content': {
+        'toolbar': 'Custom',
+        'height': 400,
+        'width': '100%',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent'],
+            ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source'],
+            ['Image', 'Table', 'HorizontalRule'],
+            ['Styles', 'Format'],
+            ['TextColor', 'BGColor'],
+            ['Maximize'],
+        ],
+        'stylesSet': [
+            {'name': 'Heading 1', 'element': 'h1', 'styles': {'color': '#1f2937', 'font-size': '2rem', 'font-weight': 'bold'}},
+            {'name': 'Heading 2', 'element': 'h2', 'styles': {'color': '#374151', 'font-size': '1.5rem', 'font-weight': 'bold'}},
+            {'name': 'Heading 3', 'element': 'h3', 'styles': {'color': '#4b5563', 'font-size': '1.25rem', 'font-weight': 'bold'}},
+            {'name': 'Paragraph', 'element': 'p', 'styles': {'line-height': '1.7', 'margin-bottom': '1rem'}},
+            {'name': 'Blockquote', 'element': 'blockquote', 'styles': {'border-left': '4px solid #3b82f6', 'background-color': '#f8fafc', 'padding': '1rem', 'font-style': 'italic'}},
+            {'name': 'Highlight Box', 'element': 'div', 'attributes': {'class': 'highlight-box'}},
+        ],
+    }
+}
 
 # Add your business email address
 BUSINESS_EMAIL = 'rijul.vishal.ahuja@gmail.com'

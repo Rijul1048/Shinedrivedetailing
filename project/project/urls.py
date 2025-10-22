@@ -12,7 +12,9 @@ sitemaps = {
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
     path('',include('app.urls')),
+    path('blog/', include('blog.urls', namespace='blog')),
 
    
     path('preview-404/', views.preview_404, name='preview_404'),

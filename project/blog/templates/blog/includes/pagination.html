@@ -1,0 +1,115 @@
+{% load blog_extras %}
+
+<!-- Desktop Pagination -->
+<nav class="flex items-center justify-center space-x-2 mt-16">
+    <!-- Previous Button -->
+    {% if page_obj.has_previous %}
+    <a href="?{% url_replace request 'page' page_obj.previous_page_number %}" 
+       class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 hover:text-gray-900 transition-all duration-200 shadow-sm">
+        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        Previous
+    </a>
+    {% else %}
+    <span class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-400 bg-gray-100 border border-gray-200 rounded-lg cursor-not-allowed">
+        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        Previous
+    </span>
+    {% endif %}
+
+    <!-- Page Numbers -->
+    <div class="flex items-center space-x-1">
+        {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+            <span class="inline-flex items-center justify-center w-10 h-10 text-sm font-semibold text-white bg-blue-600 rounded-lg shadow-md">
+                {{ num }}
+            </span>
+            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+            <a href="?{% url_replace request 'page' num %}" 
+               class="inline-flex items-center justify-center w-10 h-10 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 hover:text-gray-900 transition-all duration-200 shadow-sm">
+                {{ num }}
+            </a>
+            {% elif num == 1 or num == page_obj.paginator.num_pages %}
+            <a href="?{% url_replace request 'page' num %}" 
+               class="inline-flex items-center justify-center w-10 h-10 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 hover:text-gray-900 transition-all duration-200 shadow-sm">
+                {{ num }}
+            </a>
+            {% elif num == page_obj.number|add:'-4' or num == page_obj.number|add:'4' %}
+            <span class="inline-flex items-center justify-center w-10 h-10 text-sm font-medium text-gray-400">
+                ...
+            </span>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <!-- Next Button -->
+    {% if page_obj.has_next %}
+    <a href="?{% url_replace request 'page' page_obj.next_page_number %}" 
+       class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 hover:text-gray-900 transition-all duration-200 shadow-sm">
+        Next
+        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+    </a>
+    {% else %}
+    <span class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-400 bg-gray-100 border border-gray-200 rounded-lg cursor-not-allowed">
+        Next
+        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+    </span>
+    {% endif %}
+</nav>
+
+<!-- Mobile Pagination -->
+<div class="flex items-center justify-between mt-8 md:hidden">
+    <div>
+        {% if page_obj.has_previous %}
+        <a href="?{% url_replace request 'page' page_obj.previous_page_number %}" 
+           class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-all duration-200 shadow-sm">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Previous
+        </a>
+        {% else %}
+        <span class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-400 bg-gray-100 border border-gray-200 rounded-lg cursor-not-allowed">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Previous
+        </span>
+        {% endif %}
+    </div>
+    
+    <div class="text-sm text-gray-700 bg-gray-50 px-3 py-2 rounded-lg">
+        Page <span class="font-semibold text-blue-600">{{ page_obj.number }}</span> of <span class="font-semibold">{{ page_obj.paginator.num_pages }}</span>
+    </div>
+    
+    <div>
+        {% if page_obj.has_next %}
+        <a href="?{% url_replace request 'page' page_obj.next_page_number %}" 
+           class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-all duration-200 shadow-sm">
+            Next
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+        </a>
+        {% else %}
+        <span class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-400 bg-gray-100 border border-gray-200 rounded-lg cursor-not-allowed">
+            Next
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+        </span>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Page Info -->
+<div class="text-center mt-6 text-sm text-gray-500">
+    Showing {{ page_obj.start_index }} to {{ page_obj.end_index }} of {{ page_obj.paginator.count }} results
+</div>

@@ -1,0 +1,204 @@
+/* Blog Content Styling */
+.blog-content {
+    line-height: 1.7;
+    color: #374151;
+}
+
+/* Typography improvements */
+.blog-content h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.blog-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #374151;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.blog-content h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #4b5563;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Paragraph spacing */
+.blog-content p {
+    margin-bottom: 1.25rem;
+    font-size: 1.125rem;
+    line-height: 1.7;
+}
+
+/* Lists */
+.blog-content ul, .blog-content ol {
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+}
+
+.blog-content li {
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+    line-height: 1.6;
+}
+
+.blog-content ul li {
+    list-style-type: disc;
+}
+
+.blog-content ol li {
+    list-style-type: decimal;
+}
+
+/* Blockquotes */
+.blog-content blockquote {
+    border-left: 4px solid #3b82f6;
+    background-color: #f8fafc;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #475569;
+}
+
+.blog-content blockquote p {
+    margin-bottom: 0;
+    font-size: 1.125rem;
+}
+
+/* Code blocks */
+.blog-content pre {
+    background-color: #1f2937;
+    color: #f9fafb;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin: 1.25rem 0;
+}
+
+.blog-content code {
+    background-color: #f3f4f6;
+    color: #dc2626;
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+}
+
+.blog-content pre code {
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+}
+
+/* Images */
+.blog-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Tables */
+.blog-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background-color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.blog-content th,
+.blog-content td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.blog-content th {
+    background-color: #f9fafb;
+    font-weight: 600;
+    color: #374151;
+}
+
+.blog-content tr:hover {
+    background-color: #f9fafb;
+}
+
+/* Links */
+.blog-content a {
+    color: #2563eb;
+    text-decoration: underline;
+    text-decoration-color: #93c5fd;
+    text-underline-offset: 2px;
+}
+
+.blog-content a:hover {
+    color: #1d4ed8;
+    text-decoration-color: #2563eb;
+}
+
+/* Horizontal rules */
+.blog-content hr {
+    border: none;
+    height: 1px;
+    background-color: #e5e7eb;
+    margin: 2rem 0;
+}
+
+/* Highlight boxes */
+.blog-content .highlight-box {
+    background-color: #fef3c7;
+    border: 1px solid #f59e0b;
+    border-radius: 0.5rem;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.blog-content .highlight-box.warning {
+    background-color: #fef2f2;
+    border-color: #ef4444;
+}
+
+.blog-content .highlight-box.info {
+    background-color: #eff6ff;
+    border-color: #3b82f6;
+}
+
+.blog-content .highlight-box.success {
+    background-color: #f0fdf4;
+    border-color: #22c55e;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .blog-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .blog-content h3 {
+        font-size: 1.25rem;
+    }
+    
+    .blog-content h4 {
+        font-size: 1.125rem;
+    }
+    
+    .blog-content p,
+    .blog-content li {
+        font-size: 1rem;
+    }
+    
+    .blog-content blockquote p {
+        font-size: 1rem;
+    }
+}
