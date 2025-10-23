@@ -20,6 +20,7 @@ class PostListView(ListView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['active_page'] = 'blog'  # This will highlight the blog nav item
         context['meta_title'] = "Blog - Latest Articles"
         context['meta_description'] = "Read our latest blog posts and articles on various topics."
         context['category_list'] = Category.objects.all()
@@ -46,6 +47,9 @@ class PostDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         post = self.object
+        
+        # Add active page for navigation
+        context['active_page'] = 'blog'
         
         # Add SEO meta data
         context['meta_title'] = post.meta_title
@@ -105,6 +109,7 @@ class CategoryPostListView(ListView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['active_page'] = 'blog'  # This will highlight the blog nav item
         context['category'] = self.category
         context['category_list'] = Category.objects.all()  # Add this for related categories
         context['meta_title'] = self.category.meta_title or f"Posts in {self.category.name}"
@@ -126,6 +131,7 @@ class TagPostListView(ListView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['active_page'] = 'blog'  # This will highlight the blog nav item
         context['tag'] = self.tag
         context['meta_title'] = f"Posts tagged with {self.tag.name}"
         context['meta_description'] = f"Browse all posts tagged with {self.tag.name}"
@@ -151,6 +157,7 @@ class SearchResultsView(ListView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['active_page'] = 'blog'  # This will highlight the blog nav item
         query = self.request.GET.get('q', '')
         context['search_query'] = query
         context['meta_title'] = f"Search Results for '{query}'"
