@@ -30,7 +30,7 @@ class BlogCategorySitemap(Sitemap):
 
 class BlogTagSitemap(Sitemap):
     changefreq = 'monthly'
-    priority = 0.5
+    priority = 0.7
     protocol = 'https'
 
     def items(self):
