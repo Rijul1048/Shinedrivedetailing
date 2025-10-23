@@ -1,7 +1,6 @@
 {% extends "blog/base.html" %}
 {% load static %}
-
-{% block title %}{{ meta_title|default:"Blog Category" }}{% endblock %}
+{% load blog_extras %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/blog-content.css' %}">
@@ -31,22 +30,10 @@
 </style>
 {% endblock %}
 
-{% block extra_head %}
-{% if category %}
-<meta property="og:type" content="website">
-<meta property="og:title" content="{{ category.meta_title|default:category.name }}">
-<meta property="og:description" content="{{ category.meta_description|default:category.description }}">
-{% endif %}
-{% if tag %}
-<meta property="og:type" content="website">
-<meta property="og:title" content="Posts tagged with {{ tag.name }}">
-<meta property="og:description" content="Browse all posts tagged with {{ tag.name }}">
-{% endif %}
-{% endblock %}
 
 {% block content %}
 <!-- Hero Section -->
-<div class="category-hero text-white py-20">
+<div class="category-hero text-white py-10 pt-24">
     <div class="container mx-auto px-4">
         <!-- Breadcrumb -->
         <nav class="mb-8">
@@ -64,19 +51,16 @@
         <!-- Category/Tag Header -->
         <div class="text-center">
             {% if category %}
-                <h1 class="text-5xl font-bold mb-6">{{ category.name }}</h1>
-                {% if category.description %}
-                    <p class="text-xl opacity-90 max-w-3xl mx-auto mb-8">{{ category.description }}</p>
-                {% endif %}
+                <h1 class="text-3xl font-bold mb-4">{{ category.name }}</h1>
             {% elif tag %}
-                <h1 class="text-5xl font-bold mb-6">Posts tagged with "{{ tag.name }}"</h1>
-                <p class="text-xl opacity-90 max-w-2xl mx-auto mb-8">Browse all articles related to {{ tag.name }}</p>
+                <h1 class="text-5xl font-bold mb-4">Posts tagged with "{{ tag.name }}"</h1>
+                <p class="text- xl opacity-90 max-w-2xl mx-auto mb-8">Browse all articles related to {{ tag.name }}</p>
             {% endif %}
             
             <!-- Post Count -->
             <div class="mt-6">
                 {% with posts|length as post_count %}
-                    <span class="inline-flex items-center px-4 py-2 bg-white bg-opacity-20 rounded-full text-lg font-medium">
+                    <span class="inline-flex items-center px-4 py-2 bg-white bg-opacity-20 rounded-full text-lg font-medium text-black">
                         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                         </svg>
@@ -89,16 +73,16 @@
 </div>
 
 <!-- Main Content -->
-<div class="container mx-auto px-4 py-16">
+<div class="container mx-auto px-2 py-4">
     <!-- Related Categories/Tags -->
     {% if category and category_list %}
     <div class="mb-12">
-        <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Explore Other Categories</h2>
+        <h2 class="text-2xl font-semibold text-gray-900 mb-2 text-center">Explore Other Categories</h2>
         <div class="flex flex-wrap justify-center gap-3">
             {% for cat in category_list %}
                 {% if cat.slug != category.slug %}
                 <a href="{% url 'blog:category_posts' cat.slug %}" 
-                   class="px-6 py-3 bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition-all duration-300 font-medium hover:scale-105 transform">
+                   class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition-all duration-300 font-medium hover:scale-105 transform">
                     {{ cat.name }}
                 </a>
                 {% endif %}
@@ -118,7 +102,7 @@
     </div>
     {% else %}
     <!-- Empty State -->
-    <div class="text-center py-20">
+    <div class="text-center py-10   ">
         <div class="max-w-lg mx-auto">
             <div class="mb-8">
                 <svg class="w-32 h-32 text-gray-300 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">

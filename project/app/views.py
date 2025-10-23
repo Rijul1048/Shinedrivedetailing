@@ -114,20 +114,33 @@ def booking_view(request):
         if form.is_valid():
             try:
                 booking = form.save()
+                print(f"Booking created successfully: {booking.id} - {booking.full_name}")
                 
                 # Send confirmation email to customer
                 if booking.email:
-                    send_booking_confirmation(booking)
+                    try:
+                        send_booking_confirmation(booking)
+                        print(f"Confirmation email sent to: {booking.email}")
+                    except Exception as email_error:
+                        print(f"Error sending confirmation email: {str(email_error)}")
+                        messages.warning(request, 'Booking created but confirmation email failed to send.')
                 
                 # Send notification email to yourself (business owner)
-                send_booking_notification(booking)
+                try:
+                    send_booking_notification(booking)
+                    print(f"Notification email sent to business owner")
+                except Exception as email_error:
+                    print(f"Error sending notification email: {str(email_error)}")
+                    messages.warning(request, 'Booking created but notification email failed to send.')
                 
                 messages.success(request, 'Booking created successfully!')
                 return redirect('booking_thank_you', slug=booking.slug)
             except Exception as e:
-                # Add more specific error handling
+                print(f"Error creating booking: {str(e)}")
                 messages.error(request, f'Error creating booking: {str(e)}')
-        # If form is not valid, it will fall through and render the template with errors
+        else:
+            print(f"Form errors: {form.errors}")
+            messages.error(request, 'Please correct the errors below.')
     else:
         initial = {
             'vehicle_type': request.GET.get('vehicle', 'sedan'),

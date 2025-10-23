@@ -1,7 +1,7 @@
 {% load blog_extras %}
 
 <!-- Desktop Pagination -->
-<nav class="flex items-center justify-center space-x-2 mt-16">
+<nav class="flex items-center justify-center space-x-2 mt-16 pt-40">
     <!-- Previous Button -->
     {% if page_obj.has_previous %}
     <a href="?{% url_replace request 'page' page_obj.previous_page_number %}" 

@@ -22,6 +22,7 @@ class PostListView(ListView):
         context = super().get_context_data(**kwargs)
         context['meta_title'] = "Blog - Latest Articles"
         context['meta_description'] = "Read our latest blog posts and articles on various topics."
+        context['category_list'] = Category.objects.all()
         return context
 
 class PostDetailView(DetailView):

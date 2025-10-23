@@ -1,7 +1,6 @@
 {% extends "blog/base.html" %}
 {% load static %}
-
-{% block title %}{{ meta_title|default:"Blog" }}{% endblock %}
+{% load blog_extras %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/blog-content.css' %}">
@@ -29,21 +28,18 @@
 
 {% block content %}
 <!-- Hero Section -->
-<div class="hero-gradient text-white py-20">
+<div class="hero-gradient text-white py-10 pt-20 md:pt-32">
     <div class="container mx-auto px-4 text-center">
-        <h1 class="text-5xl font-bold mb-6">Our Blog</h1>
-        <p class="text-xl opacity-90 max-w-2xl mx-auto mb-8">
-            Discover expert tips, industry insights, and the latest trends in car detailing and automotive care.
-        </p>
+        <h1 class="text-5xl font-bold mb-6 text-black">Our Blogs</h1>
         
         <!-- Enhanced Search Form -->
         <div class="max-w-lg mx-auto">
-            <form method="get" action="{% url 'blog:search' %}" class="search-container rounded-2xl p-2 shadow-xl">
+            <form method="get" action="{% url 'blog:search' %}" class="search-container rounded-2xl p-1 shadow-xl">
                 <div class="relative">
                     <input type="text" name="q" value="{{ search_query|default:'' }}" 
                            placeholder="Search articles, tips, and guides..." 
-                           class="w-full px-6 py-4 text-gray-900 rounded-xl border-0 focus:ring-0 focus:outline-none text-lg">
-                    <button type="submit" class="absolute right-3 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-700 transition-colors">
+                           class="w-full px-3 py-2 text-gray-900 rounded-xl border-0 focus:ring-0 focus:outline-none text-sm">
+                    <button type="submit" class="absolute right-3 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white p-1 rounded-lg hover:bg-blue-700 transition-colors">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                         </svg>
@@ -55,38 +51,34 @@
 </div>
 
 <!-- Main Content -->
-<div class="container mx-auto px-4 py-16">
+<div class="container mx-auto px-4 py-6">
     <!-- Category Filter -->
-    <div class="mb-12">
-        <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Browse by Category</h2>
+    <div class="mb-2">
+        <h2 class="text-2xl font-bold text-gray-900 mb-3 text-center">Browse by Category</h2>
         <div class="flex flex-wrap justify-center gap-3">
             <a href="{% url 'blog:post_list' %}" 
-               class="px-6 py-3 bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition-all duration-300 font-medium">
+               class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition-all duration-300 font-medium">
                 All Articles
             </a>
-            <!-- Add dynamic categories here when available -->
-            <a href="#" class="px-6 py-3 bg-blue-100 text-blue-700 rounded-full hover:bg-blue-200 transition-all duration-300 font-medium">
-                Car Care Tips
+            {% for category in category_list %}
+            <a href="{% url 'blog:category_posts' category.slug %}" 
+               class="px-2 py-1 bg-blue-100 text-blue-700 rounded-full hover:bg-blue-200 transition-all duration-300 font-medium hover:scale-105 transform">
+                {{ category.name }}
             </a>
-            <a href="#" class="px-6 py-3 bg-green-100 text-green-700 rounded-full hover:bg-green-200 transition-all duration-300 font-medium">
-                Detailing Services
-            </a>
-            <a href="#" class="px-6 py-3 bg-purple-100 text-purple-700 rounded-full hover:bg-purple-200 transition-all duration-300 font-medium">
-                Maintenance
-            </a>
+            {% endfor %}
         </div>
     </div>
 
     <!-- Posts Grid -->
-    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {% for post in posts %}
             <div class="post-card-hover">
                 {% include "blog/includes/post_card.html" with post=post %}
             </div>
         {% empty %}
-            <div class="col-span-full text-center py-16">
+            <div class="col-span-full text-center ">
                 <div class="max-w-md mx-auto">
-                    <svg class="w-24 h-24 text-gray-300 mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-12 h-12 text-gray-300 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
                     </svg>
                     <h3 class="text-2xl font-semibold text-gray-600 mb-3">No articles found</h3>
@@ -114,9 +106,9 @@
 <!-- Newsletter Signup -->
 <div class="bg-gray-50 py-16">
     <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">Stay Updated</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Stay Updated with ShineDrive Detailing</h2>
         <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Get the latest car care tips and exclusive offers delivered to your inbox.
+            Get the latest car care tips, exclusive offers, and professional detailing advice delivered to your inbox. Serving Waterloo, Kitchener, Cambridge, Elmira, Woolwich, and St. Jacobs, Ontario.
         </p>
         <div class="max-w-md mx-auto">
             <form class="flex gap-3">
@@ -130,4 +122,56 @@
         </div>
     </div>
 </div>
+
+<!-- FAQ Section for SEO -->
+<section class="bg-white py-16">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Do you provide car detailing services in Waterloo, Kitchener, and Cambridge?</h3>
+                        <p class="text-gray-600">Yes! ShineDrive Detailing proudly serves Waterloo, Kitchener, Cambridge, Elmira, Woolwich, and St. Jacobs, Ontario. We offer both mobile detailing services where we come to you, and you can also visit our location. Contact us at +1-548-398-7555 to book your service.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">What is professional car detailing?</h3>
+                        <p class="text-gray-600">Professional car detailing is a comprehensive cleaning and restoration process that goes beyond a regular car wash. It includes thorough cleaning of both interior and exterior surfaces, paint correction, protection treatments, and attention to every detail.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">How often should I get my car detailed?</h3>
+                        <p class="text-gray-600">For daily drivers in Waterloo, Kitchener, and Cambridge areas, we recommend professional detailing every 3-4 months. High-end vehicles or those in harsh Ontario weather conditions may need more frequent service.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">What's the difference between car wash and detailing?</h3>
+                        <p class="text-gray-600">A car wash focuses on basic cleaning, while detailing is a comprehensive process that includes deep cleaning, paint correction, interior deep cleaning, and protection treatments.</p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Do you offer mobile car detailing in Elmira, Woolwich, and St. Jacobs?</h3>
+                        <p class="text-gray-600">Yes! We provide convenient mobile detailing services throughout our service area including Elmira, Woolwich, and St. Jacobs, Ontario. Our professionals come to your location with all necessary equipment and supplies. We're available 7 days a week from 7am to 7pm.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Can detailing remove scratches from my car?</h3>
+                        <p class="text-gray-600">Professional detailing can significantly improve or remove light scratches through paint correction techniques. Deep scratches may require more extensive repair.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">How long does a full detailing service take?</h3>
+                        <p class="text-gray-600">A basic detail typically takes 2-3 hours, while a comprehensive full detail can take 4-6 hours. Premium packages with paint correction may require a full day.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">What are your business hours?</h3>
+                        <p class="text-gray-600">ShineDrive Detailing is open 7 days a week from 7:00 AM to 7:00 PM. We serve Waterloo, Kitchener, Cambridge, Elmira, Woolwich, and St. Jacobs, Ontario. You can reach us at +1-548-398-7555 or email us at shinedrive2024@gmail.com to schedule your appointment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Structured Data -->
+<script type="application/ld+json">
+{% blog_faq_structured_data %}
+</script>
 {% endblock %}

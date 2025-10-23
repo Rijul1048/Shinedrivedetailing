@@ -1,12 +1,124 @@
 {% extends "layout.html" %}
 {% load static %}
+{% load blog_extras %}
 
 {% block extra_head %}
-<meta name="description" content="{{ meta_description|default:'Default blog description' }}">
-<meta property="og:title" content="{{ meta_title|default:'Blog' }}">
-<meta property="og:description" content="{{ meta_description|default:'Default blog description' }}">
-<meta property="og:type" content="website">
-{% if canonical_url %}<link rel="canonical" href="{{ canonical_url }}">{% endif %}
+<!-- SEO Meta Tags -->
+<title>{% blog_meta_title post=post category=category tag=tag search_query=search_query %}</title>
+<meta name="description" content="{% blog_meta_description post=post category=category tag=tag search_query=search_query %}">
+<meta name="keywords" content="{% blog_keywords post=post category=category tag=tag %}">
+<meta name="author" content="ShineDrive Detailing">
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+<meta name="bingbot" content="index, follow">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="{% blog_canonical_url request post=post category=category tag=tag %}">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:type" content="{% if post %}article{% else %}website{% endif %}">
+<meta property="og:title" content="{% blog_meta_title post=post category=category tag=tag search_query=search_query %}">
+<meta property="og:description" content="{% blog_meta_description post=post category=category tag=tag search_query=search_query %}">
+<meta property="og:url" content="{% blog_canonical_url request post=post category=category tag=tag %}">
+<meta property="og:site_name" content="ShineDrive Detailing">
+<meta property="og:locale" content="en_US">
+{% if post and post.featured_image %}
+<meta property="og:image" content="https://shinedrivedetailing.com{{ post.featured_image.url }}">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="600">
+<meta property="og:image:alt" content="{{ post.title }}">
+{% else %}
+<meta property="og:image" content="https://shinedrivedetailing.com/static/images/blog-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ShineDrive Detailing Blog - Car Detailing Tips">
+{% endif %}
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@ShineDriveDetailing">
+<meta name="twitter:creator" content="@ShineDriveDetailing">
+<meta name="twitter:title" content="{% blog_meta_title post=post category=category tag=tag search_query=search_query %}">
+<meta name="twitter:description" content="{% blog_meta_description post=post category=category tag=tag search_query=search_query %}">
+{% if post and post.featured_image %}
+<meta name="twitter:image" content="https://shinedrivedetailing.com{{ post.featured_image.url }}">
+{% else %}
+<meta name="twitter:image" content="https://shinedrivedetailing.com/static/images/blog-default.jpg">
+{% endif %}
+
+<!-- Article specific meta tags -->
+{% if post %}
+<meta property="article:author" content="{{ post.author.get_full_name|default:post.author.username }}">
+<meta property="article:published_time" content="{{ post.publish_date|date:'c' }}">
+<meta property="article:modified_time" content="{{ post.updated_date|date:'c' }}">
+<meta property="article:section" content="{{ post.category.name|default:'Car Detailing' }}">
+{% for tag in post.tags.all %}
+<meta property="article:tag" content="{{ tag.name }}">
+{% endfor %}
+{% endif %}
+
+<!-- Additional SEO Meta Tags -->
+<meta name="theme-color" content="#3b82f6">
+<meta name="msapplication-TileColor" content="#3b82f6">
+<meta name="application-name" content="ShineDrive Detailing Blog">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{% blog_structured_data post=post category=category tag=tag %}
+</script>
+
+<!-- Additional structured data for organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "ShineDrive Detailing",
+  "url": "https://shinedrivedetailing.com",
+  "logo": "https://shinedrivedetailing.com/static/images/logo.png",
+  "description": "Professional car detailing services serving Waterloo, Kitchener, Cambridge, Elmira, Woolwich, and St. Jacobs, Ontario",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "CA",
+    "addressRegion": "Ontario",
+    "addressLocality": "Waterloo"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-548-398-7555",
+    "contactType": "customer service",
+    "email": "shinedrive2024@gmail.com",
+    "availableLanguage": "English",
+    "hoursAvailable": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "07:00",
+      "closes": "19:00"
+    }
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Waterloo, ON"},
+    {"@type": "City", "name": "Kitchener, ON"},
+    {"@type": "City", "name": "Cambridge, ON"},
+    {"@type": "City", "name": "Elmira, ON"},
+    {"@type": "City", "name": "Woolwich, ON"},
+    {"@type": "City", "name": "St. Jacobs, ON"}
+  ],
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": "43.4643",
+      "longitude": "-80.5204"
+    },
+    "geoRadius": "50000"
+  },
+  "sameAs": [
+    "https://www.facebook.com/ShineDriveDetailing",
+    "https://www.instagram.com/shinedrivedetailing",
+    "https://www.twitter.com/ShineDriveDetailing"
+  ]
+}
+</script>
 {% endblock %}
 
 {% block content %}

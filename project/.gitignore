@@ -1,0 +1,33 @@
+# Django specific ignores
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+*.log
+
+# Specific settings.py file in your project folder
+Shinedrivedetailing/project/project/settings.py
+local_settings.py
+
+# Database
+*.sqlite3
+*.db
+
+# Environment variables
+.env
+.env.local
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Static files
+/staticfiles/
+/mediafiles/
+
+# OS files
+.DS_Store
+Thumbs.db
+
